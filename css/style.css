@@ -1918,3 +1918,29 @@ section[class*="series--"] { border-top: 3px solid var(--series-soft); }
 /* 施術メニューのカード一覧を廃止 → 丸いナビが施術メニュー。ヘッダーに隠れないよう少し余白 */
 #service { scroll-margin-top: calc(var(--header-h, 64px) + 4px); }
 .section--why .whyid { max-width: 720px; }
+
+/* 概要パネル（ストーリー型）：写真＋ひと言 → お悩み → 選ばれる理由 → 流れ → 料金（最後） */
+.qp__panel--story { padding-top: 14px; }
+.qp__hero { position: relative; margin: 0 0 14px; border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 10; background: #e9ebf1; }
+.qp__hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.qp__hero figcaption { position: absolute; inset: auto 0 0 0; padding: 40px 16px 14px; background: linear-gradient(180deg, transparent, rgba(12,16,44,.72)); color: #fff; }
+.qp__en { display: block; font-family: var(--font-serif); font-size: 11px; letter-spacing: .25em; text-transform: uppercase; opacity: .85; margin-bottom: 4px; }
+.qp__catch { display: block; font-family: var(--font-serif); font-size: 19px; line-height: 1.45; letter-spacing: .04em; }
+.qp__block { margin-top: 18px; }
+.qp__h { font-size: 14px; font-weight: 700; letter-spacing: .04em; color: var(--c-brand); margin-bottom: 8px; }
+.qp__checks { display: grid; gap: 6px; }
+.qp__checks li { position: relative; padding: 9px 12px 9px 34px; background: #f3f5fa; border-radius: 10px; font-size: 13px; line-height: 1.5; }
+.qp__checks li::before { content: ""; position: absolute; left: 12px; top: 50%; width: 12px; height: 7px; margin-top: -5px; border-left: 2px solid var(--c-brand); border-bottom: 2px solid var(--c-brand); transform: rotate(-45deg); }
+.qp__points { display: grid; gap: 12px; }
+.qp__points li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px; }
+.qp__pn { font-family: var(--font-serif); font-size: 20px; line-height: 1.1; color: var(--c-brand); }
+.qp__pt { display: flex; flex-direction: column; gap: 3px; font-size: 13px; line-height: 1.75; color: var(--c-ink-2); }
+.qp__pt strong { font-size: 14px; color: var(--c-ink); line-height: 1.5; }
+.qp__small { font-size: 11px; color: var(--c-ink-3); margin-top: 8px; }
+.qp__flow { display: grid; gap: 0; counter-reset: qf; border-left: 2px solid #dfe3ee; margin-left: 6px; }
+.qp__flow li { position: relative; padding: 0 0 12px 18px; display: flex; flex-direction: column; font-size: 12px; color: var(--c-ink-2); line-height: 1.6; }
+.qp__flow li::before { content: ""; position: absolute; left: -7px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 2px solid var(--c-brand); }
+.qp__flow li strong { font-size: 14px; color: var(--c-ink); }
+.qp__block--price { padding-top: 16px; border-top: 1px solid var(--c-line); }
+.qp__more { display: block; margin-top: 14px; text-align: center; font-size: 13px; color: var(--c-brand); text-decoration: underline; text-underline-offset: 4px; }
+@media (min-width: 900px) { .qp__hero { aspect-ratio: 21 / 9; } .qp__catch { font-size: 24px; } }
