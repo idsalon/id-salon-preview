@@ -168,13 +168,12 @@
     if (!mq.matches) return;
     document.body.classList.add('fmap-sheet-open');
     // 後ろのページは動かさない（オーナー指示 10/31）
-    var t = sheet && sheet.querySelector('.fmap__panel.is-active .fmap__title');
-    if (t) setTimeout(function () { t.focus({ preventScroll: true }); }, 50);
+    // iPhone の Safari ではフォーカスでページが動くことがあるため、シートでは見出しにフォーカスしない
   }
   function closeSheet() {
     if (!document.body.classList.contains('fmap-sheet-open')) return;
     document.body.classList.remove('fmap-sheet-open');
-    if (lastSpot) lastSpot.focus({ preventScroll: true });
+    // 閉じるときも後ろのページを動かさない（フォーカスを戻さない）
   }
   function show(key, byUser) {
     var st = state();
