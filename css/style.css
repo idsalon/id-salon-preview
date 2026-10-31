@@ -2072,3 +2072,33 @@ section[class*="series--"] { border-top: 3px solid var(--series-soft); }
   .official__text, .official__text p { font-size: 11px !important; line-height: 1.6 !important; }
 }
 @media (max-width: 899px) { #fmapSheet { overscroll-behavior: contain; } }
+
+/* 予約 → 店舗情報 → フッター の順に整理。スマホでコンパクトに（10/31） */
+@media (max-width: 599px) {
+  .reserve { padding: 32px 0; }
+  .reserve__title { font-size: 20px; letter-spacing: .14em; margin-bottom: 10px; }
+  .reserve__lead { font-size: 12px; line-height: 1.8; margin-bottom: 18px; }
+  .reserve__buttons { gap: 8px; }
+  .reserve__buttons .btn--lg { min-height: 0; padding: 12px 16px; }
+  .reserve__note { margin-top: 16px; font-size: 11px; line-height: 1.75; }
+
+  .access--top .info__row, .info__row { grid-template-columns: 72px minmax(0, 1fr); gap: 10px; padding: 10px 0; font-size: 13px; line-height: 1.6; }
+  .info__row dt { font-size: 11px; letter-spacing: .08em; }
+  .info__sub { font-size: 11px; line-height: 1.6; }
+  .paylogos { margin-top: 6px; }
+  .paylogos__list img { height: 22px !important; width: auto !important; }
+
+  .footer { padding: 28px 0 calc(84px + env(safe-area-inset-bottom)); }
+  .footer__logo { width: 56px; }
+  .footer__christina { margin-top: 8px; font-size: 11px; }
+  .footer__links { gap: 6px 16px; margin-top: 16px; }
+  .footer__links a { font-size: 12px; letter-spacing: .08em; }
+  .footer__sns, .footer__legal { margin-top: 12px; gap: 6px 16px; }
+  .footer__sns a, .footer__legal a { font-size: 11px; }
+  .footer__copy { margin-top: 14px; font-size: 10px; }
+}
+@media (max-width: 599px) {
+  .footer__inner { gap: 14px !important; row-gap: 14px !important; }
+  .footer__links, .footer__sns, .footer__legal { margin-top: 0 !important; padding: 0 !important; }
+  .footer__copy { margin-top: 0 !important; }
+}
