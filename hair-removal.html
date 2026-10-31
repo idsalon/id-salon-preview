@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=74">
+  <link rel="stylesheet" href="css/style.css?v=77">
   <!-- 構造化データ（Google 向け店舗情報） -->
   <script type="application/ld+json">
   {
@@ -118,7 +118,7 @@
         <p class="hrc__sub">そもそも、光脱毛の2つの方式とは？</p>
         <p class="hrc__intro"><b>SHR</b> と <b>IPL</b> は、どちらも「光脱毛」。多くの脱毛サロンが使う光脱毛は、主にこの2つの方式です。</p>
         <div class="hrc__anat">
-          <img class="hrc__anat-img" src="images/hair/anatomy.webp" alt="毛の断面図。毛の横にバルジ領域、根元に毛乳頭がある" width="611" height="465" loading="lazy">
+          <div class="folv folv--anat"><img src="images/hair/cycle-g2.webp" alt="" width="240" height="240" loading="lazy"><span class="folv__heat folv__heat--bulge"></span><span class="folv__heat folv__heat--papilla"></span><span class="folv__lab folv__lab--bulge">バルジ領域</span><span class="folv__lab folv__lab--papilla">毛乳頭</span></div>
           <ul class="hrc__anat-list">
             <li class="hrc__anat-item hrc__anat-item--bulge"><b>バルジ領域</b><span>毛を育てるもとを注ぐ「ジョウロ」</span><em>SHR が届く</em></li>
             <li class="hrc__anat-item hrc__anat-item--papilla"><b>毛乳頭（毛根の奥）</b><span>毛を生み出す「根っこ」</span><em>IPL が届く</em></li>
@@ -127,19 +127,19 @@
         <div class="hrc__grid">
           <div class="hrc__card hrc__card--shr">
             <p class="hrc__name">SHR<small>蓄熱式</small></p>
-            <img class="hrc__img" src="images/hair/shr.webp" alt="肌の表面から熱を届け、バルジ領域が温まっている図" width="353" height="263" loading="lazy">
+            <div class="folv "><img src="images/hair/cycle-g2.webp" alt="" width="240" height="240" loading="lazy"><span class="folv__heat folv__heat--bulge"></span><svg class="folv__arr" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#f08a4b" stroke-width="3" stroke-linecap="round" fill="none" opacity=".85"><path d="M30 4v14M30 18l-4-5M30 18l4-5"/><path d="M58 4v14M58 18l-4-5M58 18l4-5"/><path d="M82 4v14M82 18l-4-5M82 18l4-5"/></g></svg></div>
             <p class="hrc__txt">バルジ領域にダメージを与えて、ジョウロから栄養が出ないようにしていく</p>
             <ul class="hrc__rate"><li><span>痛みの少なさ</span><span class="hrc__gauge hrc__gauge--6" style="--v:4" role="img" aria-label="6段階中4"><i></i></span></li><li><span>太く濃い毛</span><span class="hrc__gauge hrc__gauge--6" style="--v:2" role="img" aria-label="6段階中2"><i></i></span></li><li><span>産毛・細い毛</span><span class="hrc__gauge hrc__gauge--6" style="--v:5" role="img" aria-label="6段階中5"><i></i></span></li><li><span>肌へのやさしさ</span><span class="hrc__gauge hrc__gauge--6" style="--v:4.5" role="img" aria-label="6段階中4.5"><i></i></span></li></ul>
           </div>
           <div class="hrc__card hrc__card--ipl">
             <p class="hrc__name">IPL<small>熱破壊式</small></p>
-            <img class="hrc__img" src="images/hair/ipl.webp" alt="強い光で毛根に熱を集中させている図" width="353" height="263" loading="lazy">
+            <div class="folv "><img src="images/hair/cycle-g2.webp" alt="" width="240" height="240" loading="lazy"><span class="folv__heat folv__heat--papilla"></span><svg class="folv__arr" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#d63a2f" stroke-width="3.2" stroke-linecap="round" fill="none"><path d="M24 66l9 6M33 72l-6 0M33 72l-1-6"/><path d="M62 66l-9 6M53 72l6 0M53 72l1-6"/><path d="M20 88h11M31 88l-4-3M31 88l-4 3"/><path d="M66 88h-11M55 88l4-3M55 88l4 3"/></g></svg></div>
             <p class="hrc__txt">毛根にダメージを与えて、生える力を弱めていく</p>
             <ul class="hrc__rate"><li><span>痛みの少なさ</span><span class="hrc__gauge hrc__gauge--6" style="--v:1" role="img" aria-label="6段階中1"><i></i></span></li><li><span>太く濃い毛</span><span class="hrc__gauge hrc__gauge--6" style="--v:5" role="img" aria-label="6段階中5"><i></i></span></li><li><span>産毛・細い毛</span><span class="hrc__gauge hrc__gauge--6" style="--v:2" role="img" aria-label="6段階中2"><i></i></span></li><li><span>肌へのやさしさ</span><span class="hrc__gauge hrc__gauge--6" style="--v:2" role="img" aria-label="6段階中2"><i></i></span></li></ul>
           </div>
           <div class="hrc__card hrc__card--led">
             <p class="hrc__name">LED<small>Id の脱毛</small></p>
-            <img class="hrc__img" src="images/hair/led.webp" alt="バルジ領域と毛根の両方が温まっている図" width="353" height="263" loading="lazy">
+            <div class="folv "><img src="images/hair/cycle-g2.webp" alt="" width="240" height="240" loading="lazy"><span class="folv__heat folv__heat--bulge"></span><span class="folv__heat folv__heat--papilla"></span><svg class="folv__arr" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#f08a4b" stroke-width="3" stroke-linecap="round" fill="none" opacity=".85"><path d="M30 4v14M30 18l-4-5M30 18l4-5"/><path d="M58 4v14M58 18l-4-5M58 18l4-5"/><path d="M82 4v14M82 18l-4-5M82 18l4-5"/></g></svg></div>
             <p class="hrc__txt">その両方に熱ダメージのアプローチができる</p>
             <ul class="hrc__rate"><li><span>痛みの少なさ</span><span class="hrc__gauge hrc__gauge--6" style="--v:4" role="img" aria-label="6段階中4"><i></i></span></li><li><span>太く濃い毛</span><span class="hrc__gauge hrc__gauge--6" style="--v:5" role="img" aria-label="6段階中5"><i></i></span></li><li><span>産毛・細い毛</span><span class="hrc__gauge hrc__gauge--6" style="--v:5" role="img" aria-label="6段階中5"><i></i></span></li><li><span>肌へのやさしさ</span><span class="hrc__gauge hrc__gauge--6" style="--v:6" role="img" aria-label="6段階中6"><i></i></span></li></ul>
           </div>
@@ -156,7 +156,7 @@
       <div class="container">
         <div class="section__head"><p class="section__en">Hair Cycle</p><h2 class="section__title">毛周期と脱毛の関係</h2></div>
         <p class="hcy__lead">毛には「成長期 → 退行期 → 休止期」のサイクルがあり、1本1本が異なるタイミングで生え変わっています。</p>
-        <ol class="hcy__cycle"><li class="hcy__i is-best"><img src="images/hair/cycle-g1.webp" alt="" width="240" height="240" loading="lazy"><span class="hcy__tag">成長期 1</span><b class="hcy__best">脱毛に最適な毛</b><span class="hcy__d">毛母細胞の分裂が始まり、皮膚の中で毛の成長が始まる時期。</span></li><li class="hcy__i is-best"><img src="images/hair/cycle-g2.webp" alt="" width="240" height="240" loading="lazy"><span class="hcy__tag">成長期 2</span><b class="hcy__best">脱毛に最適な毛</b><span class="hcy__d">毛がより成長し、皮膚の表面に出て伸びてくる時期。</span></li><li class="hcy__i"><img src="images/hair/cycle-cat.webp" alt="" width="240" height="240" loading="lazy"><span class="hcy__tag">退行期</span><span class="hcy__d">毛の成長が止まり、抜け落ちるまでの時期。</span></li><li class="hcy__i"><img src="images/hair/cycle-tel.webp" alt="" width="240" height="240" loading="lazy"><span class="hcy__tag">休止期</span><span class="hcy__d">毛が抜け落ち、次に毛の成長を始めるまでの期間。</span></li></ol>
+        <ol class="hcy__cycle"><li class="hcy__center" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><marker id="hcy-arw" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7d8fd0"/></marker></defs><circle cx="50" cy="50" r="46" fill="#fff"/><g fill="none" stroke="#9aaae0" stroke-width="4" stroke-linecap="round" marker-end="url(#hcy-arw)"><path d="M28 20 A36 36 0 0 1 76 26"/><path d="M82 34 A36 36 0 0 1 76 76"/><path d="M70 82 A36 36 0 0 1 24 76"/><path d="M18 68 A36 36 0 0 1 22 26"/></g></svg><span>毛周期<small>くり返す</small></span></li><li class="hcy__i is-best"><img src="images/hair/cycle-g1.webp" alt="" width="240" height="240" loading="lazy"><span class="hcy__tag">成長期 1</span><b class="hcy__best">脱毛に最適な毛</b><span class="hcy__d">毛母細胞の分裂が始まり、皮膚の中で毛の成長が始まる時期。</span></li><li class="hcy__i is-best"><img src="images/hair/cycle-g2.webp" alt="" width="240" height="240" loading="lazy"><span class="hcy__tag">成長期 2</span><b class="hcy__best">脱毛に最適な毛</b><span class="hcy__d">毛がより成長し、皮膚の表面に出て伸びてくる時期。</span></li><li class="hcy__i"><img src="images/hair/cycle-cat.webp" alt="" width="240" height="240" loading="lazy"><span class="hcy__tag">退行期</span><span class="hcy__d">毛の成長が止まり、抜け落ちるまでの時期。</span></li><li class="hcy__i"><img src="images/hair/cycle-tel.webp" alt="" width="240" height="240" loading="lazy"><span class="hcy__tag">休止期</span><span class="hcy__d">毛が抜け落ち、次に毛の成長を始めるまでの期間。</span></li></ol>
         <div class="hcy__int">
           <p class="hcy__int-h">施術間隔の目安</p>
           <p class="hcy__int-n">約 <b>3〜4</b> 週間に1回</p>

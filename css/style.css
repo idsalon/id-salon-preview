@@ -2658,3 +2658,43 @@ body.fmap-sheet-open .totop { opacity: 0; pointer-events: none; }
   .hcy__sub { font-size: 16px; } .hcy__sub-t { font-size: 13px; }
   .hcy__prog { gap: 12px; } .hcy__p b { font-size: 13px; } .hcy__p span { font-size: 11px; }
 }
+
+/* 毛の図（毛周期と同じタッチ）＋熱の光・矢印・ラベル */
+.folv { position: relative; width: 100%; max-width: 150px; margin-inline: auto; aspect-ratio: 1; }
+.folv img { width: 100%; height: 100%; display: block; }
+.folv__heat { position: absolute; width: 34%; aspect-ratio: 1; border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; mix-blend-mode: multiply; }
+.folv__heat--papilla { left: 43%; top: 80%; background: radial-gradient(circle, rgba(255,70,40,.85) 0, rgba(255,90,50,.35) 45%, rgba(255,120,60,0) 70%); }
+.folv__heat--bulge { left: 67%; top: 55%; background: radial-gradient(circle, rgba(255,170,40,.9) 0, rgba(255,190,70,.35) 45%, rgba(255,200,90,0) 70%); }
+.folv__arr { position: absolute; inset: 0; width: 100%; height: 100%; }
+.folv__lab { position: absolute; padding: 1px 6px; border-radius: 6px; background: #fff; font-size: 9px; font-weight: 700; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,.1); }
+.folv__lab--bulge { left: 74%; top: 36%; color: #c9762e; border: 1px solid #f0b27a; }
+.folv__lab--papilla { left: 52%; top: 86%; color: #c0392b; border: 1px solid #e8968c; }
+.hrc__anat .folv { max-width: 170px; }
+@media (min-width: 600px) { .folv__lab { font-size: 11px; } .hrc__anat .folv { max-width: 220px; } }
+
+/* 比較カード：3枚とも行の高さをそろえる（説明文の下にメーターを下揃え） */
+.hrc__grid { align-items: stretch; }
+.hrc__card { display: flex; flex-direction: column; }
+.hrc__txt { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; }
+.hrc__rate { margin-top: auto; }
+.hrc__name { min-height: 2.6em; }
+
+/* 毛周期：2×2 を時計回りに、真ん中に回る矢印 */
+.hcy__cycle { position: relative; }
+.hcy__cycle > .hcy__i:nth-of-type(1) { order: 1; } .hcy__cycle > .hcy__i:nth-of-type(2) { order: 2; }
+.hcy__cycle > .hcy__i:nth-of-type(3) { order: 4; } .hcy__cycle > .hcy__i:nth-of-type(4) { order: 3; }
+.hcy__center { position: absolute; left: 50%; top: 50%; z-index: 2; width: 74px; height: 74px; transform: translate(-50%, -50%); display: grid; place-items: center; filter: drop-shadow(0 3px 8px rgba(39,55,143,.18)); }
+.hcy__center svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: hcySpin 14s linear infinite; }
+.hcy__center span { position: relative; display: flex; flex-direction: column; align-items: center; font-size: 11px; font-weight: 700; color: var(--c-brand); line-height: 1.2; }
+.hcy__center small { font-size: 8px; font-weight: 400; color: var(--c-ink-3); }
+@keyframes hcySpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .hcy__center svg { animation: none; } }
+.hcy__i { padding-bottom: 12px; }
+@media (min-width: 600px) {
+  .hcy__cycle { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; max-width: 720px; margin-inline: auto; gap: 14px; }
+  .hcy__center { width: 104px; height: 104px; } .hcy__center span { font-size: 15px; } .hcy__center small { font-size: 10px; }
+}
+/* 真ん中の矢印も li なので、番号をずらして時計回り（左上→右上→右下→左下）に */
+.hcy__cycle > .hcy__i:nth-of-type(2) { order: 1; } .hcy__cycle > .hcy__i:nth-of-type(3) { order: 2; }
+.hcy__cycle > .hcy__i:nth-of-type(4) { order: 4; } .hcy__cycle > .hcy__i:nth-of-type(5) { order: 3; }
+@media (max-width: 599px) { .hcy__cycle { gap: 18px 18px; } .hcy__center { width: 58px; height: 58px; } .hcy__center span { font-size: 9.5px; } .hcy__center small { font-size: 7px; } }
