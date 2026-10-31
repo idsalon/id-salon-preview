@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=69">
+  <link rel="stylesheet" href="css/style.css?v=70">
   <!-- 構造化データ（Google 向け店舗情報） -->
   <script type="application/ld+json">
   {
@@ -107,33 +107,32 @@
     <!-- 脱毛方式の違い（図解）：IPL／SHR／LED -->
     <section class="section hrc" id="compare">
       <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <marker id="hr-arw" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2b2b33"/></marker>
+  <linearGradient id="hr-shaft" x1="0" x2="1"><stop offset="0" stop-color="#3b2620"/><stop offset=".55" stop-color="#6a4a3e"/><stop offset="1" stop-color="#3b2620"/></linearGradient>
+  <radialGradient id="hr-bulb" cx=".4" cy=".35"><stop offset="0" stop-color="#6a4a3e"/><stop offset="1" stop-color="#2e1d18"/></radialGradient>
   <linearGradient id="hr-dermis" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f9e6df"/><stop offset="1" stop-color="#f3d4ca"/></linearGradient>
   <radialGradient id="hr-heat-r"><stop offset="0" stop-color="#ff3b2f" stop-opacity=".75"/><stop offset=".6" stop-color="#ff5a36" stop-opacity=".25"/><stop offset="1" stop-color="#ff5a36" stop-opacity="0"/></radialGradient>
   <radialGradient id="hr-heat-o"><stop offset="0" stop-color="#ff9a2e" stop-opacity=".75"/><stop offset=".6" stop-color="#ffb04a" stop-opacity=".25"/><stop offset="1" stop-color="#ffb04a" stop-opacity="0"/></radialGradient>
   <linearGradient id="hr-led" x1="0" x2="1"><stop offset="0" stop-color="#e08a3c"/><stop offset="1" stop-color="#27378f"/></linearGradient>
-  <symbol id="hr-fol" viewBox="0 0 160 200">
-    <rect x="0" y="40" width="160" height="160" fill="url(#hr-dermis)"/>
-    <path d="M0 40 Q20 36 40 40 T80 40 T120 40 T160 40 V54 Q140 58 120 54 T80 54 T40 54 T0 54 Z" fill="#eebcab"/>
-    <path d="M0 40 Q20 36 40 40 T80 40 T120 40 T160 40" fill="none" stroke="#e2a592" stroke-width="1"/>
-    <path d="M118 52 C126 62 128 70 124 78" fill="none" stroke="#e8b3a2" stroke-width="1"/>
-    <path d="M89 104 C108 92 124 74 138 56" fill="none" stroke="#d99a8a" stroke-width="5" stroke-linecap="round" opacity=".75"/>
-    <path d="M89 104 C108 92 124 74 138 56" fill="none" stroke="#efc2b5" stroke-width="2" stroke-linecap="round" opacity=".9"/>
-    <path d="M94 66 C108 58 118 66 114 76 C120 84 110 94 98 88 C92 84 92 72 94 66 Z" fill="#f6e1a5" stroke="#e3c06a" stroke-width="1"/>
-    <path d="M70 48 C68 90 66 130 64 158 C62 178 98 178 96 158 C94 130 92 90 90 48 Z" fill="#f1cdbf" stroke="#dca493" stroke-width="1.2"/>
-    <path d="M74 50 C73 90 72 130 71 156 C71 168 89 168 89 156 C88 130 87 90 86 50 Z" fill="#f7ddd3"/>
-    <path d="M80 0 C82 14 78 30 80 44 L80 152" fill="none" stroke="#2e201b" stroke-width="5" stroke-linecap="round"/>
-    <path d="M80 0 C82 14 78 30 80 44 L80 152" fill="none" stroke="#5a4038" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>
-    <path d="M66 156 C64 176 96 176 94 156 C94 148 66 148 66 156 Z" fill="#3a2a24"/>
-    <path d="M80 160 C74 166 74 176 80 178 C86 176 86 166 80 160 Z" fill="#d6534a"/>
-    <path d="M80 200 C76 192 84 186 80 178" fill="none" stroke="#b8322b" stroke-width="2.2" stroke-linecap="round"/>
-    <path d="M90 92 C96 96 97 112 91 118 C88 112 88 98 90 92 Z" fill="#f5a04a" stroke="#e0832a" stroke-width="1"/>
+  <symbol id="hr-fol" viewBox="0 0 200 220">
+    <rect x="0" y="34" width="200" height="186" fill="#fbe6df"/>
+    <path d="M0 34 Q25 26 50 34 T100 34 T150 34 T200 34 V62 Q175 70 150 62 T100 62 T50 62 T0 62 Z" fill="#f4b9a9"/>
+    <path d="M0 200 H62 C64 214 96 214 98 200 H200" fill="none" stroke="#ec6a45" stroke-width="2"/>
+    <path d="M110 128 C118 126 120 122 124 120" fill="none" stroke="#f0d2a0" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="131" cy="117" r="10" fill="#fff4cc" stroke="#f0c27a" stroke-width="2"/>
+    <path d="M124 0 C126 8 124 14 121 20 C112 60 98 110 90 160 C88 172 74 172 72 160 C76 110 90 60 108 20 C111 12 113 6 112 0 Z" fill="url(#hr-shaft)"/>
+    <ellipse cx="81" cy="178" rx="15" ry="17" fill="url(#hr-bulb)"/>
+    <ellipse cx="81" cy="186" rx="8" ry="7" fill="#f8d84a" stroke="#e9b92c" stroke-width="1"/>
   </symbol>
 </defs></svg>
       <div class="container">
         <div class="section__head"><p class="section__en">Comparison</p><h2 class="section__title">IPL・SHR・LED の違い</h2></div>
         <p class="hrc__intro"><b>IPL</b> と <b>SHR</b> は、どちらも「光脱毛」。多くの脱毛サロンが使う光脱毛は、主にこの2つの方式です。</p>
         <div class="hrc__anat">
-          <svg class="hrc__anat-fig" viewBox="0 0 160 200" aria-hidden="true"><use href="#hr-fol"/></svg>
+          <svg class="hrc__anat-fig" viewBox="0 0 200 220" aria-hidden="true"><use href="#hr-fol"/>
+            <line x1="141" y1="117" x2="168" y2="96" stroke="#c9762e" stroke-width="1.2"/><rect x="146" y="80" width="52" height="18" rx="4" fill="#fff" stroke="#c9762e"/><text x="172" y="93" text-anchor="middle" font-size="10" font-weight="700" fill="#c9762e">バルジ領域</text>
+            <line x1="89" y1="188" x2="132" y2="196" stroke="#c0392b" stroke-width="1.2"/><rect x="128" y="186" width="44" height="18" rx="4" fill="#fff" stroke="#c0392b"/><text x="150" y="199" text-anchor="middle" font-size="10" font-weight="700" fill="#c0392b">毛乳頭</text>
+          </svg>
           <ul class="hrc__anat-list">
             <li class="hrc__anat-item hrc__anat-item--bulge"><b>バルジ領域</b><span>毛を育てるもとを注ぐ「ジョウロ」</span><em>SHR が届く</em></li>
             <li class="hrc__anat-item hrc__anat-item--papilla"><b>毛乳頭（毛根の奥）</b><span>毛を生み出す「根っこ」</span><em>IPL が届く</em></li>
@@ -143,19 +142,19 @@
           <div class="hrc__card hrc__card--ipl">
             <p class="hrc__name">IPL<small>熱破壊式</small></p>
             <div class="hrc__fig"><svg class="hrc__pulse" viewBox="0 0 120 36" aria-hidden="true"><line x1="2" y1="32.5" x2="118" y2="32.5" stroke="#cfd4e2"/><rect x="54" y="4" width="12" height="28" rx="3" fill="#c0392b"/></svg><p class="hrc__cap">強い光を一瞬</p></div>
-            <div class="hrc__fig"><svg class="hrc__skin" viewBox="0 0 160 200" aria-hidden="true"><use href="#hr-fol"/><circle cx="80" cy="168" r="30" fill="url(#hr-heat-r)"/></svg><p class="hrc__cap">根っこに熱</p></div>
+            <div class="hrc__fig"><svg class="hrc__skin" viewBox="0 0 200 220" aria-hidden="true"><use href="#hr-fol"/><circle cx="81" cy="182" r="34" fill="url(#hr-heat-r)"/><path d="M44 150 L60 164" stroke="#2b2b33" stroke-width="3" stroke-linecap="round" marker-end="url(#hr-arw)"/><path d="M118 150 L102 164" stroke="#2b2b33" stroke-width="3" stroke-linecap="round" marker-end="url(#hr-arw)"/><path d="M44 206 L60 194" stroke="#2b2b33" stroke-width="3" stroke-linecap="round" marker-end="url(#hr-arw)"/><path d="M118 206 L102 194" stroke="#2b2b33" stroke-width="3" stroke-linecap="round" marker-end="url(#hr-arw)"/></svg><p class="hrc__cap">根っこに熱</p></div>
             <ul class="hrc__rate"><li><span>痛みの少なさ</span><span class="hrc__gauge" style="--v:1" role="img" aria-label="3段階中1"><i></i></span></li><li><span>太く濃い毛</span><span class="hrc__gauge" style="--v:3" role="img" aria-label="3段階中3"><i></i></span></li><li><span>産毛・細い毛</span><span class="hrc__gauge" style="--v:1" role="img" aria-label="3段階中1"><i></i></span></li><li><span>肌へのやさしさ</span><span class="hrc__gauge" style="--v:1" role="img" aria-label="3段階中1"><i></i></span></li></ul>
           </div>
           <div class="hrc__card hrc__card--shr">
             <p class="hrc__name">SHR<small>蓄熱式</small></p>
             <div class="hrc__fig"><svg class="hrc__pulse" viewBox="0 0 120 36" aria-hidden="true"><line x1="2" y1="32.5" x2="118" y2="32.5" stroke="#cfd4e2"/><rect x="8" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="19" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="30" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="41" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="52" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="63" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="74" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="85" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="96" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="107" y="22" width="6" height="10" rx="2" fill="#e08a3c"/></svg><p class="hrc__cap">弱い光を何度も</p></div>
-            <div class="hrc__fig"><svg class="hrc__skin" viewBox="0 0 160 200" aria-hidden="true"><use href="#hr-fol"/><circle cx="91" cy="105" r="28" fill="url(#hr-heat-o)"/></svg><p class="hrc__cap">ジョウロに熱</p></div>
+            <div class="hrc__fig"><svg class="hrc__skin" viewBox="0 0 200 220" aria-hidden="true"><use href="#hr-fol"/><circle cx="131" cy="117" r="30" fill="url(#hr-heat-r)"/><path d="M24 40 L24 58" stroke="#2b2b33" stroke-width="3" stroke-linecap="round" marker-end="url(#hr-arw)"/><path d="M64 40 L64 58" stroke="#2b2b33" stroke-width="3" stroke-linecap="round" marker-end="url(#hr-arw)"/><path d="M150 40 L150 58" stroke="#2b2b33" stroke-width="3" stroke-linecap="round" marker-end="url(#hr-arw)"/><path d="M184 40 L184 58" stroke="#2b2b33" stroke-width="3" stroke-linecap="round" marker-end="url(#hr-arw)"/></svg><p class="hrc__cap">ジョウロに熱</p></div>
             <ul class="hrc__rate"><li><span>痛みの少なさ</span><span class="hrc__gauge" style="--v:3" role="img" aria-label="3段階中3"><i></i></span></li><li><span>太く濃い毛</span><span class="hrc__gauge" style="--v:1" role="img" aria-label="3段階中1"><i></i></span></li><li><span>産毛・細い毛</span><span class="hrc__gauge" style="--v:3" role="img" aria-label="3段階中3"><i></i></span></li><li><span>肌へのやさしさ</span><span class="hrc__gauge" style="--v:3" role="img" aria-label="3段階中3"><i></i></span></li></ul>
           </div>
           <div class="hrc__card hrc__card--led">
             <p class="hrc__name">LED<small>Id の脱毛</small></p>
             <div class="hrc__fig"><svg class="hrc__pulse" viewBox="0 0 120 36" aria-hidden="true"><line x1="2" y1="32.5" x2="118" y2="32.5" stroke="#cfd4e2"/><path d="M6 32 C 20 32 22 14 40 14 L 80 14 C 98 14 100 32 114 32 Z" fill="url(#hr-led)"/></svg><p class="hrc__cap">やさしくじっくり</p></div>
-            <div class="hrc__fig"><svg class="hrc__skin" viewBox="0 0 160 200" aria-hidden="true"><use href="#hr-fol"/><circle cx="91" cy="105" r="26" fill="url(#hr-heat-o)"/><circle cx="80" cy="168" r="28" fill="url(#hr-heat-r)"/></svg><p class="hrc__cap">両方に熱</p></div>
+            <div class="hrc__fig"><svg class="hrc__skin" viewBox="0 0 200 220" aria-hidden="true"><use href="#hr-fol"/><circle cx="131" cy="117" r="28" fill="url(#hr-heat-o)"/><circle cx="81" cy="182" r="30" fill="url(#hr-heat-o)"/><path d="M24 40 L24 58" stroke="#2b2b33" stroke-width="3" stroke-linecap="round" marker-end="url(#hr-arw)"/><path d="M64 40 L64 58" stroke="#2b2b33" stroke-width="3" stroke-linecap="round" marker-end="url(#hr-arw)"/><path d="M150 40 L150 58" stroke="#2b2b33" stroke-width="3" stroke-linecap="round" marker-end="url(#hr-arw)"/><path d="M184 40 L184 58" stroke="#2b2b33" stroke-width="3" stroke-linecap="round" marker-end="url(#hr-arw)"/></svg><p class="hrc__cap">両方に熱</p></div>
             <ul class="hrc__rate"><li><span>痛みの少なさ</span><span class="hrc__gauge" style="--v:3" role="img" aria-label="3段階中3"><i></i></span></li><li><span>太く濃い毛</span><span class="hrc__gauge" style="--v:3" role="img" aria-label="3段階中3"><i></i></span></li><li><span>産毛・細い毛</span><span class="hrc__gauge" style="--v:3" role="img" aria-label="3段階中3"><i></i></span></li><li><span>肌へのやさしさ</span><span class="hrc__gauge" style="--v:3" role="img" aria-label="3段階中3"><i></i></span></li></ul>
           </div>
         </div>

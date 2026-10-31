@@ -2565,3 +2565,6 @@ body.fmap-sheet-open .totop { opacity: 0; pointer-events: none; }
 .hrc__card--shr .hrc__gauge i { background: linear-gradient(90deg, #f7d0a2, #d9822b); }
 .hrc__card--led .hrc__gauge i { background: linear-gradient(90deg, #8d9be0, #27378f); }
 @media (min-width: 600px) { .hrc__anat { grid-template-columns: 160px minmax(0, 1fr); } .hrc__anat-fig { width: 160px; } .hrc__skin { max-width: 130px; } .hrc__gauge { width: 72px; height: 7px; } .hrc__intro { font-size: 14px; } }
+.hrc__anat-fig { width: 140px; } .hrc__anat { grid-template-columns: 140px minmax(0, 1fr); }
+.hrc__anat-fig text { font-family: var(--font-jp); }
+@media (min-width: 600px) { .hrc__anat { grid-template-columns: 200px minmax(0, 1fr); } .hrc__anat-fig { width: 200px; } }
