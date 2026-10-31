@@ -145,3 +145,28 @@
   sheet.addEventListener('touchend', end);
   sheet.addEventListener('touchcancel', end);
 })();
+
+/* 4) SP のシートが開いている間は、後ろのページを固定（動かない・スワイプが効かなくならない）。閉じたら元の位置に戻す */
+(function () {
+  var mq = window.matchMedia('(max-width: 899px)');
+  var b = document.body, y = 0, locked = false;
+  function lock() {
+    if (locked || !mq.matches) return;
+    y = window.scrollY || window.pageYOffset; locked = true;
+    b.style.position = 'fixed'; b.style.top = (-y) + 'px'; b.style.left = '0'; b.style.right = '0'; b.style.width = '100%';
+  }
+  function unlock() {
+    if (!locked) return; locked = false;
+    b.style.position = ''; b.style.top = ''; b.style.left = ''; b.style.right = ''; b.style.width = '';
+    var h = document.documentElement, sb = h.style.scrollBehavior; h.style.scrollBehavior = 'auto';
+    window.scrollTo(0, y); h.style.scrollBehavior = sb;
+  }
+  new MutationObserver(function () { b.classList.contains('fmap-sheet-open') ? lock() : unlock(); })
+    .observe(b, { attributes: true, attributeFilter: ['class'] });
+  // シートの外（暗くない部分）をタップしても閉じられるように
+  document.addEventListener('click', function (e) {
+    if (!locked) return;
+    var sheet = document.getElementById('fmapSheet');
+    if (sheet && !sheet.contains(e.target) && !e.target.closest('[data-fmap]')) { var x = sheet.querySelector('.fmap__sheet-close'); if (x) x.click(); }
+  });
+})();

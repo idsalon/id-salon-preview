@@ -2071,3 +2071,4 @@ section[class*="series--"] { border-top: 3px solid var(--series-soft); }
   .official__title { font-size: 13px !important; margin-bottom: 4px !important; letter-spacing: .04em; }
   .official__text, .official__text p { font-size: 11px !important; line-height: 1.6 !important; }
 }
+@media (max-width: 899px) { #fmapSheet { overscroll-behavior: contain; } }
