@@ -2505,3 +2505,36 @@ body.fmap-sheet-open .totop { opacity: 0; pointer-events: none; }
 @media (min-width: 900px) { .catbar__in { justify-content: center; } .catbar__btn { font-size: 12.5px; padding: 0 14px; } }
 .is-embed .catbar { display: none !important; }
 @media (max-width: 899px) { .mech-intro img { max-height: 200px; width: 100%; object-fit: cover; } .mech-intro { gap: 12px; margin-bottom: 14px; } }
+
+/* 脱毛：IPL・SHR・LED の違い（図解） */
+.hrc .section__head { margin-bottom: 14px; }
+.hrc__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.hrc__card { display: flex; flex-direction: column; gap: 6px; padding: 10px 6px 10px; border: 1px solid var(--c-line); border-radius: 12px; background: #fff; text-align: center; }
+.hrc__card--led { border: 2px solid var(--c-brand); background: linear-gradient(180deg, #f3f5fc, #fff); box-shadow: 0 6px 18px rgba(39,55,143,.12); }
+.hrc__name { font-family: var(--font-serif); font-size: 20px; letter-spacing: .08em; line-height: 1.1; color: var(--c-ink); }
+.hrc__card--led .hrc__name { color: var(--c-brand); }
+.hrc__name small { display: block; margin-top: 3px; font-family: var(--font-jp); font-size: 10px; letter-spacing: .04em; color: var(--c-ink-3); }
+.hrc__card--led .hrc__name small { color: var(--c-brand); font-weight: 700; }
+.hrc__fig { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.hrc__pulse { width: 100%; height: 30px; }
+.hrc__skin { width: 100%; height: auto; max-width: 120px; }
+.hrc__cap { font-size: 10px; line-height: 1.35; color: var(--c-ink-2); }
+.hrc__rate { display: grid; gap: 4px; margin-top: 2px; padding-top: 8px; border-top: 1px solid var(--c-line); text-align: left; }
+.hrc__rate li { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; font-size: 9.5px; line-height: 1.3; color: var(--c-ink-3); }
+.hrc__dots { display: inline-flex; gap: 3px; }
+.hrc__dots i { width: 8px; height: 8px; border-radius: 50%; background: #e3e6ef; }
+.hrc__dots i.on { background: #9aa3c4; }
+.hrc__card--led .hrc__dots i.on { background: var(--c-brand); }
+.hrc__eq { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px; margin-top: 14px; }
+.hrc__pill { display: inline-flex; flex-direction: column; align-items: center; padding: 6px 12px; border-radius: 12px; font-size: 11px; line-height: 1.3; background: #f3f5fa; color: var(--c-ink-2); }
+.hrc__pill b { font-family: var(--font-serif); font-size: 15px; font-weight: 500; letter-spacing: .06em; color: var(--c-ink); }
+.hrc__pill--ipl b { color: #c0392b; } .hrc__pill--shr b { color: #c9762e; }
+.hrc__pill--led { background: var(--c-brand); color: #fff; } .hrc__pill--led b { color: #fff; }
+.hrc__op { font-size: 16px; color: var(--c-ink-3); }
+@media (min-width: 600px) {
+  .hrc__grid { gap: 14px; } .hrc__card { padding: 16px 14px; gap: 10px; }
+  .hrc__name { font-size: 26px; } .hrc__name small { font-size: 12px; }
+  .hrc__cap { font-size: 12px; } .hrc__rate li { flex-direction: row; justify-content: space-between; font-size: 12px; }
+  .hrc__dots i { width: 10px; height: 10px; }
+  .hrc__pill { font-size: 13px; padding: 8px 18px; } .hrc__pill b { font-size: 18px; }
+}
