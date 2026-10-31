@@ -249,3 +249,45 @@
   }
 })();
 
+
+
+/* 付いてくるカテゴリメニュー（全ページ）：スクロールするとヘッダーの下に出る。
+   トップでは丸いナビを過ぎてから表示し、押すとその場でページを展開。ほかのページでは各ページへ移動 */
+(function () {
+  if (document.documentElement.classList.contains('is-embed')) return;
+  var header = document.getElementById('header'); if (!header) return;
+  var isTop = !!document.getElementById('qpanel');
+  var here = location.pathname.split('/').pop() || 'index.html';
+  var items = [['facial', 'facial.html', 'フェイシャル'], ['hair', 'hair-removal.html', '脱毛'], ['body', 'body.html', '痩身'], ['white', 'whitening.html', 'ホワイトニング'], ['men', 'mens.html', 'メンズ'], ['price', 'price.html', '料金'], ['access', 'index.html#access', 'アクセス']];
+  var bar = document.createElement('nav'); bar.className = 'catbar'; bar.setAttribute('aria-label', 'メニュー');
+  var html = '<div class="catbar__in">';
+  items.forEach(function (it) { html += '<a class="catbar__btn' + (it[1] === here ? ' is-active' : '') + '" href="' + it[1] + '" data-cat="' + it[0] + '">' + it[2] + '</a>'; });
+  html += '<button type="button" class="catbar__close" aria-label="閉じる" hidden>×</button></div>';
+  bar.innerHTML = html; document.body.appendChild(bar);
+  var closeBtn = bar.querySelector('.catbar__close');
+  var trigger = isTop ? document.getElementById('service') : document.querySelector('.page-hero');
+  function upd() {
+    var y = trigger ? trigger.getBoundingClientRect().bottom : 200;
+    bar.classList.toggle('is-show', y < header.offsetHeight);
+  }
+  window.addEventListener('scroll', upd, { passive: true }); window.addEventListener('resize', upd); upd();
+  if (isTop) {
+    var wrap = document.getElementById('qpanel'), nav = document.getElementById('service');
+    bar.querySelectorAll('.catbar__btn').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var k = a.dataset.cat; if (k === 'access') return;
+        var it = document.querySelector('.qnav2__item[data-qp="' + k + '"]'); if (!it) return;
+        e.preventDefault();
+        if (!it.classList.contains('is-active')) it.click();
+        if (nav) nav.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      });
+    });
+    function sync() {
+      var open = wrap.querySelector('[data-qp-panel]:not([hidden])'), k = open ? open.dataset.qpPanel : '';
+      bar.querySelectorAll('.catbar__btn').forEach(function (a) { a.classList.toggle('is-active', a.dataset.cat === k); });
+      closeBtn.hidden = !k;
+    }
+    new MutationObserver(sync).observe(wrap, { subtree: true, attributes: true, attributeFilter: ['hidden'] }); sync();
+    closeBtn.addEventListener('click', function () { var x = wrap.querySelector('.qp__close, [data-qp-close]'); if (x) x.click(); });
+  }
+})();
