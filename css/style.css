@@ -2704,3 +2704,6 @@ body.fmap-sheet-open .totop { opacity: 0; pointer-events: none; }
 .concept .concept__lead { font-family: var(--font-serif); font-size: 21px !important; font-weight: 500; line-height: 1.55; letter-spacing: .06em; color: var(--c-ink); margin-bottom: 10px; }
 @media (max-width: 599px) { .concept .sec-row { align-items: center; } .concept .sec-row .link-arrow { font-size: 11px; } .concept .section__title { white-space: nowrap; font-size: 19px; } }
 @media (min-width: 900px) { .concept .concept__lead { font-size: 30px !important; } }
+.concept__em { font-size: 14px !important; font-weight: 500; color: var(--c-ink) !important; line-height: 1.9 !important; }
+.concept__close { margin-top: 4px; padding-top: 12px; border-top: 1px solid var(--c-line); font-size: 13px !important; color: var(--c-brand) !important; line-height: 1.9 !important; }
+@media (min-width: 600px) { .concept__em { font-size: 16px !important; } .concept__close { font-size: 15px !important; } }
