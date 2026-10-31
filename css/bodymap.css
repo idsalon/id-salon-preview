@@ -326,3 +326,15 @@
 }
 .fc__dot.is-active::after { transform: scale(1.5); }
 .bm__pt.is-active .bm__dot::after { background: rgba(255,255,255,.22); }
+
+/* v7：白を弱めて、より透明なガラスに */
+.fc__dot::before, .fc__dot[class*="fc__dot--"]::before,
+.bm__dot::before, .bm__pt[class*="bm__pt--"] .bm__dot::before {
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.28), rgba(255,255,255,.04) 70%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.55), 0 0 8px 1px rgba(255,255,255,.22), 0 1px 4px rgba(10,14,40,.10);
+}
+.fc__dot::after { width: 3px; height: 3px; margin: -1.5px 0 0 -1.5px; background: rgba(255,255,255,.7); box-shadow: 0 0 4px 1px rgba(255,255,255,.4); }
+.fc__dot.is-active::before, .bm__pt.is-active .bm__dot::before {
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.4), rgba(255,255,255,.08) 70%);
+  box-shadow: inset 0 0 0 1.2px rgba(255,255,255,.8), 0 0 12px 3px rgba(255,255,255,.35), 0 0 0 6px rgba(255,255,255,.10);
+}
