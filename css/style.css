@@ -2026,3 +2026,5 @@ section[class*="series--"] { border-top: 3px solid var(--series-soft); }
 @media (hover: hover) { .fmap__actions .link-arrow:hover { background: #e4e8f5; } }
 /* お悩みマップ：「詳しく見る」を上、予約・LINE を下に（オーナー指示 10/31） */
 .fmap__actions .link-arrow, .fmap__side .fmap__actions .link-arrow { order: -1 !important; }
+/* シートのつまみ：引っぱれることが分かるように少し大きく */
+@media (max-width: 899px) { .fmap__sheet-bar { touch-action: none; } .fmap__sheet-handle { width: 44px; height: 5px; background: #cfd4e2; } }

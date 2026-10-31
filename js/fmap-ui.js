@@ -108,3 +108,40 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(schedule);
   schedule();
 })();
+
+/* 3) SP のシート：下へ引っぱって閉じる（つまみ・上部・シート全体から。中身が上端のときだけ） */
+(function () {
+  var sheet = document.getElementById('fmapSheet'); if (!sheet) return;
+  var closeBtn = sheet.querySelector('.fmap__sheet-close');
+  var mq = window.matchMedia('(max-width: 899px)');
+  var y0 = null, dy = 0, t0 = 0, dragging = false;
+  function isOpen() { return document.body.classList.contains('fmap-sheet-open'); }
+  sheet.addEventListener('touchstart', function (e) {
+    if (!mq.matches || !isOpen() || e.touches.length !== 1) return;
+    if (e.target.closest('a, button:not(.fmap__sheet-close)')) { y0 = e.touches[0].clientY; dragging = false; t0 = Date.now(); return; }
+    y0 = e.touches[0].clientY; dy = 0; t0 = Date.now(); dragging = false;
+  }, { passive: true });
+  sheet.addEventListener('touchmove', function (e) {
+    if (y0 === null) return;
+    var d = e.touches[0].clientY - y0;
+    if (!dragging && d > 6 && sheet.scrollTop <= 0) { dragging = true; sheet.style.transition = 'none'; }
+    if (!dragging) return;
+    dy = Math.max(0, d);
+    sheet.style.transform = 'translateY(' + dy + 'px)';
+    e.preventDefault();   // 後ろのページをスクロールさせない
+  }, { passive: false });
+  function end() {
+    if (y0 === null) return;
+    var fast = dragging && dy > 30 && (Date.now() - t0) < 250;
+    sheet.style.transition = '';
+    if (dragging && (dy > sheet.offsetHeight * 0.25 || dy > 90 || fast)) {
+      sheet.style.transform = 'translateY(100%)';
+      setTimeout(function () { if (closeBtn) closeBtn.click(); sheet.style.transform = ''; }, 220);
+    } else {
+      sheet.style.transform = '';
+    }
+    y0 = null; dy = 0; dragging = false;
+  }
+  sheet.addEventListener('touchend', end);
+  sheet.addEventListener('touchcancel', end);
+})();
