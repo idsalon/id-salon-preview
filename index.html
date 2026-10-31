@@ -1,0 +1,934 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>アイディー SALON 改善版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=48">
+<link rel="stylesheet" href="css/bodymap.css?v=4">
+
+
+  <!-- ===== ヘッダー（全ページ共通。変更時はすべてのHTMLを同じに） ===== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Id（アイディー）トップへ">
+        <img src="images/logo-mark.png" alt="Id" class="header__mark" width="40" height="40">
+        <span class="header__name">Id<span class="header__name-jp">（アイディー）</span>SALON</span>
+      </a>
+      <nav class="nav" id="nav" aria-label="メインメニュー">
+        <ul class="nav__list">
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="index.html#service" class="nav__link">Service</a></li>
+          <li><a href="price.html" class="nav__link">Price</a></li>
+          <li><a href="index.html#voice" class="nav__link">Voice</a></li>
+          <li><a href="index.html#access" class="nav__link">Access</a></li>
+          <li><a href="index.html#reserve" class="nav__link nav__link--cta">Reserve</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#reserve" class="btn btn--small btn--primary header__cta">ご予約</a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="nav" aria-label="メニューを開く">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== ヒーロー ===== -->
+    <section class="hero2">
+      <div class="hero2__bg">
+        <img src="images/hero.jpg" alt="Id サロン店内 ― ネオンサインと施術ベッド" width="2000" height="1500">
+      </div>
+      <div class="hero2__shade"></div>
+      <div class="hero2__inner">
+        <img src="images/logo-white.png" alt="Id 아이디SALON" class="hero2__logo" width="864" height="1058">
+        <h1 class="hero2__tag">自分を磨いて、<br class="sp-only">自分をもっと好きになる。</h1>
+        <p class="hero2__copy">肌も、ムダ毛も、体型も、歯の色も。「気になる」をひとつのサロンで。年齢や性別に関係なく通える、広島・矢野のトータルビューティーサロンです。</p>
+        <ul class="hero2__badges">
+          <li>男女OK</li><li>完全予約制</li><li>貸切利用OK</li><li>JR矢野駅 徒歩5分</li><li>駐車場2台</li>
+        </ul>
+        <div class="hero2__actions">
+          <a href="https://beauty.hotpepper.jp/kr/slnH000694676/" class="btn btn--white" target="_blank" rel="noopener">ホットペッパーで予約</a>
+          <a href="#service" class="btn btn--outline-white">施術メニューを見る</a>
+        </div>
+      </div>
+      <span class="hero2__scroll">Scroll</span>
+    </section>
+
+    <!-- ===== 目的別クイックナビ（Apple Store のカテゴリナビ型） ===== -->
+    <nav class="qnav2" aria-label="目的から探す">
+      <ul class="qnav2__list">
+        <li><a href="facial.html" class="qnav2__item" data-qp="facial" aria-expanded="false" aria-controls="qp-facial"><span class="qnav2__ph"><img src="images/model-facial-card.jpg" alt="" loading="lazy" style="object-position:50% 25%"></span><span class="qnav2__t">フェイシャル</span></a></li>
+        <li><a href="hair-removal.html" class="qnav2__item" data-qp="hair" aria-expanded="false" aria-controls="qp-hair"><span class="qnav2__ph"><img src="images/model-hair-card.jpg" alt="" loading="lazy" style="object-position:50% 25%"></span><span class="qnav2__t">脱毛</span></a></li>
+        <li><a href="body.html" class="qnav2__item" data-qp="body" aria-expanded="false" aria-controls="qp-body"><span class="qnav2__ph"><img src="images/model-body-f.jpg" alt="" loading="lazy" style="object-position:50% 40%"></span><span class="qnav2__t">痩身</span></a></li>
+        <li><a href="whitening.html" class="qnav2__item" data-qp="white" aria-expanded="false" aria-controls="qp-white"><span class="qnav2__ph"><img src="images/model-white-card.jpg" alt="" loading="lazy" style="object-position:50% 30%"></span><span class="qnav2__t">ホワイトニング</span></a></li>
+        <li><a href="mens.html" class="qnav2__item" data-qp="men" aria-expanded="false" aria-controls="qp-men"><span class="qnav2__ph"><img src="images/model-men-sp.jpg" alt="" loading="lazy" style="object-position:50% 20%"></span><span class="qnav2__t">メンズ</span></a></li>
+        <li><a href="price.html" class="qnav2__item" data-qp="price" aria-expanded="false" aria-controls="qp-price"><span class="qnav2__ph qnav2__ph--mark" aria-hidden="true">¥</span><span class="qnav2__t">料金表</span></a></li>
+        <li><a href="#access" class="qnav2__item" data-qp="access" aria-expanded="false" aria-controls="qp-access"><span class="qnav2__ph"><img src="images/salon-01.jpg" alt="" loading="lazy" style="object-position:50% 50%"></span><span class="qnav2__t">アクセス</span></a></li>
+      </ul>
+    </nav>
+    <div class="qp" id="qpanel" aria-live="polite">
+      <div class="qp__panel" id="qp-facial" data-qp-panel="facial" hidden>
+        <p class="qp__title">フェイシャル</p>
+        <p class="qp__lead">AI肌診断で肌の状態を確かめてから、CHRISTINA（正規取扱店）で整えます。</p>
+        <a href="facial.html#prime" class="qp__prime"><span class="qp__prime-t">Id Prime<small>毎月1回フェイシャル・縛りなし</small></span><span class="qp__prime-p">月額 ¥15,000</span></a><ul class="qp__list"><li class="qp__row"><span class="qp__name">水光うる艶ピーリング<small>乾燥・赤み・くすみに／70分</small></span><span class="qp__price"><span class="qp__reg">通常 ¥18,000</span><span class="qp__first"><small>初回</small>¥9,900</span></span></li><li class="qp__row"><span class="qp__name">肌荒れケアピーリング<small>毛穴・ニキビ・ざらつきに／60分</small></span><span class="qp__price"><span class="qp__reg">通常 ¥18,000</span><span class="qp__first"><small>初回</small>¥9,900</span></span></li><li class="qp__row"><span class="qp__name">小顔輪郭フェイシャル<small>フェイスライン・むくみに／70分</small></span><span class="qp__price"><span class="qp__reg">通常 ¥18,000</span><span class="qp__first"><small>初回</small>¥9,900</span></span></li></ul>
+        <div class="qp__btns"><a href="https://beauty.hotpepper.jp/kr/slnH000694676/" class="btn btn--small btn--primary" target="_blank" rel="noopener">ホットペッパーで予約</a><a href="facial.html" class="btn btn--small btn--ghost">詳しく見る</a></div>
+      </div>
+      <div class="qp__panel" id="qp-hair" data-qp-panel="hair" hidden>
+        <p class="qp__title">脱毛</p>
+        <p class="qp__lead">痛みを抑えた脱毛で、産毛・白髪・濃いヒゲにも。</p>
+        <p class="qp__note">24歳以下の学生は U24学割（全身 初回 ¥18,000）</p><ul class="qp__list"><li class="qp__row"><span class="qp__name">全身脱毛<small>顔（ヒゲ）・VIO込</small></span><span class="qp__price"><span class="qp__reg">通常 ¥29,800</span><span class="qp__first"><small>初回</small>¥19,800</span></span></li><li class="qp__row"><span class="qp__name">顔脱毛／ヒゲ脱毛<small>産毛・濃いヒゲにも</small></span><span class="qp__price"><span class="qp__reg">通常 ¥15,000</span><span class="qp__first"><small>初回</small>¥9,800</span></span></li><li class="qp__row"><span class="qp__name">VIO脱毛<small>デザイン脱毛OK</small></span><span class="qp__price"><span class="qp__reg">通常 ¥6,000</span><span class="qp__first"><small>初回</small>¥5,000</span></span></li><li class="qp__row"><span class="qp__name">腕まるごと／脚まるごと<small>腕〜手の甲／太もも〜足指</small></span><span class="qp__price"><span class="qp__reg">通常 ¥11,000〜</span><span class="qp__first"><small>初回</small>¥6,000〜</span></span></li></ul>
+        <div class="qp__btns"><a href="https://beauty.hotpepper.jp/kr/slnH000694676/" class="btn btn--small btn--primary" target="_blank" rel="noopener">ホットペッパーで予約</a><a href="hair-removal.html" class="btn btn--small btn--ghost">詳しく見る</a></div>
+      </div>
+      <div class="qp__panel" id="qp-body" data-qp-panel="body" hidden>
+        <p class="qp__title">痩身・ボディケア</p>
+        <p class="qp__lead">ほぐす・温める・流すを1台で。気になる部分と首肩のコリを集中ケア。</p>
+        <p class="qp__note">男性の上半身痩身は 通常 ¥19,800 → 初回 ¥9,900</p><ul class="qp__list"><li class="qp__row"><span class="qp__name">ウルトラ全身痩身<small>全身まとめて／120分</small></span><span class="qp__price"><span class="qp__reg">通常 ¥25,000</span><span class="qp__first"><small>初回</small>¥12,000</span></span></li><li class="qp__row"><span class="qp__name">ウルトラ上半身 or 下半身痩身<small>お腹・二の腕・太ももなど／60分</small></span><span class="qp__price"><span class="qp__reg">通常 ¥18,000</span><span class="qp__first"><small>初回</small>¥9,900</span></span></li><li class="qp__row"><span class="qp__name">リラクウルトラ<small>首肩・背中のコリに／40分</small></span><span class="qp__price"><span class="qp__reg">通常 ¥9,900</span><span class="qp__first"><small>初回</small>¥7,700</span></span></li></ul>
+        <div class="qp__btns"><a href="https://beauty.hotpepper.jp/kr/slnH000694676/" class="btn btn--small btn--primary" target="_blank" rel="noopener">ホットペッパーで予約</a><a href="body.html" class="btn btn--small btn--ghost">詳しく見る</a></div>
+      </div>
+      <div class="qp__panel" id="qp-white" data-qp-panel="white" hidden>
+        <p class="qp__title">ホワイトニング</p>
+        <p class="qp__lead">歯の黄ばみ・着色をケア。歯科提携サロンで、ほかの施術と同じ日にも。</p>
+        <ul class="qp__list"><li class="qp__row"><span class="qp__name">美容プレミアムセルフホワイトニング<small>黄ばみ・着色・口臭ケア</small></span><span class="qp__price"><span class="qp__reg">通常 ¥7,800</span><span class="qp__first"><small>初回</small>¥6,000</span></span></li><li class="qp__row"><span class="qp__name">医療セルフホワイトニング<small>18歳以上／3回券 ¥19,800。別途 薬剤費・オンライン診療（無料）</small></span><span class="qp__price"><span class="qp__reg">通常 ¥7,800</span></span></li></ul>
+        <div class="qp__btns"><a href="https://beauty.hotpepper.jp/kr/slnH000694676/" class="btn btn--small btn--primary" target="_blank" rel="noopener">ホットペッパーで予約</a><a href="whitening.html" class="btn btn--small btn--ghost">詳しく見る</a></div>
+      </div>
+      <div class="qp__panel" id="qp-men" data-qp-panel="men" hidden>
+        <p class="qp__title">メンズ</p>
+        <p class="qp__lead">清潔感は第一印象で決まります。脱毛・痩身は男性スタッフが担当。</p>
+        <ul class="qp__list"><li class="qp__row"><span class="qp__name">ヒゲ脱毛<small>毎朝のヒゲ剃り・剃り負けに</small></span><span class="qp__price"><span class="qp__reg">通常 ¥15,000</span><span class="qp__first"><small>初回</small>¥9,800</span></span></li><li class="qp__row"><span class="qp__name">肌管理（フェイシャル）<small>乾燥・テカリ・毛穴に</small></span><span class="qp__price"><span class="qp__reg">通常 ¥18,000</span><span class="qp__first"><small>初回</small>¥9,900</span></span></li><li class="qp__row"><span class="qp__name">ウルトラ上半身痩身<small>お腹・脇腹に／60分</small></span><span class="qp__price"><span class="qp__reg">通常 ¥19,800</span><span class="qp__first"><small>初回</small>¥9,900</span></span></li><li class="qp__row"><span class="qp__name">美容ホワイトニング<small>コーヒー・タバコの着色に</small></span><span class="qp__price"><span class="qp__reg">通常 ¥7,800</span><span class="qp__first"><small>初回</small>¥6,000</span></span></li></ul>
+        <div class="qp__btns"><a href="https://beauty.hotpepper.jp/kr/slnH000694676/" class="btn btn--small btn--primary" target="_blank" rel="noopener">ホットペッパーで予約</a><a href="mens.html" class="btn btn--small btn--ghost">詳しく見る</a></div>
+      </div>
+      <div class="qp__panel" id="qp-price" data-qp-panel="price" hidden>
+        <p class="qp__title">料金のめやす</p>
+        <p class="qp__lead">表示はすべて税込。初回はご新規様限定のクーポン価格です。</p>
+        <a href="facial.html#prime" class="qp__prime"><span class="qp__prime-t">Id Prime<small>毎月1回フェイシャル・縛りなし</small></span><span class="qp__prime-p">月額 ¥15,000</span></a><ul class="qp__list"><li class="qp__row"><span class="qp__name">フェイシャル<small>60〜70分</small></span><span class="qp__price"><span class="qp__reg">通常 ¥18,000</span><span class="qp__first"><small>初回</small>¥9,900</span></span></li><li class="qp__row"><span class="qp__name">全身脱毛<small>顔・VIO込</small></span><span class="qp__price"><span class="qp__reg">通常 ¥29,800</span><span class="qp__first"><small>初回</small>¥19,800</span></span></li><li class="qp__row"><span class="qp__name">痩身・ボディケア<small>40〜120分</small></span><span class="qp__price"><span class="qp__reg">通常 ¥9,900〜</span><span class="qp__first"><small>初回</small>¥7,700〜</span></span></li><li class="qp__row"><span class="qp__name">美容ホワイトニング<small></small></span><span class="qp__price"><span class="qp__reg">通常 ¥7,800</span><span class="qp__first"><small>初回</small>¥6,000</span></span></li></ul>
+        <div class="qp__btns"><a href="https://beauty.hotpepper.jp/kr/slnH000694676/" class="btn btn--small btn--primary" target="_blank" rel="noopener">ホットペッパーで予約</a><a href="price.html" class="btn btn--small btn--ghost">詳しく見る</a></div>
+      </div>
+      <div class="qp__panel" id="qp-access" data-qp-panel="access" hidden>
+        <p class="qp__title">アクセス</p>
+        <p class="qp__lead">広島市安芸区矢野西5-14-18 2F（JR矢野駅 徒歩5分）。黄色い建物が目印です。</p>
+        <ul class="qp__list qp__list--info"><li class="qp__row"><span class="qp__name">営業時間<small>完全予約制・不定休</small></span><span class="qp__price">11:00 – 21:00</span></li><li class="qp__row"><span class="qp__name">駐車場<small>建物1階の前側に、横並びで2台分お停めください</small></span><span class="qp__price">2台</span></li></ul>
+        <div class="qp__btns"><a href="https://www.google.com/maps/search/?api=1&query=%E5%BA%83%E5%B3%B6%E7%9C%8C%E5%BA%83%E5%B3%B6%E5%B8%82%E5%AE%89%E8%8A%B8%E5%8C%BA%E7%9F%A2%E9%87%8E%E8%A5%BF5-14-18" class="btn btn--small btn--primary" target="_blank" rel="noopener">Google マップで開く</a><a href="#access" class="btn btn--small btn--ghost" data-qp-close>店舗情報を見る</a></div>
+      </div>
+    </div>
+
+    <!-- ===== 施術メニュー ===== -->
+    <section class="section" id="service">
+      <div class="container">
+        <div class="sec-row">
+          <div class="section__head"><p class="section__en">Service</p><h2 class="section__title">施術メニュー</h2></div>
+          <a href="price.html" class="link-arrow">料金表を見る</a>
+        </div>
+        <div class="svc-grid">
+          <div class="pcards">
+          <a href="facial.html" class="pcard">
+            <img src="images/model-facial-card.jpg" alt="" class="pcard__img" loading="lazy">
+            <div class="pcard__body">
+              <p class="pcard__en">Facial</p>
+              <p class="pcard__title">フェイシャル</p>
+              <p class="pcard__desc">AI肌診断 × CHRISTINA の肌を整えるケア／会員プラン Id Prime</p>
+              <span class="pcard__price">初回 ¥9,900〜</span>
+            </div>
+            <span class="pcard__arrow" aria-hidden="true">›</span>
+          </a>
+          <a href="hair-removal.html" class="pcard">
+            <img src="images/model-hair-card.jpg" alt="" class="pcard__img" loading="lazy">
+            <div class="pcard__body">
+              <p class="pcard__en">Hair Removal</p>
+              <p class="pcard__title">脱毛</p>
+              <p class="pcard__desc">痛みを抑えた脱毛。産毛・白髪・濃い毛にも</p>
+              <span class="pcard__price">初回 ¥5,000〜</span>
+            </div>
+            <span class="pcard__arrow" aria-hidden="true">›</span>
+          </a>
+          <a href="body.html" class="pcard">
+            <img src="images/ultra-card.jpg" alt="" class="pcard__img" loading="lazy">
+            <div class="pcard__body">
+              <p class="pcard__en">Ultra Body</p>
+              <p class="pcard__title">ウルトラ痩身・ボディケア</p>
+              <p class="pcard__desc">お腹・脚・二の腕など、気になる部分を集中ケア</p>
+              <span class="pcard__price">初回 ¥7,700〜</span>
+            </div>
+            <span class="pcard__arrow" aria-hidden="true">›</span>
+          </a>
+          <a href="whitening.html" class="pcard">
+            <img src="images/model-white-card.jpg" alt="" class="pcard__img" loading="lazy">
+            <div class="pcard__body">
+              <p class="pcard__en">Whitening</p>
+              <p class="pcard__title">美容ホワイトニング</p>
+              <p class="pcard__desc">黄ばみ・着色・口臭ケア／歯科提携サロン</p>
+              <span class="pcard__price">初回 ¥6,000</span>
+            </div>
+            <span class="pcard__arrow" aria-hidden="true">›</span>
+          </a>
+          <a href="mens.html" class="pcard pcard--men">
+            <img src="images/model-men-sp.jpg" alt="" class="pcard__img" loading="lazy">
+            <div class="pcard__body">
+              <p class="pcard__en">For Men</p>
+              <p class="pcard__title">メンズ</p>
+              <p class="pcard__desc">ヒゲ脱毛・肌管理・痩身・ホワイトニング。男性スタッフ在籍</p>
+              <span class="pcard__price">ヒゲ脱毛 初回 ¥9,800</span>
+            </div>
+            <span class="pcard__arrow" aria-hidden="true">›</span>
+          </a>
+          </div>
+          <div class="whyid">
+            <p class="aside-list__title">Why Id</p>
+            <ul class="whyid__list"><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="6" width="22" height="16" rx="2.5"/><path d="M11 27h10M16 22v5"/><path d="M9 17l4-4 3 3 6-6"/></svg></span><span class="whyid__t">AI肌診断</span><span class="whyid__s">肌の状態を数値で確認</span></li><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4l3.2 6.6 7.3 1-5.3 5.1 1.3 7.2L16 20.5l-6.5 3.4 1.3-7.2-5.3-5.1 7.3-1z"/></svg></span><span class="whyid__t">CHRISTINA</span><span class="whyid__s">正規取扱店のプロ用ケア</span></li><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 5c3.5 4.5 7 8.2 7 12.5a7 7 0 0 1-14 0C9 13.2 12.5 9.5 16 5z"/><path d="M13 18.5a3 3 0 0 0 3 3"/></svg></span><span class="whyid__t">LED脱毛</span><span class="whyid__s">痛みを抑えて産毛・白髪も</span></li><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="10" r="3.5"/><circle cx="22" cy="11" r="3"/><path d="M4.5 25c.8-4.6 3.3-7 6.5-7s5.7 2.4 6.5 7"/><path d="M18.5 19.5c1-.9 2.2-1.4 3.5-1.4 2.8 0 4.8 2.2 5.5 6"/></svg></span><span class="whyid__t">男女スタッフ</span><span class="whyid__s">男性も通いやすい</span></li><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="13" width="18" height="13" rx="2.5"/><path d="M11 13V9.5a5 5 0 0 1 10 0V13"/><path d="M16 18v3"/></svg></span><span class="whyid__t">完全予約制</span><span class="whyid__s">貸切もできる</span></li><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19.5A9 9 0 0 1 12.5 6a9.5 9.5 0 1 0 9.5 13.5z"/></svg></span><span class="whyid__t">夜20時以降OK</span><span class="whyid__s">当日受付もOK</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ===== お悩みマップ ===== -->
+    <section class="section fmap-section" id="worries">
+      <span class="section__wm" aria-hidden="true">Concern</span>
+      <div class="container">
+        <div class="section__head section__head--center">
+          <p class="section__en">Concern Map</p>
+          <h2 class="section__title">気になるところから、<br class="sp-only">選べます。</h2>
+          <div class="fview" role="group" aria-label="見たい場所を選ぶ">
+            <button type="button" class="fview__btn is-active" data-fview="f-face" aria-pressed="true"><span class="fview__img"><img src="images/face-f.jpg" alt="" loading="lazy" width="800" height="1000"></span><span class="fview__t"><small>女性</small>顔</span></button>
+            <button type="button" class="fview__btn" data-fview="f-body" aria-pressed="false"><span class="fview__img fview__img--body"><img src="images/body-f.webp" alt="" loading="lazy" width="800" height="1040"></span><span class="fview__t"><small>女性</small>からだ</span></button>
+            <button type="button" class="fview__btn" data-fview="m-face" aria-pressed="false"><span class="fview__img"><img src="images/face-m.jpg" alt="" loading="lazy" width="800" height="1000"></span><span class="fview__t"><small>男性</small>顔</span></button>
+            <button type="button" class="fview__btn" data-fview="m-body" aria-pressed="false"><span class="fview__img fview__img--body"><img src="images/body-m.webp" alt="" loading="lazy" width="800" height="1040"></span><span class="fview__t"><small>男性</small>からだ</span></button>
+          </div>
+          <div class="fmap__toggles-src" hidden>
+          <div class="fmap__toggle fmap__toggle--area" role="group" aria-label="顔・からだの切り替え">
+            <button type="button" class="fmap__tbtn is-active" data-fmap-area="face" aria-pressed="true"><span>Face</span>顔</button>
+            <button type="button" class="fmap__tbtn" data-fmap-area="body" aria-pressed="false"><span>Body</span>からだ</button>
+          </div>
+          <div class="fmap__toggle fmap__toggle--gender" role="group" aria-label="レディース・メンズの切り替え">
+            <button type="button" class="fmap__tbtn is-active" data-fmap-gender="f" aria-pressed="true"><span>Women</span>レディース</button>
+            <button type="button" class="fmap__tbtn" data-fmap-gender="m" aria-pressed="false"><span>Men</span>メンズ</button>
+          </div>
+          </div>
+        </div>
+        <div class="fmap" data-fmap-root data-gender="f" data-area="face">
+          <div class="fmap__stages">
+          <div class="fmap__stage fc__stage" data-fmap-card="f-face">
+            <div class="fmap__card fc" role="group" aria-label="レディースの顔：気になるところを選ぶ" data-kfilter="all">
+              <div class="kseg" role="group" aria-label="施術で絞り込む"></div>
+              <div class="fc__body">
+              <div class="fc__col fc__col--L">
+                <button type="button" class="fc__lab kl kl--facial" data-fmap="tzone" data-kind="facial" aria-pressed="false"><span class="fc__n" aria-hidden="true">1</span><span class="ktag ktag--facial">フェイシャル</span><span class="kl__t">毛穴・ニキビ</span><span class="kl__c" aria-hidden="true">›</span></button>
+                <button type="button" class="fc__lab kl kl--white" data-fmap="teeth" data-kind="white" aria-pressed="false"><span class="fc__n" aria-hidden="true">2</span><span class="ktag ktag--white">ホワイトニング</span><span class="kl__t">歯の黄ばみ</span><span class="kl__c" aria-hidden="true">›</span></button>
+                <button type="button" class="fc__lab kl kl--kogao" data-fmap="line" data-kind="kogao" aria-pressed="false"><span class="fc__n" aria-hidden="true">3</span><span class="ktag ktag--kogao">小顔</span><span class="kl__t">フェイスライン</span><span class="kl__c" aria-hidden="true">›</span></button>
+              </div>
+              <div class="fc__fig">
+                <img class="fc__img" src="images/face-f.jpg" alt="女性の顔" width="800" height="1000" loading="lazy">
+                <span class="fc__dot fc__dot--facial" style="--x:27%;--y:33%" data-fmap="tzone" data-kind="facial" aria-hidden="true"><span class="fc__n">1</span></span>
+                <span class="fc__dot fc__dot--white" style="--x:31%;--y:71%" data-fmap="teeth" data-kind="white" aria-hidden="true"><span class="fc__n">2</span></span>
+                <span class="fc__dot fc__dot--kogao" style="--x:56%;--y:78%" data-fmap="line" data-kind="kogao" aria-hidden="true"><span class="fc__n">3</span></span>
+                <span class="fc__dot fc__dot--hair" style="--x:64%;--y:46%" data-fmap="beard" data-kind="hair" aria-hidden="true"><span class="fc__n">4</span></span>
+                <span class="fc__dot fc__dot--facial" style="--x:60%;--y:55%" data-fmap="cheek" data-kind="facial" aria-hidden="true"><span class="fc__n">5</span></span>
+                <span class="fc__dot fc__dot--body" style="--x:80%;--y:95%" data-fmap="neck" data-kind="body" aria-hidden="true"><span class="fc__n">6</span></span>
+                <span class="fc__dot fc__dot--hair" style="--x:79%;--y:66%" data-fmap="nape" data-kind="hair" aria-hidden="true"><span class="fc__n">7</span></span>
+              </div>
+              <div class="fc__col fc__col--R">
+                <button type="button" class="fc__lab kl kl--hair" data-fmap="beard" data-kind="hair" aria-pressed="false"><span class="fc__n" aria-hidden="true">4</span><span class="ktag ktag--hair">脱毛</span><span class="kl__t">顔の産毛</span><span class="kl__c" aria-hidden="true">›</span></button>
+                <button type="button" class="fc__lab kl kl--facial" data-fmap="cheek" data-kind="facial" aria-pressed="false"><span class="fc__n" aria-hidden="true">5</span><span class="ktag ktag--facial">フェイシャル</span><span class="kl__t">乾燥・くすみ</span><span class="kl__c" aria-hidden="true">›</span></button>
+                <button type="button" class="fc__lab kl kl--body" data-fmap="neck" data-kind="body" aria-pressed="false"><span class="fc__n" aria-hidden="true">6</span><span class="ktag ktag--body">ボディケア</span><span class="kl__t">首肩のコリ</span><span class="kl__c" aria-hidden="true">›</span></button>
+                <button type="button" class="fc__lab kl kl--hair" data-fmap="nape" data-kind="hair" aria-pressed="false"><span class="fc__n" aria-hidden="true">7</span><span class="ktag ktag--hair">脱毛</span><span class="kl__t">うなじ</span><span class="kl__c" aria-hidden="true">›</span></button>
+              </div>
+              <svg class="fc__lines" aria-hidden="true"></svg>
+              </div>
+            </div>
+          </div>
+          <div class="fmap__stage fc__stage" data-fmap-card="m-face" hidden>
+            <div class="fmap__card fc" role="group" aria-label="メンズの顔：気になるところを選ぶ" data-kfilter="all">
+              <div class="kseg" role="group" aria-label="施術で絞り込む"></div>
+              <div class="fc__body">
+              <div class="fc__col fc__col--L">
+                <button type="button" class="fc__lab kl kl--facial" data-fmap="cheek" data-kind="facial" aria-pressed="false"><span class="fc__n" aria-hidden="true">1</span><span class="ktag ktag--facial">フェイシャル</span><span class="kl__t">乾燥・テカリ</span><span class="kl__c" aria-hidden="true">›</span></button>
+                <button type="button" class="fc__lab kl kl--kogao" data-fmap="line" data-kind="kogao" aria-pressed="false"><span class="fc__n" aria-hidden="true">2</span><span class="ktag ktag--kogao">小顔</span><span class="kl__t">フェイスライン</span><span class="kl__c" aria-hidden="true">›</span></button>
+                <button type="button" class="fc__lab kl kl--body" data-fmap="neck" data-kind="body" aria-pressed="false"><span class="fc__n" aria-hidden="true">3</span><span class="ktag ktag--body">ボディケア</span><span class="kl__t">首肩のコリ</span><span class="kl__c" aria-hidden="true">›</span></button>
+              </div>
+              <div class="fc__fig">
+                <img class="fc__img" src="images/face-m.jpg" alt="男性の顔" width="800" height="1000" loading="lazy">
+                <span class="fc__dot fc__dot--facial" style="--x:31%;--y:56%" data-fmap="cheek" data-kind="facial" aria-hidden="true"><span class="fc__n">1</span></span>
+                <span class="fc__dot fc__dot--kogao" style="--x:26%;--y:70%" data-fmap="line" data-kind="kogao" aria-hidden="true"><span class="fc__n">2</span></span>
+                <span class="fc__dot fc__dot--body" style="--x:36%;--y:94%" data-fmap="neck" data-kind="body" aria-hidden="true"><span class="fc__n">3</span></span>
+                <span class="fc__dot fc__dot--facial" style="--x:52%;--y:45%" data-fmap="tzone" data-kind="facial" aria-hidden="true"><span class="fc__n">4</span></span>
+                <span class="fc__dot fc__dot--white" style="--x:64%;--y:63%" data-fmap="teeth" data-kind="white" aria-hidden="true"><span class="fc__n">5</span></span>
+                <span class="fc__dot fc__dot--hair" style="--x:58%;--y:80%" data-fmap="beard" data-kind="hair" aria-hidden="true"><span class="fc__n">6</span></span>
+              </div>
+              <div class="fc__col fc__col--R">
+                <button type="button" class="fc__lab kl kl--facial" data-fmap="tzone" data-kind="facial" aria-pressed="false"><span class="fc__n" aria-hidden="true">4</span><span class="ktag ktag--facial">フェイシャル</span><span class="kl__t">毛穴・ニキビ</span><span class="kl__c" aria-hidden="true">›</span></button>
+                <button type="button" class="fc__lab kl kl--white" data-fmap="teeth" data-kind="white" aria-pressed="false"><span class="fc__n" aria-hidden="true">5</span><span class="ktag ktag--white">ホワイトニング</span><span class="kl__t">歯の黄ばみ</span><span class="kl__c" aria-hidden="true">›</span></button>
+                <button type="button" class="fc__lab kl kl--hair" data-fmap="beard" data-kind="hair" aria-pressed="false"><span class="fc__n" aria-hidden="true">6</span><span class="ktag ktag--hair">脱毛</span><span class="kl__t">ヒゲ</span><span class="kl__c" aria-hidden="true">›</span></button>
+              </div>
+              <svg class="fc__lines" aria-hidden="true"></svg>
+              </div>
+            </div>
+          </div>
+          <!-- bodymap:start -->
+          <div class="fmap__stage bm__stage" data-fmap-card="f-body" hidden>
+            <div class="fmap__card fmap__card--body bm__card" role="group" aria-label="レディースのからだ：部位を選ぶ" data-kfilter="all">
+              <div class="kseg" role="group" aria-label="施術で絞り込む"></div>
+              <div class="bm__fig">
+                <img class="bm__img" src="images/body-f.webp" alt="女性の体の部位図" width="800" height="1040" loading="lazy" decoding="async">
+                <button type="button" class="bm__pt bm__pt--body bm__pt--R" style="--x:57.25%;--y:17.31%" data-fmap="neck" data-kind="body" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--body"><span class="ktag ktag--body">ボディケア</span><span class="kl__t">首肩</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+                <button type="button" class="bm__pt bm__pt--hair bm__pt--L" style="--x:41.62%;--y:25.77%" data-fmap="waki" data-kind="hair" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--hair"><span class="ktag ktag--hair">脱毛</span><span class="kl__t">わき</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+                <button type="button" class="bm__pt bm__pt--slim bm__pt--R" style="--x:61.25%;--y:27.50%" data-fmap="arm" data-kind="slim" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--slim"><span class="ktag ktag--slim">痩身</span><span class="kl__t">二の腕</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+                <button type="button" class="bm__pt bm__pt--hair bm__pt--L" style="--x:36.75%;--y:45.19%" data-fmap="armhair" data-kind="hair" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--hair"><span class="ktag ktag--hair">脱毛</span><span class="kl__t">腕のムダ毛</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+                <button type="button" class="bm__pt bm__pt--slim bm__pt--R" style="--x:52.50%;--y:37.69%" data-fmap="belly" data-kind="slim" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--slim"><span class="ktag ktag--slim">痩身</span><span class="kl__t">お腹・ウエスト</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+                <button type="button" class="bm__pt bm__pt--hair bm__pt--R" style="--x:50.00%;--y:47.88%" data-fmap="vio" data-kind="hair" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--hair"><span class="ktag ktag--hair">脱毛</span><span class="kl__t">VIO</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+                <button type="button" class="bm__pt bm__pt--slim bm__pt--R" style="--x:55.75%;--y:58.46%" data-fmap="thigh" data-kind="slim" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--slim"><span class="ktag ktag--slim">痩身</span><span class="kl__t">太もも・お尻</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+                <button type="button" class="bm__pt bm__pt--hair bm__pt--L" style="--x:45.25%;--y:79.81%" data-fmap="leg" data-kind="hair" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--hair"><span class="ktag ktag--hair">脱毛</span><span class="kl__t">脚のムダ毛</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+              </div>
+              <div class="bm__all">
+                <p class="bm__all-label">全身まとめて</p>
+                <div class="bm__all-list">
+                  <button type="button" aria-pressed="false" class="bm__chip kl kl--slim" data-fmap="allbody" data-kind="slim"><span class="ktag ktag--slim">痩身</span><span class="bm__chip-txt"><span class="bm__chip-t">全身の脂肪・むくみ</span><span class="bm__chip-s">ウルトラ全身痩身</span></span><span class="kl__c" aria-hidden="true">›</span></button>
+                  <button type="button" aria-pressed="false" class="bm__chip kl kl--hair" data-fmap="allhair" data-kind="hair"><span class="ktag ktag--hair">脱毛</span><span class="bm__chip-txt"><span class="bm__chip-t">全身のムダ毛</span><span class="bm__chip-s">全身脱毛（顔・VIO込）</span></span><span class="kl__c" aria-hidden="true">›</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fmap__stage bm__stage" data-fmap-card="m-body" hidden>
+            <div class="fmap__card fmap__card--body bm__card" role="group" aria-label="メンズのからだ：部位を選ぶ" data-kfilter="all">
+              <div class="kseg" role="group" aria-label="施術で絞り込む"></div>
+              <div class="bm__fig">
+                <img class="bm__img" src="images/body-m.webp" alt="男性の体の部位図" width="800" height="1040" loading="lazy" decoding="async">
+                <button type="button" class="bm__pt bm__pt--body bm__pt--R" style="--x:58.75%;--y:18.94%" data-fmap="neck" data-kind="body" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--body"><span class="ktag ktag--body">ボディケア</span><span class="kl__t">首肩</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+                <button type="button" class="bm__pt bm__pt--hair bm__pt--L" style="--x:38.25%;--y:27.50%" data-fmap="waki" data-kind="hair" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--hair"><span class="ktag ktag--hair">脱毛</span><span class="kl__t">わき</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+                <button type="button" class="bm__pt bm__pt--hair bm__pt--R" style="--x:52.50%;--y:29.13%" data-fmap="chest" data-kind="hair" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--hair"><span class="ktag ktag--hair">脱毛</span><span class="kl__t">胸毛</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+                <button type="button" class="bm__pt bm__pt--slim bm__pt--L" style="--x:34.88%;--y:37.69%" data-fmap="arm" data-kind="slim" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--slim"><span class="ktag ktag--slim">痩身</span><span class="kl__t">二の腕・肩</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+                <button type="button" class="bm__pt bm__pt--hair bm__pt--L" style="--x:32.75%;--y:48.08%" data-fmap="armhair" data-kind="hair" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--hair"><span class="ktag ktag--hair">脱毛</span><span class="kl__t">腕のムダ毛</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+                <button type="button" class="bm__pt bm__pt--slim bm__pt--R" style="--x:52.50%;--y:39.33%" data-fmap="belly" data-kind="slim" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--slim"><span class="ktag ktag--slim">痩身</span><span class="kl__t">お腹・脇腹</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+                <button type="button" class="bm__pt bm__pt--hair bm__pt--R" style="--x:50.00%;--y:49.52%" data-fmap="vio" data-kind="hair" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--hair"><span class="ktag ktag--hair">脱毛</span><span class="kl__t">VIO</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+                <button type="button" class="bm__pt bm__pt--hair bm__pt--L" style="--x:41.00%;--y:79.81%" data-fmap="leg" data-kind="hair" aria-pressed="false"><span class="bm__row"><span class="bm__tag kl kl--hair"><span class="ktag ktag--hair">脱毛</span><span class="kl__t">脚のムダ毛</span><span class="kl__c" aria-hidden="true">›</span></span><span class="bm__line" aria-hidden="true"></span></span><span class="bm__dot" aria-hidden="true"></span></button>
+              </div>
+              <div class="bm__all">
+                <p class="bm__all-label">全身まとめて</p>
+                <div class="bm__all-list">
+                  <button type="button" aria-pressed="false" class="bm__chip kl kl--hair" data-fmap="allhair" data-kind="hair"><span class="ktag ktag--hair">脱毛</span><span class="bm__chip-txt"><span class="bm__chip-t">全身のムダ毛</span><span class="bm__chip-s">全身脱毛（ヒゲ・VIO込）</span></span><span class="kl__c" aria-hidden="true">›</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- bodymap:end -->
+          </div>
+          <div class="fmap__side" id="fmapSheet" aria-live="polite">
+            <div class="fmap__sheet-bar"><span class="fmap__sheet-handle" aria-hidden="true"></span><button type="button" class="fmap__sheet-close" aria-label="閉じる">×</button></div>
+            <div class="fmap__panel is-active" data-fmap-panel="tzone" data-fmap-g="f" data-fmap-area="face">
+              <p class="fmap__kicker">毛穴・ニキビ</p>
+              <h3 class="fmap__title" tabindex="-1">毛穴の開き・黒ずみ、くり返すニキビ</h3>
+              <p class="fmap__text">Tゾーンの毛穴や、治ってもまた出るニキビ。AI肌診断で原因（皮脂・乾燥・角質）を数値で確かめてから、肌荒れケアピーリングで整えます。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">肌荒れケアピーリング<small><span class="series-tag series--comodex">COMODEX</span> AI肌診断つき</small></span>
+                <span class="fmap__menu-price">初回 ¥9,900</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="tzone" data-gender="f" data-area="face">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="tzone" data-gender="f" data-area="face">LINEで相談</a>
+                <a href="facial.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="cheek" data-fmap-g="f" data-fmap-area="face" hidden>
+              <p class="fmap__kicker">乾燥・くすみ</p>
+              <h3 class="fmap__title" tabindex="-1">乾燥・赤み・くすみ、化粧ノリの悪さ</h3>
+              <p class="fmap__text">乾燥で赤みが出やすい、ファンデが浮く、顔色が沈む。水分量と皮脂のバランスを診断し、水光うる艶ピーリングでうるおいとツヤを戻します。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">水光うる艶ピーリング<small><span class="series-tag series--unstress">UNSTRESS</span> AI肌診断つき</small></span>
+                <span class="fmap__menu-price">初回 ¥9,900</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="cheek" data-gender="f" data-area="face">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="cheek" data-gender="f" data-area="face">LINEで相談</a>
+                <a href="facial.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="line" data-fmap-g="f" data-fmap-area="face" hidden>
+              <p class="fmap__kicker">フェイスライン</p>
+              <h3 class="fmap__title" tabindex="-1">フェイスラインのもたつき・むくみ</h3>
+              <p class="fmap__text">あごまわりが重い、写真で顔が大きく見える。超音波×ラジオ波（RF）の小顔輪郭フェイシャルで、フェイスラインをすっきりケア。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">小顔輪郭フェイシャル<small>男女OK</small></span>
+                <span class="fmap__menu-price">初回 ¥9,900</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="line" data-gender="f" data-area="face">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="line" data-gender="f" data-area="face">LINEで相談</a>
+                <a href="facial.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="beard" data-fmap-g="f" data-fmap-area="face" hidden>
+              <p class="fmap__kicker">顔の産毛</p>
+              <h3 class="fmap__title" tabindex="-1">顔の産毛、うぶ毛によるくすみ</h3>
+              <p class="fmap__text">産毛があると肌がワントーン暗く見え、ファンデも密着しにくくなります。顔脱毛で産毛をなくすと、肌が明るくなめらかに。LED脱毛は顔の細い毛にも反応します。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">顔脱毛<small>産毛にも反応</small></span>
+                <span class="fmap__menu-price">初回 ¥9,800</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="beard" data-gender="f" data-area="face">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="beard" data-gender="f" data-area="face">LINEで相談</a>
+                <a href="hair-removal.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="teeth" data-fmap-g="f" data-fmap-area="face" hidden>
+              <p class="fmap__kicker">歯の黄ばみ</p>
+              <h3 class="fmap__title" tabindex="-1">歯の黄ばみ・着色、笑顔に自信がない</h3>
+              <p class="fmap__text">コーヒー・お茶の着色で、写真で口を閉じてしまう。歯科提携サロンの美容ホワイトニングで、まず1回の変化を体感。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">美容ホワイトニング<small>歯科提携</small></span>
+                <span class="fmap__menu-price">初回 ¥6,000</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="teeth" data-gender="f" data-area="face">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="teeth" data-gender="f" data-area="face">LINEで相談</a>
+                <a href="whitening.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="neck" data-fmap-g="f" data-fmap-area="face" hidden>
+              <p class="fmap__kicker">首肩のコリ</p>
+              <h3 class="fmap__title" tabindex="-1">首肩・背中の重だるさ</h3>
+              <p class="fmap__text">デスクワークやスマホで固まった首肩。肩甲骨まわりを温めながらほぐす、リラクウルトラ（40分）。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">リラクウルトラ<small>男女OK</small></span>
+                <span class="fmap__menu-price">初回 ¥7,700</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="neck" data-gender="f" data-area="face">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="neck" data-gender="f" data-area="face">LINEで相談</a>
+                <a href="body.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="nape" data-fmap-g="f" data-fmap-area="face" hidden>
+              <p class="fmap__kicker">うなじ</p>
+              <h3 class="fmap__title" tabindex="-1">うなじ・えり足のムダ毛</h3>
+              <p class="fmap__text">髪をまとめたとき、後ろ姿で目立つうなじ。自分では処理しにくい場所だからこそ、サロンで。カスタム脱毛なら1箇所 ¥3,000 で追加できます（他の脱毛メニューと一緒にご予約ください）。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">カスタム脱毛（うなじ）<small>脱毛／他の脱毛メニューに追加</small></span>
+                <span class="fmap__menu-price">1箇所 ¥3,000</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-line data-concern="nape" data-gender="f" data-area="face">LINEで相談</a>
+                <a href="hair-removal.html" class="link-arrow">詳しく見る</a>
+              </div>
+              <p class="fmap__hint">カスタム脱毛は、ほかの脱毛メニューと一緒にご予約いただけます。組み合わせはLINEでご案内します。</p>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="tzone" data-fmap-g="m" data-fmap-area="face" hidden>
+              <p class="fmap__kicker">毛穴・ニキビ</p>
+              <h3 class="fmap__title" tabindex="-1">鼻まわりの毛穴、くり返すニキビ</h3>
+              <p class="fmap__text">小鼻の黒ずみや、剃った後にできるニキビ。男性は皮脂が多く毛穴が詰まりやすいので、AI肌診断で状態を見てから肌荒れケアピーリングで整えます。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">肌荒れケアピーリング<small><span class="series-tag series--comodex">COMODEX</span> AI肌診断つき</small></span>
+                <span class="fmap__menu-price">初回 ¥9,900</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="tzone" data-gender="m" data-area="face">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="tzone" data-gender="m" data-area="face">LINEで相談</a>
+                <a href="facial.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="cheek" data-fmap-g="m" data-fmap-area="face" hidden>
+              <p class="fmap__kicker">乾燥・テカリ</p>
+              <h3 class="fmap__title" tabindex="-1">洗顔後はつっぱるのに、昼にはテカる</h3>
+              <p class="fmap__text">乾燥とテカリが同時に起きる男性特有の肌。水分と皮脂のバランスを診断し、うるおいを入れて整えることで、テカリも赤みも落ち着きます。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">水光うる艶ピーリング<small><span class="series-tag series--unstress">UNSTRESS</span> AI肌診断つき</small></span>
+                <span class="fmap__menu-price">初回 ¥9,900</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="cheek" data-gender="m" data-area="face">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="cheek" data-gender="m" data-area="face">LINEで相談</a>
+                <a href="facial.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="line" data-fmap-g="m" data-fmap-area="face" hidden>
+              <p class="fmap__kicker">フェイスライン</p>
+              <h3 class="fmap__title" tabindex="-1">あごまわりのたるみ、二重あご</h3>
+              <p class="fmap__text">顔が丸く見える、写真で輪郭がぼやける。超音波×ラジオ波（RF）の小顔輪郭フェイシャルで、フェイスラインをすっきりケア。体型が気になる方はウルトラ痩身との組み合わせも。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">小顔輪郭フェイシャル<small>男女OK</small></span>
+                <span class="fmap__menu-price">初回 ¥9,900</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="line" data-gender="m" data-area="face">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="line" data-gender="m" data-area="face">LINEで相談</a>
+                <a href="facial.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="beard" data-fmap-g="m" data-fmap-area="face" hidden>
+              <p class="fmap__kicker">ヒゲ</p>
+              <h3 class="fmap__title" tabindex="-1">毎朝のヒゲ剃り、青ヒゲ・剃り負け</h3>
+              <p class="fmap__text">剃っても夕方には青い、カミソリ負けでヒリつく。太く濃いヒゲにも、毛質に合わせて機械を使い分けて照射。毎朝のヒゲ剃りの手間を減らしていきます。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">ヒゲ脱毛<small>濃いヒゲにも</small></span>
+                <span class="fmap__menu-price">初回 ¥9,800</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="beard" data-gender="m" data-area="face">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="beard" data-gender="m" data-area="face">LINEで相談</a>
+                <a href="hair-removal.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="teeth" data-fmap-g="m" data-fmap-area="face" hidden>
+              <p class="fmap__kicker">歯の黄ばみ</p>
+              <h3 class="fmap__title" tabindex="-1">コーヒー・タバコの着色、歯の黄ばみ</h3>
+              <p class="fmap__text">白い歯は、笑顔と話の説得力。商談も写真も口元で差がつきます。歯科提携サロンの美容ホワイトニングで、まず1回の変化を体感。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">美容ホワイトニング<small>歯科提携</small></span>
+                <span class="fmap__menu-price">初回 ¥6,000</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="teeth" data-gender="m" data-area="face">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="teeth" data-gender="m" data-area="face">LINEで相談</a>
+                <a href="whitening.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="neck" data-fmap-g="m" data-fmap-area="face" hidden>
+              <p class="fmap__kicker">首肩のコリ</p>
+              <h3 class="fmap__title" tabindex="-1">首と肩の重だるさ</h3>
+              <p class="fmap__text">長時間のデスクワークで固まった首肩・背中。肩甲骨まわりを温めながらほぐす、リラクウルトラ（40分）。仕事帰りの40分で。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">リラクウルトラ<small>男女OK</small></span>
+                <span class="fmap__menu-price">初回 ¥7,700</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="neck" data-gender="m" data-area="face">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="neck" data-gender="m" data-area="face">LINEで相談</a>
+                <a href="body.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="neck" data-fmap-g="f" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">首肩</p>
+              <h3 class="fmap__title" tabindex="-1">首肩・背中の重だるさ</h3>
+              <p class="fmap__text">デスクワークやスマホで固まった首肩。肩甲骨まわりを温めながらほぐす40分。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">リラクウルトラ<small>痩身・ボディケア／40分・通常 ¥9,900</small></span>
+                <span class="fmap__menu-price">初回 ¥7,700</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="neck" data-gender="f" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="neck" data-gender="f" data-area="body">LINEで相談</a>
+                <a href="body.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="waki" data-fmap-g="f" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">わき</p>
+              <h3 class="fmap__title" tabindex="-1">わきのムダ毛・黒ずみ</h3>
+              <p class="fmap__text">剃るたびに黒ずむわき。カスタム脱毛なら1箇所 ¥3,000 で追加できます（他の脱毛メニューと一緒にご予約ください）。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">カスタム脱毛（わき）<small>脱毛／他の脱毛メニューに追加</small></span>
+                <span class="fmap__menu-price">1箇所 ¥3,000</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-line data-concern="waki" data-gender="f" data-area="body">LINEで相談</a>
+                <a href="hair-removal.html" class="link-arrow">詳しく見る</a>
+              </div>
+              <p class="fmap__hint">カスタム脱毛は、ほかの脱毛メニューと一緒にご予約いただけます。組み合わせはLINEでご案内します。</p>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="arm" data-fmap-g="f" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">二の腕</p>
+              <h3 class="fmap__title" tabindex="-1">二の腕のたるみ</h3>
+              <p class="fmap__text">ノースリーブをためらう二の腕。むくみ・冷えが気になる部位を、「ほぐす・温める・流す」で集中ケア。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">ウルトラ上半身 or 下半身 痩身<small>痩身／60分・通常 ¥18,000</small></span>
+                <span class="fmap__menu-price">初回 ¥9,900</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="arm" data-gender="f" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="arm" data-gender="f" data-area="body">LINEで相談</a>
+                <a href="body.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="armhair" data-fmap-g="f" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">腕のムダ毛</p>
+              <h3 class="fmap__title" tabindex="-1">腕〜手の甲のムダ毛</h3>
+              <p class="fmap__text">自己処理の手間を減らす。腕〜手の甲までまるごと、LED脱毛で痛みを抑えて。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">腕まるごと脱毛<small>脱毛／通常 ¥11,000</small></span>
+                <span class="fmap__menu-price">初回 ¥6,000</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="armhair" data-gender="f" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="armhair" data-gender="f" data-area="body">LINEで相談</a>
+                <a href="hair-removal.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="belly" data-fmap-g="f" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">お腹・ウエスト</p>
+              <h3 class="fmap__title" tabindex="-1">下腹のぽっこり、お腹まわりのむくみ</h3>
+              <p class="fmap__text">運動も食事制限も続かなかった方へ。「整える・温める・流す」で、お腹まわりの脂肪とむくみを集中ケア。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">ウルトラ上半身 or 下半身 痩身<small>痩身／60分・通常 ¥18,000</small></span>
+                <span class="fmap__menu-price">初回 ¥9,900</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="belly" data-gender="f" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="belly" data-gender="f" data-area="body">LINEで相談</a>
+                <a href="body.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="vio" data-fmap-g="f" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">VIO</p>
+              <h3 class="fmap__title" tabindex="-1">VIOのムダ毛、デザイン脱毛</h3>
+              <p class="fmap__text">残したい部分は残して、いらない部分だけ。白髪にも対応。女性スタッフが担当し、貸切でのご利用もできます。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">VIO脱毛<small>脱毛／通常 ¥6,000・女性スタッフ担当</small></span>
+                <span class="fmap__menu-price">初回 ¥5,000</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="vio" data-gender="f" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="vio" data-gender="f" data-area="body">LINEで相談</a>
+                <a href="hair-removal.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="thigh" data-fmap-g="f" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">太もも・お尻</p>
+              <h3 class="fmap__title" tabindex="-1">太もものハリ、お尻のたるみ</h3>
+              <p class="fmap__text">パンツが張る太もも、下がったヒップライン。むくみ・冷えが気になる下半身を集中ケアします。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">ウルトラ下半身痩身<small>痩身／60分・通常 ¥18,000</small></span>
+                <span class="fmap__menu-price">初回 ¥9,900</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="thigh" data-gender="f" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="thigh" data-gender="f" data-area="body">LINEで相談</a>
+                <a href="body.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="leg" data-fmap-g="f" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">脚のムダ毛</p>
+              <h3 class="fmap__title" tabindex="-1">太もも〜足指のムダ毛</h3>
+              <p class="fmap__text">毎回の処理で乾燥・黒ずみが気になる脚。太もも〜足指までまるごと、産毛にも反応するLED脱毛で。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">脚まるごと脱毛<small>脱毛／通常 ¥13,000</small></span>
+                <span class="fmap__menu-price">初回 ¥8,000</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="leg" data-gender="f" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="leg" data-gender="f" data-area="body">LINEで相談</a>
+                <a href="hair-removal.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="allbody" data-fmap-g="f" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">全身の脂肪・むくみ</p>
+              <h3 class="fmap__title" tabindex="-1">全身の脂肪・むくみ・冷え</h3>
+              <p class="fmap__text">お腹も脚も、まとめて変えたい方に。全身をまとめてケアする120分。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">ウルトラ全身痩身<small>痩身／120分・通常 ¥25,000</small></span>
+                <span class="fmap__menu-price">初回 ¥12,000</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="allbody" data-gender="f" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="allbody" data-gender="f" data-area="body">LINEで相談</a>
+                <a href="body.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="allhair" data-fmap-g="f" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">全身のムダ毛</p>
+              <h3 class="fmap__title" tabindex="-1">全身まとめて脱毛したい</h3>
+              <p class="fmap__text">顔・VIOを含む全身。自己処理を卒業するなら、まとめてが近道。24歳以下の学生は U24 学割（初回 ¥18,000）も。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">全身脱毛（顔・VIO込）<small>脱毛／通常 ¥29,800</small></span>
+                <span class="fmap__menu-price">初回 ¥19,800</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="allhair" data-gender="f" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="allhair" data-gender="f" data-area="body">LINEで相談</a>
+                <a href="hair-removal.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="neck" data-fmap-g="m" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">首肩</p>
+              <h3 class="fmap__title" tabindex="-1">首と肩の重だるさ</h3>
+              <p class="fmap__text">長時間のデスクワークで固まった首肩・背中。温めながらほぐす、仕事帰りの40分。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">リラクウルトラ<small>痩身・ボディケア／40分・通常 ¥9,900</small></span>
+                <span class="fmap__menu-price">初回 ¥7,700</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="neck" data-gender="m" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="neck" data-gender="m" data-area="body">LINEで相談</a>
+                <a href="body.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="waki" data-fmap-g="m" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">わき</p>
+              <h3 class="fmap__title" tabindex="-1">わきのムダ毛・ニオイ対策</h3>
+              <p class="fmap__text">わきの毛はニオイと清潔感に直結。カスタム脱毛なら1箇所 ¥3,000 で追加できます（他の脱毛メニューと一緒にご予約ください）。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">カスタム脱毛（わき）<small>脱毛／他の脱毛メニューに追加</small></span>
+                <span class="fmap__menu-price">1箇所 ¥3,000</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-line data-concern="waki" data-gender="m" data-area="body">LINEで相談</a>
+                <a href="hair-removal.html" class="link-arrow">詳しく見る</a>
+              </div>
+              <p class="fmap__hint">カスタム脱毛は、ほかの脱毛メニューと一緒にご予約いただけます。組み合わせはLINEでご案内します。</p>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="chest" data-fmap-g="m" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">胸毛</p>
+              <h3 class="fmap__title" tabindex="-1">胸毛・体毛の処理</h3>
+              <p class="fmap__text">胸毛もカスタム脱毛の対象。1箇所 ¥3,000 で、腕や脚の脱毛と一緒にケアできます。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">カスタム脱毛（胸毛）<small>脱毛／他の脱毛メニューに追加</small></span>
+                <span class="fmap__menu-price">1箇所 ¥3,000</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-line data-concern="chest" data-gender="m" data-area="body">LINEで相談</a>
+                <a href="hair-removal.html" class="link-arrow">詳しく見る</a>
+              </div>
+              <p class="fmap__hint">カスタム脱毛は、ほかの脱毛メニューと一緒にご予約いただけます。組み合わせはLINEでご案内します。</p>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="arm" data-fmap-g="m" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">二の腕・肩</p>
+              <h3 class="fmap__title" tabindex="-1">二の腕・肩まわりのたるみ</h3>
+              <p class="fmap__text">Tシャツ姿で気になる二の腕と肩まわり。「ほぐす・温める・流す」で上半身を集中ケア。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">ウルトラ上半身痩身<small>痩身／60分・通常 ¥19,800</small></span>
+                <span class="fmap__menu-price">初回 ¥9,900</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="arm" data-gender="m" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="arm" data-gender="m" data-area="body">LINEで相談</a>
+                <a href="body.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="armhair" data-fmap-g="m" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">腕のムダ毛</p>
+              <h3 class="fmap__title" tabindex="-1">腕〜手の甲のムダ毛</h3>
+              <p class="fmap__text">腕〜手の甲までまるごと。LED脱毛は痛みが少なく、太い毛にも細い毛にも対応します。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">腕まるごと脱毛<small>脱毛／通常 ¥11,000</small></span>
+                <span class="fmap__menu-price">初回 ¥6,000</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="armhair" data-gender="m" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="armhair" data-gender="m" data-area="body">LINEで相談</a>
+                <a href="hair-removal.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="belly" data-fmap-g="m" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">お腹・脇腹</p>
+              <h3 class="fmap__title" tabindex="-1">ぽっこりお腹、脇腹のたるみ</h3>
+              <p class="fmap__text">ベルトの上に乗るお腹、脇腹のたるみ。お腹・脇腹・胸まわりを60分で集中的に。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">ウルトラ上半身痩身<small>痩身／60分・通常 ¥19,800</small></span>
+                <span class="fmap__menu-price">初回 ¥9,900</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="belly" data-gender="m" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="belly" data-gender="m" data-area="body">LINEで相談</a>
+                <a href="body.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="vio" data-fmap-g="m" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">VIO</p>
+              <h3 class="fmap__title" tabindex="-1">VIOのムレ・ニオイ対策</h3>
+              <p class="fmap__text">蒸れやニオイ、処理の手間。デザイン脱毛OKで残したい部分は残せます。男性スタッフが担当するので安心。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">VIO脱毛<small>脱毛／通常 ¥6,000・男性スタッフ担当</small></span>
+                <span class="fmap__menu-price">初回 ¥5,000</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="vio" data-gender="m" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="vio" data-gender="m" data-area="body">LINEで相談</a>
+                <a href="hair-removal.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="leg" data-fmap-g="m" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">脚のムダ毛</p>
+              <h3 class="fmap__title" tabindex="-1">すね毛・太ももの体毛</h3>
+              <p class="fmap__text">短パンの季節に気になるすね毛。太もも〜足指までまるごと、痛みを抑えたLED脱毛で。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">脚まるごと脱毛<small>脱毛／通常 ¥13,000</small></span>
+                <span class="fmap__menu-price">初回 ¥8,000</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="leg" data-gender="m" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="leg" data-gender="m" data-area="body">LINEで相談</a>
+                <a href="hair-removal.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <div class="fmap__panel" data-fmap-panel="allhair" data-fmap-g="m" data-fmap-area="body" hidden>
+              <p class="fmap__kicker">全身のムダ毛</p>
+              <h3 class="fmap__title" tabindex="-1">全身まとめて脱毛したい</h3>
+              <p class="fmap__text">ヒゲ・VIOを含む全身。清潔感もニオイ対策も、まとめてが近道。24歳以下の学生は U24 学割（初回 ¥18,000）も。</p>
+              <div class="fmap__menu">
+                <span class="fmap__menu-name">全身脱毛（ヒゲ・VIO込）<small>脱毛／通常 ¥29,800</small></span>
+                <span class="fmap__menu-price">初回 ¥19,800</span>
+              </div>
+              <div class="fmap__actions">
+                <a href="https://beauty.hotpepper.jp/kr/slnH000694676/coupon/" class="btn btn--small btn--primary" target="_blank" rel="noopener" data-map-reserve data-concern="allhair" data-gender="m" data-area="body">ホットペッパーで予約</a>
+                <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--small btn--ghost" target="_blank" rel="noopener" data-map-line data-concern="allhair" data-gender="m" data-area="body">LINEで相談</a>
+                <a href="hair-removal.html" class="link-arrow">詳しく見る</a>
+              </div>
+            </div>
+            <p class="fmap__body-link">どのメニューが合うか迷ったら、LINE でご相談ください。カウンセリングだけのご来店も歓迎です。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section class="section concept" id="about">
+      <div class="container">
+        <div class="sec-row">
+          <div class="section__head"><p class="section__en">About</p><h2 class="section__title">Id が選ばれる理由</h2></div>
+          <a href="about.html" class="link-arrow">サロンについて詳しく</a>
+        </div>
+        <div class="concept__grid concept__grid--text">
+          <div class="concept__text">
+            <p class="concept__lead">男女問わず、肌ケアが当たり前になってきた今。<br class="pc-only">さまざまなお悩みにアプローチできるサロンを作りました。</p>
+            <p>毛穴・ニキビ・乾燥・フェイスラインなど、肌状態に合わせたフェイシャルとLED脱毛をご用意。痩身やホワイトニングも受けられる、トータルビューティーサロンです。</p>
+            <p>男性・女性スタッフが在籍する、完全予約制のプライベートサロン。年齢や性別に関係なく、どなたにもご利用いただける効果重視のメニューを揃えています。</p>
+            <p class="concept__sign">— Id オーナー</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== お客様の声 ===== -->
+    <section class="section voice" id="voice" style="background:var(--c-surface);border-top:1px solid var(--c-line)">
+      <div class="container">
+        <div class="sec-row">
+          <div class="section__head"><p class="section__en">Voice</p><h2 class="section__title">お客様の声</h2></div>
+          <a href="https://beauty.hotpepper.jp/kr/slnH000694676/review/" class="link-arrow" target="_blank" rel="noopener">口コミをもっと見る</a>
+        </div>
+        <!-- ★要変更: 口コミ件数・点数は変動するため、公開前に最新の数値へ更新 -->
+        <p class="voice__score"><span class="voice__score-num">5.0</span><span class="voice__score-stars" aria-hidden="true">★★★★★</span><span class="voice__score-txt">ホットペッパービューティー 口コミ17件 <span class="note-date">※2026年9月時点</span></span></p>
+        <!-- ★要変更: 口コミ本文の転載は規約上できないため、ホットペッパーの口コミ6件の内容を要約して掲載。原文を載せる場合はご本人の許可を得たものに差し替え -->
+        <ul class="voice__list voice__list--6 swipe-sp">
+          <li class="voice__card"><p class="voice__stars">★★★★★</p><p class="voice__meta">20代男性 ／ 脱毛＋フェイシャル</p><p class="voice__text">4回目の来店。毎回変わらず丁寧で、脱毛と一緒に肌の調子も良くなってきた。</p></li>
+          <li class="voice__card"><p class="voice__stars">★★★★★</p><p class="voice__meta">30代男性 ／ ヒゲ脱毛</p><p class="voice__text">接客が良く施術も丁寧。ヒゲの減りが早く、効果を実感できた。</p></li>
+          <li class="voice__card"><p class="voice__stars">★★★★★</p><p class="voice__meta">20代女性 ／ 美容ホワイトニング</p><p class="voice__text">初めてでも説明が丁寧で安心。雰囲気が良く、次回も通いたくなった。</p></li>
+          <li class="voice__card"><p class="voice__stars">★★★★★</p><p class="voice__meta">30代女性 ／ フェイシャル（ピーリング）</p><p class="voice__text">これまで行ったサロンの中でいちばん丁寧。仕上がりの肌のなめらかさが違う。</p></li>
+          <li class="voice__card"><p class="voice__stars">★★★★★</p><p class="voice__meta">40代女性 ／ ウルトラ全身痩身</p><p class="voice__text">対応がとても丁寧で、リラックスして受けられた。店内も落ち着いていて居心地がいい。</p></li>
+          <li class="voice__card"><p class="voice__stars">★★★★★</p><p class="voice__meta">40代女性 ／ フェイシャル＋娘の脱毛</p><p class="voice__text">娘の脱毛も優しく対応してもらえて安心。自分の小顔の変化もはっきり分かった。</p></li>
+        </ul>
+        <p class="section__note" style="margin-top:14px">※ ホットペッパービューティーに寄せられた口コミの内容を要約して掲載しています。原文は<a href="https://beauty.hotpepper.jp/kr/slnH000694676/review/" class="link-inline" target="_blank" rel="noopener">ホットペッパービューティー</a>・<a href="https://share.google/dJgbHaJT1b8ZgHk9W" class="link-inline" target="_blank" rel="noopener">Google</a>でご覧ください。</p>
+      </div>
+    </section>
+
+    <!-- ===== 料金（抜粋） ===== -->
+    <section class="section" id="price">
+      <div class="container">
+        <div class="sec-row">
+          <div class="section__head"><p class="section__en">Price</p><h2 class="section__title">料金</h2></div>
+          <a href="price.html" class="link-arrow">料金表をすべて見る</a>
+        </div>
+        <div class="price-teaser">
+          <a href="price.html#price-facial" class="price-teaser__card"><span class="price-teaser__name">フェイシャル<span class="price-teaser__sub">通常 ¥18,000 ／ 60〜70分</span></span><span class="price-teaser__price"><small>初回</small>¥9,900</span></a>
+          <a href="price.html#price-hair" class="price-teaser__card"><span class="price-teaser__name">全身脱毛<span class="price-teaser__sub">通常 ¥29,800 ／ 顔・VIO込</span></span><span class="price-teaser__price"><small>初回</small>¥19,800</span></a>
+          <a href="price.html#price-body" class="price-teaser__card"><span class="price-teaser__name">ウルトラ痩身・リラクウルトラ<span class="price-teaser__sub">通常 ¥9,900〜 ／ 40〜120分</span></span><span class="price-teaser__price"><small>初回</small>¥7,700〜</span></a>
+          <a href="price.html#price-white" class="price-teaser__card"><span class="price-teaser__name">美容ホワイトニング<span class="price-teaser__sub">通常 ¥7,800</span></span><span class="price-teaser__price"><small>初回</small>¥6,000</span></a>
+        </div>
+        <div class="u24-mini"><span class="u24__tag">U24 学割</span><p>24歳以下の学生の方は、全身脱毛（通常 ¥29,800）が初回 <strong>¥18,000</strong>。部分脱毛も初回学割価格。</p><a href="price.html#price-u24" class="link-arrow">学割の料金を見る</a></div>
+        <p class="section__note" style="margin-top:16px">表示価格はすべて税込。初回価格はご新規様限定のクーポン価格です。回数券もあります。</p>
+      </div>
+    </section>
+
+    <!-- ===== 店舗情報・アクセス ===== -->
+    <section class="section access access--top" id="access">
+      <div class="container">
+        <div class="sec-row">
+          <div class="section__head"><p class="section__en">Access</p><h2 class="section__title">店舗情報</h2></div>
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%BA%83%E5%B3%B6%E7%9C%8C%E5%BA%83%E5%B3%B6%E5%B8%82%E5%AE%89%E8%8A%B8%E5%8C%BA%E7%9F%A2%E9%87%8E%E8%A5%BF5-14-18" class="link-arrow" target="_blank" rel="noopener">Google マップで開く</a>
+        </div>
+        <div class="access__grid access__grid--single">
+          <dl class="info">
+            <div class="info__row"><dt>店名</dt><dd>Id（アイディー）</dd></div>
+            <div class="info__row"><dt>住所</dt><dd>〒736-0085<br>広島県広島市安芸区矢野西5-14-18 2F</dd></div>
+            <div class="info__row"><dt>アクセス</dt><dd>JR呉線 矢野駅 徒歩5分<br><span class="info__sub">瀬戸内石材店の看板・黄色い建物が目印。建物1階が駐車場です。</span></dd></div>
+            <div class="info__row"><dt>営業時間</dt><dd>11:00 – 21:00<br><span class="info__sub">夜20時以降の受付・当日受付OK</span></dd></div>
+            <div class="info__row"><dt>定休日</dt><dd>不定休</dd></div>
+            <div class="info__row"><dt>ご予約</dt><dd>完全予約制／WEB（ホットペッパービューティー）または LINE</dd></div>
+            <div class="info__row"><dt>お支払い</dt><dd>
+              現金／クレジットカード／QRコード決済／電子マネー
+              <div class="paylogos">
+                <div class="paylogos__row"><span class="paylogos__label">カード</span><ul class="paylogos__list"><li><img src="images/pay/visa.png" alt="Visa" width="89" height="56"></li><li><img src="images/pay/mastercard.png" alt="Mastercard" width="68" height="56"></li><li><img src="images/pay/amex.png" alt="American Express" width="56" height="56"></li><li><img src="images/pay/jcb.png" alt="JCB" width="64" height="56"></li><li><img src="images/pay/diners.png" alt="Diners Club" width="74" height="56"></li><li><img src="images/pay/discover.png" alt="Discover" width="74" height="56"></li><li><img src="images/pay/unionpay.png" alt="UnionPay" width="74" height="56"></li></ul></div>
+                <div class="paylogos__row"><span class="paylogos__label">QR決済</span><ul class="paylogos__list"><li><img src="images/pay/dbarai.png" alt="d払い" width="53" height="56"></li><li><img src="images/pay/rpay.png" alt="楽天ペイ" width="38" height="56"></li><li><img src="images/pay/aupay.png" alt="au PAY" width="50" height="56"></li><li><img src="images/pay/merpay.png" alt="メルペイ" width="35" height="56"></li><li><img src="images/pay/wechat.png" alt="WeChat Pay" width="45" height="56"></li><li><img src="images/pay/alipay.png" alt="Alipay" width="50" height="56"></li></ul><span class="paylogos__note">※ PayPay はご利用いただけません</span></div>
+                <div class="paylogos__row"><span class="paylogos__label">電子マネー</span><ul class="paylogos__list"><li><img src="images/pay/id.png" alt="iD" width="75" height="56"></li><li><img src="images/pay/quicpay.png" alt="QUICPay" width="81" height="56"></li><li><img src="images/pay/ic.png" alt="交通系ICカード" width="73" height="56"></li></ul><span class="paylogos__note">交通系IC（Suica・ICOCA など）</span></div>
+              </div>
+            </dd></div>
+            <div class="info__row"><dt>駐車場</dt><dd>2台（建物1階）<br><span class="info__sub">建物前側に、横並びで2台分お停めください。中央に停めると、ほかのお客様の車が出入りできなくなります。</span></dd></div>
+            <div class="info__row"><dt>Instagram</dt><dd><a href="https://www.instagram.com/id_hsm/" class="link-inline" target="_blank" rel="noopener">@id_hsm</a></dd></div>
+            <div class="info__row"><dt>設備</dt><dd>ベッド2・チェア1（カーテン仕切り）／メイクルーム／お着替えあり／お子さま同伴可</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 予約 ===== -->
+    <section class="section reserve" id="reserve">
+      <div class="container reserve__inner">
+        <p class="section__en section__en--light">Reservation</p>
+        <h2 class="reserve__title">ご予約</h2>
+        <p class="reserve__lead">
+          完全予約制です。ご希望のメニュー・日時を選んで、<br class="pc-only">WEB または LINE からご予約ください。当日予約も承ります（ご来店2時間以内のご予約は、必ず事前に空き状況をご確認ください）。
+        </p>
+        <div class="reserve__buttons">
+          <a href="https://beauty.hotpepper.jp/kr/slnH000694676/" class="btn btn--white btn--lg" target="_blank" rel="noopener" data-reserve="web">
+            <span class="btn__label">ホットペッパーで予約</span>
+            <span class="btn__sub">24時間受付・初回クーポンはこちら</span>
+          </a>
+          <a href="https://line.me/R/ti/p/@870qfoil" class="btn btn--outline-white btn--lg" target="_blank" rel="noopener" data-reserve="line">
+            <span class="btn__label">LINEで相談</span>
+            <span class="btn__sub">ご予約・ご質問 @870qfoil</span>
+          </a>
+        </div>
+        <p class="reserve__note">
+          ※ 初回クーポンをご利用の場合は、ホットペッパービューティーからのご予約が確実です。<br>
+          ※ 前日キャンセル 50%・当日キャンセル 100%・当日変更 ¥2,200 を申し受けます。詳しくは<a href="about.html#flow" class="reserve__link">ご来店の流れ</a>をご覧ください。
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== フッター（全ページ共通） ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="images/logo.png" alt="Id 아이디SALON" class="footer__logo" width="864" height="1058">
+        <p class="footer__addr">〒736-0085 広島県広島市安芸区矢野西5-14-18 2F<br>11:00 – 21:00 ／ 不定休 ／ 完全予約制</p>
+        <p class="footer__christina"><a href="facial.html#series">CHRISTINA 日本正規取扱店 #00279</a></p>
+      </div>
+      <ul class="footer__links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="facial.html">Facial</a></li>
+        <li><a href="hair-removal.html">Hair Removal</a></li>
+        <li><a href="body.html">Ultra Body</a></li>
+        <li><a href="whitening.html">Whitening</a></li>
+        <li><a href="mens.html">For Men</a></li>
+        <li><a href="price.html">Price</a></li>
+        <li><a href="index.html#access">Access</a></li>
+      </ul>
+      <ul class="footer__sns">
+        <li><a href="https://beauty.hotpepper.jp/kr/slnH000694676/" target="_blank" rel="noopener">Hot Pepper Beauty</a></li>
+        <li><a href="https://line.me/R/ti/p/@870qfoil" target="_blank" rel="noopener">LINE</a></li>
+        <li><a href="https://www.instagram.com/id_hsm/" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+      <ul class="footer__legal">
+        <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+      </ul>
+      <p class="footer__copy">&copy; <span id="year"></span> Id SALON. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== スマホ用 固定予約バー ===== -->
+  <div class="fixed-bar" id="fixedBar">
+    <a href="https://beauty.hotpepper.jp/kr/slnH000694676/" class="fixed-bar__btn fixed-bar__btn--main" target="_blank" rel="noopener">ホットペッパーで予約</a>
+    <a href="https://line.me/R/ti/p/@870qfoil" class="fixed-bar__btn fixed-bar__btn--sub" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3c-.9 0-1.8-.1-2.6-.4L5 21l1-3.6A8.3 8.3 0 0 1 3 11.5C3 6.9 7 3.2 12 3.2s9 3.7 9 8.3z"/></svg>
+      LINEで相談
+    </a>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/fmap-ui.js?v=2"></script>
+  <script src="js/qnav.js?v=1"></script>
+  <script>
+    /* PC では「Why Id」を最初から全部表示（スマホは3点＋折りたたみ） */
+    (function(){var mq=window.matchMedia('(min-width: 900px)');function f(){document.querySelectorAll('details[data-open-pc]').forEach(function(d){d.open=mq.matches;});}f();if(mq.addEventListener)mq.addEventListener('change',f);})();
+  </script>
+
+</body></html>

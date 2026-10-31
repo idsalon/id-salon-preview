@@ -1,0 +1,282 @@
+/* =========================================================
+   お悩みマップ（顔・からだ）共通のデザイン言語　v2
+   - ラベル（.kl）＝ピル＋種類タグ（.ktag 脱毛／ケア）＋「›」。押せることを形で示す
+       脱毛：白地＋紺の枠 ／ ケア：淡い紺の塗り（点の形の違いだけに頼らない）
+   - カード上部に絞り込み .kseg「すべて｜脱毛｜ケア」（Apple の Segmented Control 型）= 凡例も兼ねる
+   - ラベルは人物・顔の上に置かず、左右の列にそろえて並べ、細い線で点とつなぐ
+   - 押した反応：:active で軽く縮む／選択中は紺に反転＋わずかに拡大
+   - js/main.js の [data-fmap] クリック → show() をそのまま使う。追加UIは js/fmap-ui.js
+   ========================================================= */
+
+/* ---------- 共通：絞り込み（Segmented Control） ---------- */
+.kseg { display: flex; gap: 2px; width: min(100%, 320px); margin: 0 auto 12px; padding: 3px; background: #eceef5; border-radius: 999px; }
+.kseg__btn {
+  flex: 1; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 10px;
+  border: 0; border-radius: 999px; background: none; font: inherit; font-size: 13px; font-weight: 500; letter-spacing: .06em; color: var(--c-ink-2);
+  cursor: pointer; transition: background-color .2s var(--ease), color .2s var(--ease), box-shadow .2s var(--ease);
+}
+.kseg__btn.is-active { background: #fff; color: var(--c-brand); box-shadow: 0 1px 4px rgba(20,22,31,.14); }
+.kseg__btn:focus-visible { outline: 2px solid var(--c-brand); outline-offset: 2px; }
+@media (hover: hover) { .kseg__btn:not(.is-active):hover { color: var(--c-brand); } }
+
+/* 絞り込みで該当しない点・ラベルを隠す */
+[data-kfilter="hair"] [data-kind="care"], [data-kfilter="care"] [data-kind="hair"] { display: none !important; }
+
+/* ---------- 共通：種類タグ ---------- */
+.ktag {
+  flex: none; display: inline-flex; align-items: center; height: 20px; padding: 0 5px; border-radius: 5px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0; line-height: 1; white-space: nowrap;
+  transition: background-color .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease);
+}
+.ktag--hair { background: #fff; color: var(--c-brand); border: 1px solid var(--c-brand); }
+.ktag--care { background: var(--c-brand); color: #fff; border: 1px solid var(--c-brand); }
+
+/* ---------- 共通：ラベル（押せるピル） ---------- */
+.kl {
+  position: relative; display: inline-flex; align-items: center; gap: 5px; height: 34px; padding: 0 8px 0 6px;
+  border-radius: 999px; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: .02em; line-height: 1;
+  color: var(--c-brand); white-space: nowrap; cursor: pointer; -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 1px 3px rgba(39,55,143,.08);
+  transition: background-color .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease), transform .15s var(--ease);
+}
+.kl--hair { background: #fff; border: 1px solid rgba(39,55,143,.5); }
+.kl--care { background: #e8ebf7; border: 1px solid #d3d9ef; }
+.kl__t { color: var(--c-ink); }
+.kl__c { font-size: 17px; line-height: 1; margin: -2px 0 0 1px; color: var(--c-brand); transition: transform .2s var(--ease); }
+@media (hover: hover) {
+  .kl:hover, .bm__pt:hover .kl { border-color: var(--c-brand); box-shadow: 0 3px 10px rgba(39,55,143,.16); }
+  .kl:hover .kl__c, .bm__pt:hover .kl__c { transform: translateX(2px); }
+}
+/* 押した瞬間 */
+.kl:active, .bm__pt:active .kl { transform: scale(.95); background: #d9dff3; }
+/* 選択中：紺に反転＋少し大きく */
+.kl.is-active, .bm__pt.is-active .kl { background: var(--c-brand); border-color: var(--c-brand); transform: scale(1.05); box-shadow: 0 6px 16px rgba(39,55,143,.3); }
+.kl.is-active .kl__t, .kl.is-active .kl__c, .bm__pt.is-active .kl__t, .bm__pt.is-active .kl__c { color: #fff; }
+.kl.is-active .ktag, .bm__pt.is-active .ktag { background: #fff; color: var(--c-brand); border-color: #fff; }
+.kl:focus-visible, .bm__pt:focus-visible .kl { outline: 2px solid var(--c-brand); outline-offset: 3px; }
+
+/* ---------- からだ ---------- */
+.bm__stage, .fc__stage { max-width: 560px; }
+.bm__card, .fc {
+  aspect-ratio: auto !important; transform: none !important; overflow: visible;
+  background: #fff; border-radius: 24px; box-shadow: 0 20px 50px rgba(39,55,143,.09), 0 0 0 1px rgba(39,55,143,.07);
+}
+.bm__card::before, .bm__card::after, .fc::before, .fc::after { display: none !important; }
+.bm__card { padding: 12px 0 14px; --bm-m: 8px; }
+.bm__card .kseg { width: calc(100% - 24px); max-width: 320px; }
+.bm__fig { --s: 1; position: relative; aspect-ratio: 400 / calc(520 * var(--s)); }
+.bm__img { position: absolute; top: 0; bottom: 0; left: calc(50% - 50% * var(--s)); width: calc(100% * var(--s)); height: 100%; display: block; object-fit: contain; user-select: none; -webkit-user-drag: none; pointer-events: none; }
+
+/* 部位ボタン：ボタン自体は大きさを持たず、中の要素を図の基準で配置する（行も点も同じボタン） */
+.bm__pt { --px: calc(50% + (var(--x) - 50%) * var(--s)); position: static; display: block; width: 0; height: 0; padding: 0; margin: 0; border: 0; background: none; font: inherit; color: var(--c-brand); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.bm__pt:focus { outline: none; }
+/* 行＝ラベル＋引き出し線（高さ44px＝押せる範囲） */
+.bm__row { position: absolute; top: var(--y); height: 44px; margin-top: -22px; display: flex; align-items: center; z-index: 2; }
+.bm__pt--L .bm__row { left: var(--bm-m); right: calc(100% - var(--px)); }
+.bm__pt--R .bm__row { left: var(--px); right: var(--bm-m); flex-direction: row-reverse; }
+.bm__tag { flex: none; }
+.bm__line { flex: 1 1 auto; min-width: 6px; height: 1px; background: rgba(39,55,143,.32); transition: background-color .2s var(--ease); }
+.bm__pt--L .bm__line { margin-right: 8px; }
+.bm__pt--R .bm__line { margin-left: 8px; }
+@media (hover: hover) { .bm__pt:hover .bm__line { background: var(--c-brand); } }
+.bm__pt.is-active .bm__line { background: var(--c-brand); height: 1.5px; }
+
+/* 点：見た目10px／押せる範囲44px。ケア＝塗り、脱毛＝リング（補助の手がかり） */
+.bm__dot { position: absolute; left: var(--px); top: var(--y); width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; z-index: 3; }
+.bm__dot::before, .bm__dot::after { content: ""; position: absolute; left: 50%; top: 50%; border-radius: 50%; }
+.bm__dot::before { width: 10px; height: 10px; margin: -5px 0 0 -5px; background: var(--c-brand); box-shadow: 0 0 0 2.5px #fff, 0 1px 5px rgba(39,55,143,.3); transition: transform .2s var(--ease); }
+.bm__pt--hair .bm__dot::before { background: #fff; box-shadow: inset 0 0 0 2px var(--c-brand), 0 0 0 2.5px #fff, 0 1px 5px rgba(39,55,143,.3); }
+.bm__dot::after { width: 28px; height: 28px; margin: -14px 0 0 -14px; background: rgba(39,55,143,.14); transform: scale(.4); opacity: 0; transition: transform .25s var(--ease), opacity .25s var(--ease); }
+.bm__pt.is-active .bm__dot::before { transform: scale(1.2); }
+.bm__pt.is-active .bm__dot::after { transform: scale(1); opacity: 1; }
+
+/* 全身まとめて：カードの内側の下部。ほかのラベルと同じ「種類タグ＋›」 */
+.bm__all { margin: 6px 12px 0; padding-top: 12px; border-top: 1px solid var(--c-line); }
+.bm__all-label { font-size: 12px; letter-spacing: .16em; color: var(--c-ink-3); margin-bottom: 8px; text-align: center; }
+.bm__all-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 8px; }
+.bm__all-list:has(> :only-child) { grid-template-columns: minmax(0, 300px); justify-content: center; }
+.bm__chip { width: 100%; height: auto; min-height: 56px; padding: 8px 10px 8px 8px; border-radius: 14px; text-align: left; white-space: normal; }
+.bm__chip-txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.bm__chip-t { font-size: 13px; font-weight: 600; color: var(--c-ink); line-height: 1.3; }
+.bm__chip-s { font-size: 12px; color: var(--c-brand); line-height: 1.35; }
+.bm__chip.is-active { transform: scale(1.02); }
+.bm__chip.is-active .bm__chip-t, .bm__chip.is-active .bm__chip-s { color: #fff; }
+@media (max-width: 420px) { .bm__all-list { grid-template-columns: 1fr; } }
+
+@media (min-width: 900px) {
+  .bm__card { --bm-m: 16px; padding: 16px 0 18px; }
+  .bm__all { margin-inline: 18px; }
+}
+
+/* SP：カードを画面の端近くまで広げ、からだ図は少し縮めて左右のラベル列の余白を確保 */
+@media (max-width: 599px) {
+  .bm__stage, .fc__stage { width: calc(100% + 24px); max-width: none; margin-inline: -12px; }
+  .bm__card { --bm-m: 6px; }
+  .bm__fig { --s: .86; }
+  .bm__tag { gap: 4px; padding: 0 6px 0 5px; letter-spacing: 0; }
+  .bm__tag .ktag { padding: 0 4px; }
+  .bm__line { min-width: 4px; }
+  .bm__pt--L .bm__line { margin-right: 4px; } .bm__pt--R .bm__line { margin-left: 4px; }
+  .fc { padding: 10px 10px 12px; }
+  .fc__body { column-gap: 6px; }
+  .fc__lab { gap: 3px; letter-spacing: 0; padding: 0 6px 0 4px; }
+  .fc__lab .fc__n { width: 18px; height: 18px; }
+  .fc__lab .kl__c { margin-left: 0; }
+}
+
+/* ---------- 顔 ---------- */
+.fc { padding: 12px 12px 14px; }
+.fc__body { position: relative; display: grid; grid-template-areas: "fig fig" "L R"; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px 8px; }
+.fc__fig { grid-area: fig; position: relative; justify-self: center; width: min(100%, 280px); aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden; background: #eef0f6; }
+.fc__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; user-select: none; }
+.fc__col { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.fc__col--L { grid-area: L; } .fc__col--R { grid-area: R; }
+.fc__lab { width: 100%; height: auto; min-height: 44px; padding: 0 8px 0 5px; border-radius: 12px; }
+.fc__lab { text-align: left; }
+.fc__lab .kl__t { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+/* 番号（SPのみ：点とラベルを対応させる） */
+.fc__n { flex: none; display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; font-size: 12px; font-weight: 700; line-height: 1; font-family: var(--font-jp); }
+.fc__lab .fc__n { background: #fff; color: var(--c-brand); box-shadow: inset 0 0 0 1px rgba(39,55,143,.4); }
+.fc__lab.is-active .fc__n { box-shadow: none; }
+/* 点：写真の上では控えめに（白縁の小さな点） */
+.fc__dot { position: absolute; left: var(--x); top: var(--y); width: 44px; height: 44px; margin: -22px 0 0 -22px; z-index: 3; display: grid; place-items: center; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.fc__dot .fc__n { background: var(--c-brand); color: #fff; box-shadow: 0 0 0 2px #fff, 0 2px 6px rgba(20,22,31,.3); transition: transform .2s var(--ease); }
+.fc__dot--hair .fc__n { background: #fff; color: var(--c-brand); box-shadow: inset 0 0 0 2px var(--c-brand), 0 0 0 2px #fff, 0 2px 6px rgba(20,22,31,.3); }
+.fc__dot.is-active .fc__n { transform: scale(1.2); box-shadow: 0 0 0 2px #fff, 0 0 0 6px rgba(39,55,143,.35), 0 2px 6px rgba(20,22,31,.3); }
+.fc__dot--hair.is-active .fc__n { background: var(--c-brand); color: #fff; }
+.fc__lines { display: none; }
+
+/* 600px 以上：左右の列にラベル、細い線で点へ */
+@media (min-width: 600px) {
+  .fc { padding: 14px 14px 18px; }
+  .fc__body { grid-template-areas: "L fig R"; grid-template-columns: minmax(0, 1fr) minmax(0, 36%) minmax(0, 1fr); gap: 0 14px; align-items: stretch; }
+  .fc__fig { width: 100%; }
+  .fc__col { position: relative; justify-content: space-evenly; gap: 10px; }
+  .fc__col--L { align-items: flex-end; } .fc__col--R { align-items: flex-start; }
+  .fc__col[data-placed] .fc__lab { position: absolute; top: var(--ly, 0); }
+  .fc__col--L[data-placed] .fc__lab { right: 0; } .fc__col--R[data-placed] .fc__lab { left: 0; }
+  .fc__lab { width: auto; max-width: 100%; height: 34px; min-height: 0; border-radius: 999px; padding: 0 8px 0 6px; }
+  .fc__lab::after { content: ""; position: absolute; left: 0; right: 0; top: -5px; bottom: -5px; } /* 押せる範囲を44pxに */
+  .fc__n { display: none; }
+  /* 左右のラベル（44px）が主な押し先。点の当たりは隣と重ならない大きさに */
+  .fc__dot { width: 30px; height: 30px; margin: -15px 0 0 -15px; }
+  .fc__dot::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--c-brand); box-shadow: 0 0 0 2px #fff, 0 1px 5px rgba(20,22,31,.35); transition: transform .2s var(--ease); }
+  .fc__dot--hair::before { background: #fff; box-shadow: inset 0 0 0 2px var(--c-brand), 0 0 0 2px #fff, 0 1px 5px rgba(20,22,31,.35); }
+  .fc__dot.is-active::before { transform: scale(1.3); box-shadow: 0 0 0 2px #fff, 0 0 0 6px rgba(39,55,143,.3); }
+  .fc__lines { display: block; position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 2; }
+  .fc__ln-halo { fill: none; stroke: rgba(255,255,255,.85); stroke-width: 3; stroke-linejoin: round; }
+  .fc__ln { fill: none; stroke: rgba(39,55,143,.55); stroke-width: 1; stroke-linejoin: round; }
+  .fc__ln.is-active { stroke: var(--c-brand); stroke-width: 1.5; }
+}
+@media (min-width: 900px) {
+  .fmap { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 44px; }
+  .fc__stage { max-width: 640px; }
+  /* PC（マウス操作）では点の当たりを小さくして隣の点と重ならないように。主な押し先は左右のラベル */
+  .fc__body { grid-template-columns: minmax(0, 1fr) minmax(0, 40%) minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) { .kl, .kl__c, .ktag, .kseg__btn, .bm__line, .bm__dot::before, .bm__dot::after, .fc__dot::before, .fc__dot .fc__n { transition: none; } }
+
+/* 顔マップ：古い HUD 文字は使わない */
+.fmap__card.fc .fmap__hud { display: none; }
+
+/* 小さいスマホ（〜379px）：カードをさらに端まで広げ、ラベルの余白を詰める。顔のラベル一覧は1列に */
+@media (max-width: 379px) {
+  .bm__stage, .fc__stage { width: calc(100% + 32px); margin-inline: -16px; }
+  .bm__card { --bm-m: 4px; }
+  .bm__tag .ktag { padding: 0 3px; }
+  .bm__tag { padding: 0 5px 0 4px; gap: 3px; }
+  .fc__body { grid-template-areas: "fig" "L" "R"; grid-template-columns: minmax(0, 1fr); row-gap: 8px; }
+}
+
+
+/* =========================================================
+   v3（2026-10-31 オーナー確認を受けて）
+   - 種類を「脱毛／ケア」→ 施術カテゴリ（フェイシャル・小顔・脱毛・ホワイトニング・痩身・ボディケア）に
+   - 顔の点：濃い紺の丸 → 半透明のガラス（Apple の Liquid Glass 風）。顔が隠れないように
+   - 切替：写真つきタブ（.fview）。元の切替ボタンは裏で使う
+   ========================================================= */
+.fmap__card { --k-facial: #1f7a70; --k-facial-s: #e2f2ef; --k-kogao: #8a6a35; --k-kogao-s: #f6efe2; --k-hair: #27378f; --k-hair-s: #e8ebf7;
+  --k-white: #2a6f9e; --k-white-s: #e4f1f9; --k-slim: #a23a56; --k-slim-s: #f8e8ec; --k-body: #4c7a33; --k-body-s: #ebf3e3; }
+.kl--facial, .ktag--facial, .kseg__btn--facial { --k: var(--k-facial); --ks: var(--k-facial-s); }
+.kl--kogao, .ktag--kogao, .kseg__btn--kogao { --k: var(--k-kogao); --ks: var(--k-kogao-s); }
+.kl--hair, .ktag--hair, .kseg__btn--hair { --k: var(--k-hair); --ks: var(--k-hair-s); }
+.kl--white, .ktag--white, .kseg__btn--white { --k: var(--k-white); --ks: var(--k-white-s); }
+.kl--slim, .ktag--slim, .kseg__btn--slim { --k: var(--k-slim); --ks: var(--k-slim-s); }
+.kl--body, .ktag--body, .kseg__btn--body { --k: var(--k-body); --ks: var(--k-body-s); }
+
+/* ラベル：白地＋カテゴリ色のタグ */
+.kl[class*="kl--"] { background: #fff; border: 1px solid #dfe3ee; }
+.ktag[class*="ktag--"] { background: var(--ks); color: var(--k); border: 0; font-weight: 600; }
+.kl.is-active .ktag, .bm__pt.is-active .ktag { background: rgba(255,255,255,.18); color: #fff; }
+.is-kout { display: none !important; }
+
+/* 絞り込み：横スクロールできるチップ */
+.kseg { width: auto; max-width: 100%; justify-content: flex-start; gap: 6px; padding: 2px 2px 4px; background: none; border-radius: 0;
+  overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.kseg::-webkit-scrollbar { display: none; }
+.kseg__btn { flex: none; display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 12px; border: 1px solid #dfe3ee; border-radius: 999px;
+  background: #fff; font-size: 12px; font-weight: 500; letter-spacing: .02em; color: var(--c-ink-2); white-space: nowrap; box-shadow: none; }
+.kseg__btn i { width: 8px; height: 8px; border-radius: 50%; background: var(--k); }
+.kseg__btn.is-active { background: var(--c-ink, #1d2133); border-color: var(--c-ink, #1d2133); color: #fff; box-shadow: none; }
+.kseg__btn[class*="kseg__btn--"].is-active { background: var(--k); border-color: var(--k); }
+.kseg__btn.is-active i { background: #fff; }
+.bm__card .kseg { width: auto; max-width: calc(100% - 24px); }
+@media (min-width: 600px) { .kseg { justify-content: center; flex-wrap: wrap; overflow: visible; } }
+
+/* 顔の点：半透明のガラス */
+.fc__dot .fc__n, .fc__dot[class*="fc__dot--"] .fc__n {
+  width: 26px; height: 26px; font-size: 12px; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.35);
+  background: rgba(255,255,255,.22); -webkit-backdrop-filter: blur(8px) saturate(170%); backdrop-filter: blur(8px) saturate(170%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.7), inset 0 1px 1px rgba(255,255,255,.6), 0 4px 12px rgba(10,14,40,.18);
+}
+.fc__dot.is-active .fc__n, .fc__dot[class*="fc__dot--"].is-active .fc__n {
+  transform: scale(1.12); background: rgba(39,55,143,.42);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.85), 0 0 0 5px rgba(255,255,255,.28), 0 4px 14px rgba(10,14,40,.25);
+}
+@media (min-width: 600px) {
+  .fc__dot::before, .fc__dot[class*="fc__dot--"]::before {
+    width: 14px; height: 14px; margin: 0; background: rgba(255,255,255,.3);
+    -webkit-backdrop-filter: blur(6px) saturate(170%); backdrop-filter: blur(6px) saturate(170%);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.8), 0 2px 8px rgba(10,14,40,.22);
+  }
+  .fc__dot.is-active::before { transform: scale(1.3); background: rgba(39,55,143,.5); box-shadow: inset 0 0 0 1px #fff, 0 0 0 5px rgba(255,255,255,.3); }
+}
+/* からだの点もガラスに */
+.bm__dot::before, .bm__pt[class*="bm__pt--"] .bm__dot::before {
+  width: 14px; height: 14px; margin: -7px 0 0 -7px; background: rgba(255,255,255,.35);
+  -webkit-backdrop-filter: blur(6px) saturate(170%); backdrop-filter: blur(6px) saturate(170%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.85), 0 2px 8px rgba(10,14,40,.25);
+}
+.bm__pt.is-active .bm__dot::before { background: rgba(39,55,143,.55); }
+
+/* SP（〜599px）の顔ラベル：カテゴリを小さく上に、悩みを下に（2段） */
+@media (max-width: 599px) {
+  .fc__lab { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "n k c" "n t c"; column-gap: 6px; row-gap: 1px; align-items: center; min-height: 48px; padding: 6px 8px 6px 6px; }
+  .fc__lab .fc__n { grid-area: n; }
+  .fc__lab .ktag { grid-area: k; justify-self: start; height: 16px; padding: 0 5px; font-size: 10px; border-radius: 4px; }
+  .fc__lab .kl__t { grid-area: t; font-size: 13px; line-height: 1.3; }
+  .fc__lab .kl__c { grid-area: c; }
+}
+
+/* 切替：写真つきタブ */
+.fview { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; width: min(100%, 440px); margin: 20px auto 0; }
+.fview__btn { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 0; border: 0; background: none; cursor: pointer; font: inherit; color: var(--c-ink-2); -webkit-tap-highlight-color: transparent; }
+.fview__img { display: block; width: 100%; aspect-ratio: 1; border-radius: 16px; overflow: hidden; background: #eef0f6; box-shadow: 0 0 0 1px #dfe3ee; transition: box-shadow .2s var(--ease), transform .15s var(--ease); }
+.fview__img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; display: block; }
+.fview__img--body img { object-fit: contain; object-position: 50% 50%; padding: 4px 0; }
+.fview__t { display: flex; flex-direction: column; align-items: center; font-size: 13px; font-weight: 500; line-height: 1.25; letter-spacing: .04em; }
+.fview__t small { font-size: 10px; letter-spacing: .1em; color: var(--c-ink-3); }
+.fview__btn.is-active .fview__img { box-shadow: 0 0 0 2.5px var(--c-brand), 0 6px 16px rgba(39,55,143,.18); }
+.fview__btn.is-active .fview__t { color: var(--c-brand); font-weight: 700; }
+.fview__btn.is-active .fview__t small { color: var(--c-brand); }
+.fview__btn:active .fview__img { transform: scale(.96); }
+.fview__btn:focus-visible { outline: none; } .fview__btn:focus-visible .fview__img { box-shadow: 0 0 0 3px var(--c-brand); }
+.fmap__toggles-src[hidden] { display: none !important; }
+@media (prefers-reduced-motion: reduce) { .fview__img { transition: none; } }
+/* v3 修正：チップ列でカードが横に広がらないように／選択中ラベルは紺に反転 */
+.fmap__stages, .fmap__stage, .fmap__card, .fc__body { min-width: 0; }
+.fmap__card > .kseg { width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box; }
+.bm__card > .kseg { width: auto; max-width: calc(100% - 24px); margin-inline: 12px; }
+.kl[class*="kl--"].is-active, .bm__pt.is-active .kl[class*="kl--"] { background: var(--c-brand); border-color: var(--c-brand); }
+@media (max-width: 899px) { .fmap { grid-template-columns: minmax(0, 1fr); } }
