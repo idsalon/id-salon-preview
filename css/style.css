@@ -1988,3 +1988,17 @@ section[class*="series--"] { border-top: 3px solid var(--series-soft); }
   .fmap__side .fmap__menu-name { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; }
   .fmap__side .fmap__menu-name small { margin-top: 0; font-size: 11px; }
 }
+
+/* こだわり：さらにコンパクトに（見出し小さく・3列・説明は1行） */
+.section--why { padding-block: 28px 24px; }
+.section--why .section__head { margin-bottom: 12px; }
+.section--why .section__en { font-size: 10px; margin-bottom: 2px; }
+.section--why .section__title { font-size: 17px; }
+.section--why .section__title::after { display: none; }
+.whyid__list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 8px; }
+.whyid__item { gap: 6px; }
+.whyid__ic { width: 18px; height: 18px; margin-top: 1px; }
+.whyid__ic svg { width: 18px; height: 18px; }
+.whyid__t { font-size: 12px; white-space: nowrap; }
+.whyid__s { font-size: 10px; line-height: 1.4; }
+@media (min-width: 900px) { .whyid__list { grid-template-columns: repeat(6, minmax(0, 1fr)); } .section--why .section__title { font-size: 20px; } }
