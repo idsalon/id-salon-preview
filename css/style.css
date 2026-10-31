@@ -2024,3 +2024,5 @@ section[class*="series--"] { border-top: 3px solid var(--series-soft); }
 .fmap__actions .link-arrow::after { content: "›"; font-size: 20px; line-height: 1; }
 .fmap__actions .link-arrow:active { background: #e1e5f3; }
 @media (hover: hover) { .fmap__actions .link-arrow:hover { background: #e4e8f5; } }
+/* お悩みマップ：「詳しく見る」を上、予約・LINE を下に（オーナー指示 10/31） */
+.fmap__actions .link-arrow, .fmap__side .fmap__actions .link-arrow { order: -1 !important; }
