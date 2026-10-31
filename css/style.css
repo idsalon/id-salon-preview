@@ -1915,3 +1915,6 @@ section[class*="series--"] { border-top: 3px solid var(--series-soft); }
 .qp__btns { display: flex; gap: 8px; margin-top: 14px; }
 .qp__btns .btn { flex: 1; min-width: 0; white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) { .qp__panel { animation: none; } }
+/* 施術メニューのカード一覧を廃止 → 丸いナビが施術メニュー。ヘッダーに隠れないよう少し余白 */
+#service { scroll-margin-top: calc(var(--header-h, 64px) + 4px); }
+.section--why .whyid { max-width: 720px; }

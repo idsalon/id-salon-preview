@@ -56,7 +56,7 @@
     </section>
 
     <!-- ===== 目的別クイックナビ（Apple Store のカテゴリナビ型） ===== -->
-    <nav class="qnav2" aria-label="目的から探す">
+    <nav class="qnav2" id="service" aria-label="施術メニュー・目的から探す">
       <ul class="qnav2__list">
         <li><a href="facial.html" class="qnav2__item" data-qp="facial" aria-expanded="false" aria-controls="qp-facial"><span class="qnav2__ph"><img src="images/model-facial-card.jpg" alt="" loading="lazy" style="object-position:50% 25%"></span><span class="qnav2__t">フェイシャル</span></a></li>
         <li><a href="hair-removal.html" class="qnav2__item" data-qp="hair" aria-expanded="false" aria-controls="qp-hair"><span class="qnav2__ph"><img src="images/model-hair-card.jpg" alt="" loading="lazy" style="object-position:50% 25%"></span><span class="qnav2__t">脱毛</span></a></li>
@@ -112,71 +112,13 @@
       </div>
     </div>
 
-    <!-- ===== 施術メニュー ===== -->
-    <section class="section" id="service">
+    <!-- ===== Id のこだわり（施術メニューのカード一覧は廃止。メニューは上の丸いナビから） ===== -->
+    <section class="section section--why" id="why">
       <div class="container">
-        <div class="sec-row">
-          <div class="section__head"><p class="section__en">Service</p><h2 class="section__title">施術メニュー</h2></div>
-          <a href="price.html" class="link-arrow">料金表を見る</a>
-        </div>
-        <div class="svc-grid">
-          <div class="pcards">
-          <a href="facial.html" class="pcard">
-            <img src="images/model-facial-card.jpg" alt="" class="pcard__img" loading="lazy">
-            <div class="pcard__body">
-              <p class="pcard__en">Facial</p>
-              <p class="pcard__title">フェイシャル</p>
-              <p class="pcard__desc">AI肌診断 × CHRISTINA の肌を整えるケア／会員プラン Id Prime</p>
-              <span class="pcard__price">初回 ¥9,900〜</span>
-            </div>
-            <span class="pcard__arrow" aria-hidden="true">›</span>
-          </a>
-          <a href="hair-removal.html" class="pcard">
-            <img src="images/model-hair-card.jpg" alt="" class="pcard__img" loading="lazy">
-            <div class="pcard__body">
-              <p class="pcard__en">Hair Removal</p>
-              <p class="pcard__title">脱毛</p>
-              <p class="pcard__desc">痛みを抑えた脱毛。産毛・白髪・濃い毛にも</p>
-              <span class="pcard__price">初回 ¥5,000〜</span>
-            </div>
-            <span class="pcard__arrow" aria-hidden="true">›</span>
-          </a>
-          <a href="body.html" class="pcard">
-            <img src="images/ultra-card.jpg" alt="" class="pcard__img" loading="lazy">
-            <div class="pcard__body">
-              <p class="pcard__en">Ultra Body</p>
-              <p class="pcard__title">ウルトラ痩身・ボディケア</p>
-              <p class="pcard__desc">お腹・脚・二の腕など、気になる部分を集中ケア</p>
-              <span class="pcard__price">初回 ¥7,700〜</span>
-            </div>
-            <span class="pcard__arrow" aria-hidden="true">›</span>
-          </a>
-          <a href="whitening.html" class="pcard">
-            <img src="images/model-white-card.jpg" alt="" class="pcard__img" loading="lazy">
-            <div class="pcard__body">
-              <p class="pcard__en">Whitening</p>
-              <p class="pcard__title">美容ホワイトニング</p>
-              <p class="pcard__desc">黄ばみ・着色・口臭ケア／歯科提携サロン</p>
-              <span class="pcard__price">初回 ¥6,000</span>
-            </div>
-            <span class="pcard__arrow" aria-hidden="true">›</span>
-          </a>
-          <a href="mens.html" class="pcard pcard--men">
-            <img src="images/model-men-sp.jpg" alt="" class="pcard__img" loading="lazy">
-            <div class="pcard__body">
-              <p class="pcard__en">For Men</p>
-              <p class="pcard__title">メンズ</p>
-              <p class="pcard__desc">ヒゲ脱毛・肌管理・痩身・ホワイトニング。男性スタッフ在籍</p>
-              <span class="pcard__price">ヒゲ脱毛 初回 ¥9,800</span>
-            </div>
-            <span class="pcard__arrow" aria-hidden="true">›</span>
-          </a>
+        <div class="section__head"><p class="section__en">Why Id</p><h2 class="section__title">Id のこだわり</h2></div>
+        <div class="whyid">
+                        <ul class="whyid__list"><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="6" width="22" height="16" rx="2.5"/><path d="M11 27h10M16 22v5"/><path d="M9 17l4-4 3 3 6-6"/></svg></span><span class="whyid__t">AI肌診断</span><span class="whyid__s">肌の状態を数値で確認</span></li><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4l3.2 6.6 7.3 1-5.3 5.1 1.3 7.2L16 20.5l-6.5 3.4 1.3-7.2-5.3-5.1 7.3-1z"/></svg></span><span class="whyid__t">CHRISTINA</span><span class="whyid__s">正規取扱店のプロ用ケア</span></li><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 5c3.5 4.5 7 8.2 7 12.5a7 7 0 0 1-14 0C9 13.2 12.5 9.5 16 5z"/><path d="M13 18.5a3 3 0 0 0 3 3"/></svg></span><span class="whyid__t">LED脱毛</span><span class="whyid__s">痛みを抑えて産毛・白髪も</span></li><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="10" r="3.5"/><circle cx="22" cy="11" r="3"/><path d="M4.5 25c.8-4.6 3.3-7 6.5-7s5.7 2.4 6.5 7"/><path d="M18.5 19.5c1-.9 2.2-1.4 3.5-1.4 2.8 0 4.8 2.2 5.5 6"/></svg></span><span class="whyid__t">男女スタッフ</span><span class="whyid__s">男性も通いやすい</span></li><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="13" width="18" height="13" rx="2.5"/><path d="M11 13V9.5a5 5 0 0 1 10 0V13"/><path d="M16 18v3"/></svg></span><span class="whyid__t">完全予約制</span><span class="whyid__s">貸切もできる</span></li><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19.5A9 9 0 0 1 12.5 6a9.5 9.5 0 1 0 9.5 13.5z"/></svg></span><span class="whyid__t">夜20時以降OK</span><span class="whyid__s">当日受付もOK</span></li></ul>
           </div>
-          <div class="whyid">
-            <p class="aside-list__title">Why Id</p>
-            <ul class="whyid__list"><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="6" width="22" height="16" rx="2.5"/><path d="M11 27h10M16 22v5"/><path d="M9 17l4-4 3 3 6-6"/></svg></span><span class="whyid__t">AI肌診断</span><span class="whyid__s">肌の状態を数値で確認</span></li><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4l3.2 6.6 7.3 1-5.3 5.1 1.3 7.2L16 20.5l-6.5 3.4 1.3-7.2-5.3-5.1 7.3-1z"/></svg></span><span class="whyid__t">CHRISTINA</span><span class="whyid__s">正規取扱店のプロ用ケア</span></li><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 5c3.5 4.5 7 8.2 7 12.5a7 7 0 0 1-14 0C9 13.2 12.5 9.5 16 5z"/><path d="M13 18.5a3 3 0 0 0 3 3"/></svg></span><span class="whyid__t">LED脱毛</span><span class="whyid__s">痛みを抑えて産毛・白髪も</span></li><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="10" r="3.5"/><circle cx="22" cy="11" r="3"/><path d="M4.5 25c.8-4.6 3.3-7 6.5-7s5.7 2.4 6.5 7"/><path d="M18.5 19.5c1-.9 2.2-1.4 3.5-1.4 2.8 0 4.8 2.2 5.5 6"/></svg></span><span class="whyid__t">男女スタッフ</span><span class="whyid__s">男性も通いやすい</span></li><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="13" width="18" height="13" rx="2.5"/><path d="M11 13V9.5a5 5 0 0 1 10 0V13"/><path d="M16 18v3"/></svg></span><span class="whyid__t">完全予約制</span><span class="whyid__s">貸切もできる</span></li><li class="whyid__item"><span class="whyid__ic"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19.5A9 9 0 0 1 12.5 6a9.5 9.5 0 1 0 9.5 13.5z"/></svg></span><span class="whyid__t">夜20時以降OK</span><span class="whyid__s">当日受付もOK</span></li></ul>
-          </div>
-        </div>
       </div>
     </section>
 
