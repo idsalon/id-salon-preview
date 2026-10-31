@@ -2606,3 +2606,21 @@ body.fmap-sheet-open .totop { opacity: 0; pointer-events: none; }
   .hrc__pill b { font-size: 12px; }
   .hrc__op { font-size: 12px; }
 }
+
+/* 脱毛：Id の LED 脱毛の説明（図解の前） */
+.ledx { padding: 16px 14px; border-radius: 16px; background: linear-gradient(140deg, #1d2a72, #34449e); color: #fff; margin-bottom: 18px; }
+.ledx__en { font-family: var(--font-serif); font-size: 10px; letter-spacing: .28em; text-transform: uppercase; opacity: .75; }
+.ledx__title { margin-top: 4px; font-size: 17px; font-weight: 700; line-height: 1.5; letter-spacing: .04em; }
+.ledx__lead { margin-top: 6px; font-size: 12px; line-height: 1.8; color: rgba(255,255,255,.88); }
+.ledx__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin-top: 12px; }
+.ledx__m { display: flex; flex-direction: column; gap: 2px; padding: 10px; border-radius: 12px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16); }
+.ledx__ic { color: #cfd6ff; margin-bottom: 2px; }
+.ledx__m b { font-size: 13px; letter-spacing: .02em; }
+.ledx__m span:last-child { font-size: 10.5px; line-height: 1.55; color: rgba(255,255,255,.8); }
+.ledx__note { margin-top: 8px; font-size: 10px; color: rgba(255,255,255,.65); }
+.hrc__sub { font-size: 14px; font-weight: 700; color: var(--c-ink); margin: 0 0 4px; }
+@media (min-width: 600px) {
+  .ledx { padding: 26px 28px; } .ledx__title { font-size: 22px; } .ledx__lead { font-size: 14px; }
+  .ledx__list { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; } .ledx__m b { font-size: 15px; } .ledx__m span:last-child { font-size: 12px; }
+  .hrc__sub { font-size: 16px; }
+}
