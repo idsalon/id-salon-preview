@@ -1944,3 +1944,17 @@ section[class*="series--"] { border-top: 3px solid var(--series-soft); }
 .qp__block--price { padding-top: 16px; border-top: 1px solid var(--c-line); }
 .qp__more { display: block; margin-top: 14px; text-align: center; font-size: 13px; color: var(--c-brand); text-decoration: underline; text-underline-offset: 4px; }
 @media (min-width: 900px) { .qp__hero { aspect-ratio: 21 / 9; } .qp__catch { font-size: 24px; } }
+
+/* Id のこだわり：枠・背景をやめて「読むだけ」の見た目に。2列で詰める */
+.section--why { padding-block: 40px 36px; }
+.section--why .section__head { margin-bottom: 18px; }
+.section--why .section__title { font-size: 22px; }
+.whyid__list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 16px; }
+.whyid__item { flex-direction: row; align-items: flex-start; text-align: left; gap: 10px; padding: 0; background: none; border: 0; border-radius: 0; }
+.whyid__ic { flex: none; width: 24px; height: 24px; background: none; margin: 1px 0 0; color: var(--c-brand); }
+.whyid__ic svg { width: 22px; height: 22px; }
+.whyid__item > .whyid__t, .whyid__item > .whyid__s { display: block; }
+.whyid__txt { display: flex; flex-direction: column; min-width: 0; }
+.whyid__t { font-size: 13px; line-height: 1.4; }
+.whyid__s { font-size: 11px; line-height: 1.5; color: var(--c-ink-3); }
+@media (min-width: 900px) { .whyid__list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 28px; } .section--why .section__title { font-size: 26px; } }
