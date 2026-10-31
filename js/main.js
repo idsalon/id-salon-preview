@@ -167,14 +167,7 @@
   function openSheet() {
     if (!mq.matches) return;
     document.body.classList.add('fmap-sheet-open');
-    // 選んだ点がシートの上に見えるよう、必要なときだけ少し動かす
-    if (lastSpot && sheet) {
-      // シートの実際の高さを測り、選んだ点がシートの上に見えるように少しだけ動かす
-      requestAnimationFrame(function () {
-        var r = lastSpot.getBoundingClientRect(), limit = window.innerHeight - sheet.offsetHeight - 16;
-        if (r.bottom > limit) window.scrollBy({ top: r.bottom - limit, behavior: 'smooth' });
-      });
-    }
+    // 後ろのページは動かさない（オーナー指示 10/31）
     var t = sheet && sheet.querySelector('.fmap__panel.is-active .fmap__title');
     if (t) setTimeout(function () { t.focus({ preventScroll: true }); }, 50);
   }
