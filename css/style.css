@@ -2538,3 +2538,15 @@ body.fmap-sheet-open .totop { opacity: 0; pointer-events: none; }
   .hrc__dots i { width: 10px; height: 10px; }
   .hrc__pill { font-size: 13px; padding: 8px 18px; } .hrc__pill b { font-size: 18px; }
 }
+/* 毛のしくみ（バルジ領域＝司令塔／毛根の奥＝ジョウロ） */
+.hrc__anat { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 12px; align-items: center; margin-bottom: 14px; padding: 12px; border-radius: 14px; background: #f7f8fc; }
+.hrc__anat-fig { width: 100%; height: auto; }
+.hrc__anat-list { display: grid; gap: 10px; }
+.hrc__anat-item { display: flex; flex-direction: column; gap: 2px; padding-left: 12px; border-left: 3px solid; }
+.hrc__anat-item--bulge { border-color: #f5a04a; } .hrc__anat-item--papilla { border-color: #d9534f; }
+.hrc__anat-item b { font-size: 13px; color: var(--c-ink); }
+.hrc__anat-item span { font-size: 11px; line-height: 1.6; color: var(--c-ink-2); }
+.hrc__anat-item em { font-style: normal; font-size: 10px; font-weight: 700; letter-spacing: .04em; }
+.hrc__anat-item--bulge em { color: #c9762e; } .hrc__anat-item--papilla em { color: #c0392b; }
+@media (min-width: 600px) { .hrc__anat { grid-template-columns: 180px minmax(0, 1fr); gap: 24px; padding: 18px 24px; } .hrc__anat-item b { font-size: 15px; } .hrc__anat-item span { font-size: 13px; } .hrc__anat-item em { font-size: 12px; } }
+@media (max-width: 599px) { .hrc__anat { grid-template-columns: 132px minmax(0, 1fr); } }

@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=66">
+  <link rel="stylesheet" href="css/style.css?v=68">
   <!-- 構造化データ（Google 向け店舗情報） -->
   <script type="application/ld+json">
   {
@@ -114,30 +114,45 @@
 </defs></svg>
       <div class="container">
         <div class="section__head"><p class="section__en">Comparison</p><h2 class="section__title">IPL・SHR・LED の違い</h2></div>
+        <div class="hrc__anat">
+          <svg class="hrc__anat-fig" viewBox="0 0 200 170" aria-hidden="true">
+            <rect x="0" y="22" width="200" height="148" rx="10" fill="#f8e3dc"/><rect x="0" y="22" width="200" height="12" rx="6" fill="#f2cfc3"/>
+            <path d="M86 34 C80 70 80 110 84 140 Q100 158 116 140 C120 110 120 70 114 34" fill="#f3d6cc" stroke="#e5b9aa"/>
+            <path d="M100 2 C102 30 98 70 100 132" stroke="#3a2a24" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+            <ellipse cx="100" cy="140" rx="9" ry="10" fill="#3a2a24"/>
+            <ellipse cx="100" cy="150" rx="6" ry="4" fill="#d9534f" opacity=".85"/>
+            <ellipse cx="118" cy="62" rx="9" ry="13" fill="#f5a04a" opacity=".85"/>
+            <line x1="127" y1="62" x2="150" y2="52" stroke="#9aa3c4"/><line x1="94" y1="148" x2="62" y2="150" stroke="#9aa3c4"/>
+          </svg>
+          <ul class="hrc__anat-list">
+            <li class="hrc__anat-item hrc__anat-item--bulge"><b>バルジ領域</b><span>毛を生やす「司令塔」。<br>「生えて」の合図を出す</span><em>SHR が届く</em></li>
+            <li class="hrc__anat-item hrc__anat-item--papilla"><b>毛根の奥（毛乳頭）</b><span>栄養を受け取り毛を育てる「ジョウロ」</span><em>IPL が届く</em></li>
+          </ul>
+        </div>
         <div class="hrc__grid">
           <div class="hrc__card hrc__card--ipl">
             <p class="hrc__name">IPL<small>熱破壊式</small></p>
             <div class="hrc__fig"><svg class="hrc__pulse" viewBox="0 0 120 36" aria-hidden="true"><line x1="2" y1="32.5" x2="118" y2="32.5" stroke="#cfd4e2"/><rect x="54" y="4" width="12" height="28" rx="3" fill="#c0392b"/></svg><p class="hrc__cap">強い光を一瞬</p></div>
-            <div class="hrc__fig"><svg class="hrc__skin" viewBox="0 0 120 80" aria-hidden="true"><rect x="0" y="16" width="120" height="64" rx="6" fill="#f8e3dc"/><rect x="0" y="16" width="120" height="8" rx="4" fill="#f2cfc3"/><ellipse cx="60" cy="60" rx="11" ry="9" fill="url(#hr-hot)"/><path d="M60 2 C61 10 59 18 60 26 L60 56" stroke="#3a2a24" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="60" cy="60" rx="4" ry="5" fill="#3a2a24"/></svg><p class="hrc__cap">毛根に熱を集中</p></div>
+            <div class="hrc__fig"><svg class="hrc__skin" viewBox="0 0 120 80" aria-hidden="true"><rect x="0" y="16" width="120" height="64" rx="6" fill="#f8e3dc"/><rect x="0" y="16" width="120" height="8" rx="4" fill="#f2cfc3"/><ellipse cx="60" cy="60" rx="11" ry="9" fill="url(#hr-hot)"/><path d="M60 2 C61 10 59 18 60 26 L60 56" stroke="#3a2a24" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="60" cy="60" rx="4" ry="5" fill="#3a2a24"/></svg><p class="hrc__cap">ジョウロに熱</p></div>
             <ul class="hrc__rate"><li><span>痛みの少なさ</span><span class="hrc__dots" aria-label="1段階中1"><i class="on"></i><i class=""></i><i class=""></i></span></li><li><span>太く濃い毛</span><span class="hrc__dots" aria-label="3段階中3"><i class="on"></i><i class="on"></i><i class="on"></i></span></li><li><span>産毛・細い毛</span><span class="hrc__dots" aria-label="1段階中1"><i class="on"></i><i class=""></i><i class=""></i></span></li><li><span>肌へのやさしさ</span><span class="hrc__dots" aria-label="1段階中1"><i class="on"></i><i class=""></i><i class=""></i></span></li></ul>
           </div>
           <div class="hrc__card hrc__card--shr">
             <p class="hrc__name">SHR<small>蓄熱式</small></p>
             <div class="hrc__fig"><svg class="hrc__pulse" viewBox="0 0 120 36" aria-hidden="true"><line x1="2" y1="32.5" x2="118" y2="32.5" stroke="#cfd4e2"/><rect x="8" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="19" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="30" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="41" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="52" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="63" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="74" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="85" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="96" y="22" width="6" height="10" rx="2" fill="#e08a3c"/><rect x="107" y="22" width="6" height="10" rx="2" fill="#e08a3c"/></svg><p class="hrc__cap">弱い光を何度も</p></div>
-            <div class="hrc__fig"><svg class="hrc__skin" viewBox="0 0 120 80" aria-hidden="true"><rect x="0" y="16" width="120" height="64" rx="6" fill="#f8e3dc"/><rect x="0" y="16" width="120" height="8" rx="4" fill="#f2cfc3"/><rect x="14" y="30" width="92" height="20" rx="10" fill="url(#hr-warm)"/><path d="M60 2 C61 10 59 18 60 26 L60 56" stroke="#3a2a24" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="60" cy="60" rx="4" ry="5" fill="#3a2a24"/></svg><p class="hrc__cap">広くじわじわ温める</p></div>
+            <div class="hrc__fig"><svg class="hrc__skin" viewBox="0 0 120 80" aria-hidden="true"><rect x="0" y="16" width="120" height="64" rx="6" fill="#f8e3dc"/><rect x="0" y="16" width="120" height="8" rx="4" fill="#f2cfc3"/><rect x="14" y="30" width="92" height="20" rx="10" fill="url(#hr-warm)"/><path d="M60 2 C61 10 59 18 60 26 L60 56" stroke="#3a2a24" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="60" cy="60" rx="4" ry="5" fill="#3a2a24"/></svg><p class="hrc__cap">司令塔に熱</p></div>
             <ul class="hrc__rate"><li><span>痛みの少なさ</span><span class="hrc__dots" aria-label="3段階中3"><i class="on"></i><i class="on"></i><i class="on"></i></span></li><li><span>太く濃い毛</span><span class="hrc__dots" aria-label="1段階中1"><i class="on"></i><i class=""></i><i class=""></i></span></li><li><span>産毛・細い毛</span><span class="hrc__dots" aria-label="3段階中3"><i class="on"></i><i class="on"></i><i class="on"></i></span></li><li><span>肌へのやさしさ</span><span class="hrc__dots" aria-label="3段階中3"><i class="on"></i><i class="on"></i><i class="on"></i></span></li></ul>
           </div>
           <div class="hrc__card hrc__card--led">
             <p class="hrc__name">LED<small>Id の脱毛</small></p>
             <div class="hrc__fig"><svg class="hrc__pulse" viewBox="0 0 120 36" aria-hidden="true"><line x1="2" y1="32.5" x2="118" y2="32.5" stroke="#cfd4e2"/><path d="M6 32 C 20 32 22 14 40 14 L 80 14 C 98 14 100 32 114 32 Z" fill="url(#hr-led)"/></svg><p class="hrc__cap">やさしくじっくり</p></div>
-            <div class="hrc__fig"><svg class="hrc__skin" viewBox="0 0 120 80" aria-hidden="true"><rect x="0" y="16" width="120" height="64" rx="6" fill="#f8e3dc"/><rect x="0" y="16" width="120" height="8" rx="4" fill="#f2cfc3"/><rect x="14" y="30" width="92" height="20" rx="10" fill="url(#hr-warm)"/><ellipse cx="60" cy="60" rx="10" ry="8" fill="url(#hr-hot2)"/><path d="M60 2 C61 10 59 18 60 26 L60 56" stroke="#3a2a24" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="60" cy="60" rx="4" ry="5" fill="#3a2a24"/></svg><p class="hrc__cap">両方に届く</p></div>
+            <div class="hrc__fig"><svg class="hrc__skin" viewBox="0 0 120 80" aria-hidden="true"><rect x="0" y="16" width="120" height="64" rx="6" fill="#f8e3dc"/><rect x="0" y="16" width="120" height="8" rx="4" fill="#f2cfc3"/><rect x="14" y="30" width="92" height="20" rx="10" fill="url(#hr-warm)"/><ellipse cx="60" cy="60" rx="10" ry="8" fill="url(#hr-hot2)"/><path d="M60 2 C61 10 59 18 60 26 L60 56" stroke="#3a2a24" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="60" cy="60" rx="4" ry="5" fill="#3a2a24"/></svg><p class="hrc__cap">両方に熱</p></div>
             <ul class="hrc__rate"><li><span>痛みの少なさ</span><span class="hrc__dots" aria-label="3段階中3"><i class="on"></i><i class="on"></i><i class="on"></i></span></li><li><span>太く濃い毛</span><span class="hrc__dots" aria-label="3段階中3"><i class="on"></i><i class="on"></i><i class="on"></i></span></li><li><span>産毛・細い毛</span><span class="hrc__dots" aria-label="3段階中3"><i class="on"></i><i class="on"></i><i class="on"></i></span></li><li><span>肌へのやさしさ</span><span class="hrc__dots" aria-label="3段階中3"><i class="on"></i><i class="on"></i><i class="on"></i></span></li></ul>
           </div>
         </div>
-        <div class="hrc__eq" aria-label="IPLのしっかりとSHRのやさしさをあわせたのがLED">
-          <span class="hrc__pill hrc__pill--ipl"><b>IPL</b>しっかり</span><span class="hrc__op">＋</span><span class="hrc__pill hrc__pill--shr"><b>SHR</b>やさしさ</span><span class="hrc__op">＝</span><span class="hrc__pill hrc__pill--led"><b>LED</b>次世代ハイブリッド脱毛</span>
+        <div class="hrc__eq" aria-label="IPLはジョウロ、SHRは司令塔に届く。両方に届くのがLED">
+          <span class="hrc__pill hrc__pill--ipl"><b>IPL</b>ジョウロに</span><span class="hrc__op">＋</span><span class="hrc__pill hrc__pill--shr"><b>SHR</b>司令塔に</span><span class="hrc__op">＝</span><span class="hrc__pill hrc__pill--led"><b>LED</b>次世代ハイブリッド脱毛</span>
         </div>
-        <p class="section__note" style="margin-top:10px">※ ●の数は Id の考え方による目安です。効果・痛みの感じ方には個人差があります。</p>
+        <p class="section__note" style="margin-top:10px">※ 熱を届けて、毛を育てる働きを弱めていく仕組みです。●の数は Id の考え方による目安で、効果・痛みの感じ方には個人差があります。</p>
       </div>
     </section>
 
