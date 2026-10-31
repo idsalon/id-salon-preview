@@ -2550,3 +2550,18 @@ body.fmap-sheet-open .totop { opacity: 0; pointer-events: none; }
 .hrc__anat-item--bulge em { color: #c9762e; } .hrc__anat-item--papilla em { color: #c0392b; }
 @media (min-width: 600px) { .hrc__anat { grid-template-columns: 180px minmax(0, 1fr); gap: 24px; padding: 18px 24px; } .hrc__anat-item b { font-size: 15px; } .hrc__anat-item span { font-size: 13px; } .hrc__anat-item em { font-size: 12px; } }
 @media (max-width: 599px) { .hrc__anat { grid-template-columns: 132px minmax(0, 1fr); } }
+
+/* 脱毛図解 v2：導入文・毛の断面イラスト・目盛りメーター */
+.hrc__intro { font-size: 13px; line-height: 1.8; color: var(--c-ink-2); margin: -4px 0 12px; }
+.hrc__intro b { color: var(--c-ink); font-family: var(--font-serif); font-size: 15px; letter-spacing: .04em; }
+.hrc__anat { grid-template-columns: 112px minmax(0, 1fr); background: linear-gradient(135deg, #fbf4f1, #f4f6fc); }
+.hrc__anat-fig { width: 112px; height: auto; border-radius: 10px; }
+.hrc__skin { max-width: 96px; border-radius: 8px; }
+.hrc__rate li { gap: 3px; }
+.hrc__gauge { position: relative; display: block; width: 100%; height: 6px; border-radius: 3px; background: #e7e9f1; overflow: hidden; }
+.hrc__gauge i { position: absolute; inset: 0 auto 0 0; width: calc(var(--v) / 3 * 100%); border-radius: 3px; background: linear-gradient(90deg, #b9bfd6, #8d95b8); }
+.hrc__gauge::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0 calc(100% / 6 - 1px), rgba(255,255,255,.95) calc(100% / 6 - 1px) calc(100% / 6)); pointer-events: none; }
+.hrc__card--ipl .hrc__gauge i { background: linear-gradient(90deg, #f0b2a6, #c0392b); }
+.hrc__card--shr .hrc__gauge i { background: linear-gradient(90deg, #f7d0a2, #d9822b); }
+.hrc__card--led .hrc__gauge i { background: linear-gradient(90deg, #8d9be0, #27378f); }
+@media (min-width: 600px) { .hrc__anat { grid-template-columns: 160px minmax(0, 1fr); } .hrc__anat-fig { width: 160px; } .hrc__skin { max-width: 130px; } .hrc__gauge { width: 72px; height: 7px; } .hrc__intro { font-size: 14px; } }
