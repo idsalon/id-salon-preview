@@ -2431,3 +2431,5 @@ body.fmap-sheet-open .totop { opacity: 0; pointer-events: none; }
 .qp.has-page .qpbar { gap: 5px; padding-right: 6px; }
 .qpbar__btn { padding: 0 10px; font-size: 11.5px; }
 .qpbar__close { position: sticky; right: 0; box-shadow: -10px 0 10px 2px rgba(255,255,255,.95); }
+/* iPhone Duo を開いたとき（縦626px・横890px）など広めの画面：丸いナビを中央に */
+@media (min-width: 600px) { .qnav2__list { justify-content: center; } }
