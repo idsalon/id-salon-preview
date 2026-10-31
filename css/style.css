@@ -2568,3 +2568,20 @@ body.fmap-sheet-open .totop { opacity: 0; pointer-events: none; }
 .hrc__anat-fig { width: 140px; } .hrc__anat { grid-template-columns: 140px minmax(0, 1fr); }
 .hrc__anat-fig text { font-family: var(--font-jp); }
 @media (min-width: 600px) { .hrc__anat { grid-template-columns: 200px minmax(0, 1fr); } .hrc__anat-fig { width: 200px; } }
+
+/* 脱毛図解 v3（オーナー支給イラスト） */
+.hrc__anat { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) !important; padding: 10px; gap: 12px; }
+.hrc__anat-img { width: 100%; height: auto; border-radius: 12px; display: block; }
+.hrc__img { width: 100%; height: auto; border-radius: 8px; display: block; }
+.hrc__card { padding: 10px 6px; }
+.hrc__name { font-size: 22px; }
+.hrc__card--shr .hrc__name { color: #d9822b; } .hrc__card--ipl .hrc__name { color: #c0392b; }
+.hrc__txt { font-size: 10.5px; line-height: 1.55; color: var(--c-ink); min-height: 4.6em; }
+.hrc__gauge--6 i { width: calc(var(--v) / 6 * 100%); }
+.hrc__card--led { border-width: 1px; }
+@media (max-width: 599px) {
+  .hrc__anat { grid-template-columns: 1fr !important; }
+  .hrc__anat-list { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .hrc__anat-item b { font-size: 12px; } .hrc__anat-item span { font-size: 10.5px; }
+}
+@media (min-width: 600px) { .hrc__txt { font-size: 13px; } .hrc__name { font-size: 32px; } .hrc__card { padding: 16px 14px; } }
