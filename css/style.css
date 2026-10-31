@@ -2102,3 +2102,296 @@ section[class*="series--"] { border-top: 3px solid var(--series-soft); }
   .footer__links, .footer__sns, .footer__legal { margin-top: 0 !important; padding: 0 !important; }
   .footer__copy { margin-top: 0 !important; }
 }
+
+/* スマホのメニュー：閉じているときに画面の右外へ置かない（iPhone でページ全体が縮んで見える原因）。フェードで開閉 */
+@media (max-width: 899px) {
+  .nav { transform: none; visibility: hidden; pointer-events: none; transition: opacity .25s var(--ease), visibility 0s .25s; }
+  .nav.is-open { visibility: visible; pointer-events: auto; transition: opacity .25s var(--ease), visibility 0s; }
+}
+html, body { overflow-x: clip; }
+
+/* 痩身の3ステップ：白いカードの上の白文字で読めなかったのを修正 */
+.section--dark .step--img { background: #fff; }
+.section--dark .step--img h3 { color: var(--c-ink); }
+.section--dark .step--img p { color: var(--c-ink-2); }
+
+/* =========================================================
+   v58 スマホ（〜599px）：各ページの部品をまとめてコンパクトに
+   ========================================================= */
+@media (max-width: 599px) {
+  /* ページ上部 */
+  .page-hero { padding: 28px 0 20px; }
+  .page-hero--img { padding: 36px 0 28px; }
+  .page-hero__en { font-size: 10px; margin-bottom: 4px; }
+  .page-hero__title { font-size: 22px; }
+  .page-hero__lead { margin-top: 8px; font-size: 12px; line-height: 1.8; }
+  .page-hero__meta { margin-top: 10px; gap: 6px; }
+  .page-hero__meta li { font-size: 10px; padding: 3px 8px; }
+  .breadcrumb { margin-bottom: 8px; font-size: 10px; }
+
+  /* 紹介ブロック */
+  .detail { gap: 16px; }
+  .detail__catch, .ub-intro__catch, .mech-intro__catch { font-size: 16px; line-height: 1.6; margin-bottom: 10px; }
+  .detail__body > p, .ub-intro__text > p, .mech-intro__text > p { font-size: 13px; line-height: 1.85; }
+  .detail__img, .ub-intro__media img { max-height: 220px; object-fit: cover; width: 100%; }
+  .points { margin-top: 14px; }
+  .points > div { padding: 10px 0; }
+  .points dt { font-size: 11px; margin-bottom: 2px; }
+  .points dd, .points li { font-size: 12px; line-height: 1.75; }
+  .ub-intro { gap: 16px; }
+  .ub-intro__tags { margin-top: 10px; gap: 6px; }
+  .ub-intro__tags li { font-size: 11px; padding: 3px 10px; }
+
+  /* 数字のタイル（施術時間・初回価格など） */
+  .stats { margin-top: 18px; gap: 8px; }
+  .stat { padding: 10px 12px; gap: 2px; }
+  .stat__label { font-size: 10px; letter-spacing: .1em; }
+  .stat__num { font-size: 22px; }
+  .stat__sub { font-size: 10px; }
+
+  /* 痩身メニューのカード */
+  .ub-menus { gap: 8px; }
+  .ub-menu { padding: 14px 14px 12px; border-top-width: 2px; }
+  .ub-menu__num { font-size: 10px; }
+  .ub-menu__name { font-size: 15px; }
+  .ub-menu__time { font-size: 11px; }
+  .ub-menu__desc { font-size: 12px; line-height: 1.7; margin-top: 4px; }
+  .ub-menu__for { font-size: 11px; margin-top: 2px; }
+  .ub-menu__price { margin-top: 8px; padding-top: 8px; gap: 8px; }
+  .ub-menu__price strong { font-size: 18px; }
+  .ub-menu__note { font-size: 10px; margin-top: 4px; }
+  .ub-panel__media { max-height: 180px; overflow: hidden; }
+  .ub-panel__media img { width: 100%; height: 180px; object-fit: cover; object-position: 50% 30%; }
+
+  /* 3ステップ（画像つき）：画像を低く */
+  .step--img img { height: 150px; object-fit: cover; }
+  .step--img h3 { font-size: 14px; margin-bottom: 2px; }
+  .step--img p { font-size: 12px; line-height: 1.7; }
+  .steps--img { gap: 8px; }
+
+  /* 感覚・通うペース */
+  .quote-card { padding: 16px; }
+  .quote-card__title { font-size: 16px; margin: 2px 0 8px; }
+  .quote-card__text { font-size: 13px; line-height: 1.85; }
+  .timeline__list li { padding-bottom: 10px; }
+  .timeline__when { font-size: 13px; }
+  .timeline__what { font-size: 12px; line-height: 1.7; }
+  .ub-two { gap: 16px; }
+
+  /* ビフォーアフター */
+  .ba { margin-top: 20px; }
+  .ba__figs { gap: 10px; }
+  .ba__fig { padding: 8px; }
+  .ba__fig figcaption { font-size: 11px; margin-top: 6px; }
+
+  /* 料金表 */
+  .detail-price { margin-top: 24px; padding-top: 20px; }
+  .menu__category { font-size: 16px; margin-bottom: 10px; }
+  .menu__item { padding: 10px 0; gap: 6px; }
+  .menu__name { font-size: 14px; }
+  .menu__desc { font-size: 11px; line-height: 1.6; }
+  .menu__coupon { font-size: 18px; }
+
+  /* 予約の帯・ほかのメニュー */
+  .cta-band { margin-top: 24px; padding: 20px 16px; }
+  .cta-band__title { font-size: 16px; margin-bottom: 4px; }
+  .cta-band__text { font-size: 12px; margin-bottom: 12px; }
+  .other-svc { margin-top: 24px; }
+
+  /* LED のメリット・ヒゲの3つの光・準備 */
+  .led__grid { gap: 8px; }
+  .led__card { padding: 12px; }
+  .led__card h3 { font-size: 14px; margin: 4px 0 2px; }
+  .led__card p { font-size: 12px; line-height: 1.7; }
+  .led__icon { width: 32px; height: 32px; }
+  .triple__title { font-size: 20px; }
+  .triple__lead { font-size: 13px; line-height: 1.85; }
+  .triple__node { width: 72px; height: 72px; font-size: 16px; }
+  .triple__label { font-size: 10px; }
+  .prep__t { font-size: 12px; line-height: 1.75; }
+
+  /* about：選ばれる理由・FAQ */
+  .features { margin-top: 20px; }
+  .feature { padding: 14px 0; }
+  .feature__title { font-size: 14px; margin: 4px 0; }
+  .feature__text { font-size: 12px; line-height: 1.75; }
+  .faq__item summary { padding: 12px 0; font-size: 13px; }
+  .faq__item p { font-size: 12px; line-height: 1.8; }
+}
+
+
+/* 折りたたみスマホを開いたとき・小さなタブレット（600〜899px）にも、スマホ同様のコンパクトさを適用 */
+@media (min-width: 600px) and (max-width: 899px) {
+  .section { padding: 40px 0; }
+  .section__head { margin-bottom: 20px; }
+  .section__en { font-size: 10px; margin-bottom: 4px; }
+  .section__title { font-size: 20px; line-height: 1.45; }
+  .section__wm { display: none; }
+  .sec-row { margin-bottom: 18px; }
+
+  .steps:not(.steps--img) { gap: 0; border-top: 1px solid var(--c-line); }
+  .steps:not(.steps--img) .step { display: grid; grid-template-columns: 28px minmax(0, 1fr); column-gap: 8px; padding: 12px 0; background: none; border: 0; border-bottom: 1px solid var(--c-line); }
+  .steps:not(.steps--img) .step__num { grid-row: span 2; font-size: 15px; line-height: 1.4; margin: 0; }
+  .steps:not(.steps--img) .step h3 { font-size: 14px; letter-spacing: .04em; margin-bottom: 2px; }
+  .steps:not(.steps--img) .step p { font-size: 12px; line-height: 1.7; }
+  .section--dark .steps:not(.steps--img) .step { background: none; border-color: rgba(255,255,255,.14); }
+  .step--img > div { padding: 12px 14px 14px; }
+
+  .series__grid, .series__list { gap: 8px; }
+  .series__card { padding: 12px 12px 12px; min-height: 0; }
+  .series__name { font-size: 14px; letter-spacing: .1em; }
+  .series__ja { font-size: 10px; margin: 0; }
+  .series__desc { font-size: 11px; line-height: 1.5; margin-top: 4px; }
+  .series__arrow { display: none; }
+
+  .series__cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .series__card { padding: 10px 10px 12px; border-radius: 12px; }
+  .series__group { font-size: 12px; margin: 14px 0 8px; }
+
+  .series__cards .series__card .series__name { font-size: 13px !important; letter-spacing: .08em; line-height: 1.35; }
+  .series__cards .series__card .series__ja { font-size: 10px; line-height: 1.4; }
+  .official { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 12px; align-items: center; padding: 14px; border-radius: 12px; }
+  .official__badge { width: 72px !important; height: auto; margin: 0 !important; }
+  .official__title { font-size: 13px !important; margin-bottom: 4px !important; letter-spacing: .04em; }
+  .official__text, .official__text p { font-size: 11px !important; line-height: 1.6 !important; }
+
+  .reserve { padding: 32px 0; }
+  .reserve__title { font-size: 20px; letter-spacing: .14em; margin-bottom: 10px; }
+  .reserve__lead { font-size: 12px; line-height: 1.8; margin-bottom: 18px; }
+  .reserve__buttons { gap: 8px; }
+  .reserve__buttons .btn--lg { min-height: 0; padding: 12px 16px; }
+  .reserve__note { margin-top: 16px; font-size: 11px; line-height: 1.75; }
+
+  .access--top .info__row, .info__row { grid-template-columns: 72px minmax(0, 1fr); gap: 10px; padding: 10px 0; font-size: 13px; line-height: 1.6; }
+  .info__row dt { font-size: 11px; letter-spacing: .08em; }
+  .info__sub { font-size: 11px; line-height: 1.6; }
+  .paylogos { margin-top: 6px; }
+  .paylogos__list img { height: 22px !important; width: auto !important; }
+
+  .footer { padding: 28px 0 calc(84px + env(safe-area-inset-bottom)); }
+  .footer__logo { width: 56px; }
+  .footer__christina { margin-top: 8px; font-size: 11px; }
+  .footer__links { gap: 6px 16px; margin-top: 16px; }
+  .footer__links a { font-size: 12px; letter-spacing: .08em; }
+  .footer__sns, .footer__legal { margin-top: 12px; gap: 6px 16px; }
+  .footer__sns a, .footer__legal a { font-size: 11px; }
+  .footer__copy { margin-top: 14px; font-size: 10px; }
+
+  .footer__inner { gap: 14px !important; row-gap: 14px !important; }
+  .footer__links, .footer__sns, .footer__legal { margin-top: 0 !important; padding: 0 !important; }
+  .footer__copy { margin-top: 0 !important; }
+
+  /* ページ上部 */
+  .page-hero { padding: 28px 0 20px; }
+  .page-hero--img { padding: 36px 0 28px; }
+  .page-hero__en { font-size: 10px; margin-bottom: 4px; }
+  .page-hero__title { font-size: 22px; }
+  .page-hero__lead { margin-top: 8px; font-size: 12px; line-height: 1.8; }
+  .page-hero__meta { margin-top: 10px; gap: 6px; }
+  .page-hero__meta li { font-size: 10px; padding: 3px 8px; }
+  .breadcrumb { margin-bottom: 8px; font-size: 10px; }
+
+  /* 紹介ブロック */
+  .detail { gap: 16px; }
+  .detail__catch, .ub-intro__catch, .mech-intro__catch { font-size: 16px; line-height: 1.6; margin-bottom: 10px; }
+  .detail__body > p, .ub-intro__text > p, .mech-intro__text > p { font-size: 13px; line-height: 1.85; }
+  .detail__img, .ub-intro__media img { max-height: 220px; object-fit: cover; width: 100%; }
+  .points { margin-top: 14px; }
+  .points > div { padding: 10px 0; }
+  .points dt { font-size: 11px; margin-bottom: 2px; }
+  .points dd, .points li { font-size: 12px; line-height: 1.75; }
+  .ub-intro { gap: 16px; }
+  .ub-intro__tags { margin-top: 10px; gap: 6px; }
+  .ub-intro__tags li { font-size: 11px; padding: 3px 10px; }
+
+  /* 数字のタイル（施術時間・初回価格など） */
+  .stats { margin-top: 18px; gap: 8px; }
+  .stat { padding: 10px 12px; gap: 2px; }
+  .stat__label { font-size: 10px; letter-spacing: .1em; }
+  .stat__num { font-size: 22px; }
+  .stat__sub { font-size: 10px; }
+
+  /* 痩身メニューのカード */
+  .ub-menus { gap: 8px; }
+  .ub-menu { padding: 14px 14px 12px; border-top-width: 2px; }
+  .ub-menu__num { font-size: 10px; }
+  .ub-menu__name { font-size: 15px; }
+  .ub-menu__time { font-size: 11px; }
+  .ub-menu__desc { font-size: 12px; line-height: 1.7; margin-top: 4px; }
+  .ub-menu__for { font-size: 11px; margin-top: 2px; }
+  .ub-menu__price { margin-top: 8px; padding-top: 8px; gap: 8px; }
+  .ub-menu__price strong { font-size: 18px; }
+  .ub-menu__note { font-size: 10px; margin-top: 4px; }
+  .ub-panel__media { max-height: 180px; overflow: hidden; }
+  .ub-panel__media img { width: 100%; height: 180px; object-fit: cover; object-position: 50% 30%; }
+
+  /* 3ステップ（画像つき）：画像を低く */
+  .step--img img { height: 150px; object-fit: cover; }
+  .step--img h3 { font-size: 14px; margin-bottom: 2px; }
+  .step--img p { font-size: 12px; line-height: 1.7; }
+  .steps--img { gap: 8px; }
+
+  /* 感覚・通うペース */
+  .quote-card { padding: 16px; }
+  .quote-card__title { font-size: 16px; margin: 2px 0 8px; }
+  .quote-card__text { font-size: 13px; line-height: 1.85; }
+  .timeline__list li { padding-bottom: 10px; }
+  .timeline__when { font-size: 13px; }
+  .timeline__what { font-size: 12px; line-height: 1.7; }
+  .ub-two { gap: 16px; }
+
+  /* ビフォーアフター */
+  .ba { margin-top: 20px; }
+  .ba__figs { gap: 10px; }
+  .ba__fig { padding: 8px; }
+  .ba__fig figcaption { font-size: 11px; margin-top: 6px; }
+
+  /* 料金表 */
+  .detail-price { margin-top: 24px; padding-top: 20px; }
+  .menu__category { font-size: 16px; margin-bottom: 10px; }
+  .menu__item { padding: 10px 0; gap: 6px; }
+  .menu__name { font-size: 14px; }
+  .menu__desc { font-size: 11px; line-height: 1.6; }
+  .menu__coupon { font-size: 18px; }
+
+  /* 予約の帯・ほかのメニュー */
+  .cta-band { margin-top: 24px; padding: 20px 16px; }
+  .cta-band__title { font-size: 16px; margin-bottom: 4px; }
+  .cta-band__text { font-size: 12px; margin-bottom: 12px; }
+  .other-svc { margin-top: 24px; }
+
+  /* LED のメリット・ヒゲの3つの光・準備 */
+  .led__grid { gap: 8px; }
+  .led__card { padding: 12px; }
+  .led__card h3 { font-size: 14px; margin: 4px 0 2px; }
+  .led__card p { font-size: 12px; line-height: 1.7; }
+  .led__icon { width: 32px; height: 32px; }
+  .triple__title { font-size: 20px; }
+  .triple__lead { font-size: 13px; line-height: 1.85; }
+  .triple__node { width: 72px; height: 72px; font-size: 16px; }
+  .triple__label { font-size: 10px; }
+  .prep__t { font-size: 12px; line-height: 1.75; }
+
+  /* about：選ばれる理由・FAQ */
+  .features { margin-top: 20px; }
+  .feature { padding: 14px 0; }
+  .feature__title { font-size: 14px; margin: 4px 0; }
+  .feature__text { font-size: 12px; line-height: 1.75; }
+  .faq__item summary { padding: 12px 0; font-size: 13px; }
+  .faq__item p { font-size: 12px; line-height: 1.8; }
+}
+
+/* 600〜899px：横幅を活かして2〜3列に並べる */
+@media (min-width: 600px) and (max-width: 899px) {
+  .ub-menus, .ub-menus--panel { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .steps:not(.steps--img) { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
+  .steps--img { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .series__cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .led__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ba__figs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ub-panel { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 14px; align-items: start; }
+  .ub-panel__media img { height: 100%; max-height: none; }
+  .detail { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: start; }
+  .whyid__list { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
