@@ -2624,3 +2624,37 @@ body.fmap-sheet-open .totop { opacity: 0; pointer-events: none; }
   .ledx__list { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; } .ledx__m b { font-size: 15px; } .ledx__m span:last-child { font-size: 12px; }
   .hrc__sub { font-size: 16px; }
 }
+
+/* 脱毛：毛周期と脱毛の関係 */
+.hcy { background: var(--c-surface); border-top: 1px solid var(--c-line); }
+.hcy__lead { font-size: 12px; line-height: 1.8; color: var(--c-ink-2); margin: -6px 0 12px; }
+.hcy__cycle { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; counter-reset: hcy; }
+.hcy__i { position: relative; display: grid; grid-template-columns: 64px minmax(0, 1fr); grid-template-areas: "img tag" "img best" "img d"; column-gap: 8px; align-items: start; padding: 8px; border-radius: 12px; background: #fff; border: 1px solid var(--c-line); }
+.hcy__i img { grid-area: img; width: 64px; height: 64px; }
+.hcy__tag { grid-area: tag; justify-self: start; padding: 2px 8px; border-radius: 999px; background: #4b5a8f; color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: .04em; }
+.hcy__i.is-best .hcy__tag { background: var(--c-brand); }
+.hcy__best { grid-area: best; font-size: 10px; color: var(--c-brand); margin-top: 2px; }
+.hcy__d { grid-area: d; font-size: 10px; line-height: 1.5; color: var(--c-ink-2); margin-top: 2px; }
+.hcy__i.is-best { border-color: rgba(39,55,143,.35); }
+.hcy__int { margin-top: 12px; padding: 12px 14px; border-radius: 14px; background: #eef1fa; }
+.hcy__int-h { font-size: 11px; font-weight: 700; color: var(--c-ink-2); }
+.hcy__int-n { font-family: var(--font-serif); font-size: 20px; color: var(--c-brand); letter-spacing: .04em; }
+.hcy__int-n b { font-size: 30px; font-weight: 500; margin: 0 2px; }
+.hcy__int-t { font-size: 11px; line-height: 1.75; color: var(--c-ink-2); margin-top: 2px; }
+.hcy__sub { margin-top: 14px; font-size: 14px; font-weight: 700; color: var(--c-ink); }
+.hcy__sub-t { font-size: 11px; line-height: 1.7; color: var(--c-ink-2); margin: 2px 0 8px; }
+.hcy__prog { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.hcy__p { display: flex; flex-direction: column; gap: 2px; text-align: center; }
+.hcy__p img { width: 100%; height: auto; border-radius: 8px; }
+.hcy__p b { font-size: 10.5px; color: var(--c-ink); margin-top: 2px; }
+.hcy__p span { font-size: 8.5px; line-height: 1.4; color: var(--c-ink-3); }
+@media (min-width: 600px) {
+  .hcy__lead { font-size: 14px; }
+  .hcy__cycle { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .hcy__i { grid-template-columns: 1fr; grid-template-areas: "img" "tag" "best" "d"; justify-items: center; text-align: center; padding: 14px; }
+  .hcy__i img { width: 110px; height: 110px; margin-bottom: 6px; }
+  .hcy__tag { justify-self: center; font-size: 12px; } .hcy__best, .hcy__d { font-size: 12px; }
+  .hcy__int { padding: 18px 22px; } .hcy__int-n { font-size: 26px; } .hcy__int-n b { font-size: 40px; } .hcy__int-t { font-size: 13px; }
+  .hcy__sub { font-size: 16px; } .hcy__sub-t { font-size: 13px; }
+  .hcy__prog { gap: 12px; } .hcy__p b { font-size: 13px; } .hcy__p span { font-size: 11px; }
+}
