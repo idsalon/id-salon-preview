@@ -1,8 +1,22 @@
+/* トップの丸から埋め込まれたとき（?embed=1）：ヘッダー・フッター等を隠し、リンクはトップ画面ごと移動、高さを親へ知らせる */
+(function () {
+  var embed = /[?&]embed=1/.test(location.search) && window.parent !== window;
+  if (!embed) return;
+  var h = document.documentElement; h.classList.add('is-embed');
+  function send() { try { window.parent.postMessage({ idEmbedH: document.documentElement.scrollHeight }, '*'); } catch (e) {} }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href]').forEach(function (a) { if (!a.target) a.target = '_top'; });
+    send();
+    if ('ResizeObserver' in window) new ResizeObserver(send).observe(document.body);
+  });
+  window.addEventListener('load', send);
+})();
+
 /* ページ遷移時は常に先頭から表示（#アンカー指定時を除く） */
 (function () {
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   function toTop() {
-    if (location.hash) return;
+    if (location.hash || document.documentElement.classList.contains('is-embed')) return;
     window.scrollTo(0, 0);
     var top = document.getElementById('header') || document.body;
     try { top.scrollIntoView({ block: 'start' }); } catch (e) {}
