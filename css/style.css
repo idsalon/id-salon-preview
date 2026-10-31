@@ -2002,3 +2002,25 @@ section[class*="series--"] { border-top: 3px solid var(--series-soft); }
 .whyid__t { font-size: 12px; white-space: nowrap; }
 .whyid__s { font-size: 10px; line-height: 1.4; }
 @media (min-width: 900px) { .whyid__list { grid-template-columns: repeat(6, minmax(0, 1fr)); } .section--why .section__title { font-size: 20px; } }
+
+/* こだわり：見出しも含めて小さな帯に（英字の自動大文字で「ID」になる見出しは使わない） */
+.section--why { padding-block: 18px 16px; }
+.whyid__h { font-size: 13px; font-weight: 700; letter-spacing: .08em; color: var(--c-brand); margin: 0 0 10px; }
+.whyid__list { gap: 10px 6px; }
+.whyid__item { gap: 5px; }
+.whyid__ic, .whyid__ic svg { width: 15px; height: 15px; }
+.whyid__t { font-size: 11px; line-height: 1.35; }
+.whyid__s { font-size: 9.5px; line-height: 1.35; }
+@media (min-width: 900px) { .section--why { padding-block: 24px 20px; } .whyid__t { font-size: 12px; } .whyid__s { font-size: 11px; } }
+
+/* お悩みマップ：「詳しく見る」は予約・LINE の下に横幅いっぱいのボタン（右に矢印） */
+.fmap__panel .fmap__kicker, .fmap__side .fmap__kicker { padding-right: 0 !important; }
+.fmap__actions { flex-wrap: wrap; }
+.fmap__actions .link-arrow, .fmap__side .fmap__actions .link-arrow {
+  position: static !important; order: 3; flex: 1 1 100% !important; display: flex; align-items: center; justify-content: space-between;
+  min-height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: #eef0f8;
+  font-size: 13px; font-weight: 500; letter-spacing: .04em; color: var(--c-brand) !important;
+}
+.fmap__actions .link-arrow::after { content: "›"; font-size: 20px; line-height: 1; }
+.fmap__actions .link-arrow:active { background: #e1e5f3; }
+@media (hover: hover) { .fmap__actions .link-arrow:hover { background: #e4e8f5; } }
