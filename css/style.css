@@ -2698,3 +2698,9 @@ body.fmap-sheet-open .totop { opacity: 0; pointer-events: none; }
 .hcy__cycle > .hcy__i:nth-of-type(2) { order: 1; } .hcy__cycle > .hcy__i:nth-of-type(3) { order: 2; }
 .hcy__cycle > .hcy__i:nth-of-type(4) { order: 4; } .hcy__cycle > .hcy__i:nth-of-type(5) { order: 3; }
 @media (max-width: 599px) { .hcy__cycle { gap: 18px 18px; } .hcy__center { width: 58px; height: 58px; } .hcy__center span { font-size: 9.5px; } .hcy__center small { font-size: 7px; } }
+.concept__prime { font-size: 12px; line-height: 1.8; color: var(--c-ink-2); padding: 10px 12px; border-left: 3px solid var(--c-brand); background: #f3f5fa; border-radius: 0 10px 10px 0; }
+.price-sameday { font-size: 11px !important; line-height: 1.7 !important; color: var(--c-ink-3) !important; }
+@media (max-width: 599px) { .concept__lead { font-size: 18px; line-height: 1.6; } .concept__text p { font-size: 13px; line-height: 1.85; } }
+.concept .concept__lead { font-family: var(--font-serif); font-size: 21px !important; font-weight: 500; line-height: 1.55; letter-spacing: .06em; color: var(--c-ink); margin-bottom: 10px; }
+@media (max-width: 599px) { .concept .sec-row { align-items: center; } .concept .sec-row .link-arrow { font-size: 11px; } .concept .section__title { white-space: nowrap; font-size: 19px; } }
+@media (min-width: 900px) { .concept .concept__lead { font-size: 30px !important; } }
