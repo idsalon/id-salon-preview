@@ -280,3 +280,33 @@
 .bm__card > .kseg { width: auto; max-width: calc(100% - 24px); margin-inline: 12px; }
 .kl[class*="kl--"].is-active, .bm__pt.is-active .kl[class*="kl--"] { background: var(--c-brand); border-color: var(--c-brand); }
 @media (max-width: 899px) { .fmap { grid-template-columns: minmax(0, 1fr); } }
+
+/* v5（10/31 オーナー確認）
+   - 切替：FACE／BODY の2グループに分け、それぞれ Women／Men の写真
+   - 顔の点：番号をやめ、小さなガラスの丸（中心にカテゴリ色）。ラベルからも番号を外す */
+.fview { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: min(100%, 460px); margin: 22px auto 0; }
+.fview__grp { min-width: 0; }
+.fview__h { font-family: var(--font-serif); font-size: 13px; letter-spacing: .3em; text-transform: uppercase; color: var(--c-ink-2); text-align: center; padding-bottom: 8px; margin-bottom: 10px; border-bottom: 1px solid var(--c-line); }
+.fview__row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.fview__t { font-family: var(--font-serif); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 400; }
+.fview__btn.is-active .fview__t { font-weight: 500; }
+.fview__grp:has(.is-active) .fview__h { color: var(--c-brand); border-bottom-color: var(--c-brand); }
+
+/* 顔の点：小さな丸 */
+.fc__dot--facial { --k: var(--k-facial); } .fc__dot--kogao { --k: var(--k-kogao); } .fc__dot--hair { --k: var(--k-hair); }
+.fc__dot--white { --k: var(--k-white); } .fc__dot--slim { --k: var(--k-slim); } .fc__dot--body { --k: var(--k-body); }
+.fc__dot .fc__n { display: none !important; }
+.fc__dot { width: 36px; height: 36px; margin: -18px 0 0 -18px; }
+.fc__dot::before, .fc__dot[class*="fc__dot--"]::before {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%;
+  background: rgba(255,255,255,.35); -webkit-backdrop-filter: blur(6px) saturate(170%); backdrop-filter: blur(6px) saturate(170%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.9), 0 2px 8px rgba(10,14,40,.22); transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+.fc__dot::after { content: ""; position: absolute; left: 50%; top: 50%; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--k, var(--c-brand)); transition: transform .2s var(--ease); }
+.fc__dot.is-active::before { transform: scale(1.5); background: rgba(255,255,255,.5); box-shadow: inset 0 0 0 1.5px #fff, 0 0 0 6px rgba(255,255,255,.28), 0 3px 12px rgba(10,14,40,.3); }
+.fc__dot.is-active::after { transform: scale(1.4); }
+.fc__lab .fc__n { display: none !important; }
+@media (max-width: 599px) {
+  .fc__lab { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "k c" "t c"; padding-left: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .fc__dot::before, .fc__dot::after { transition: none; } }

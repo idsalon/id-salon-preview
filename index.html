@@ -5,7 +5,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=48">
-<link rel="stylesheet" href="css/bodymap.css?v=4">
+<link rel="stylesheet" href="css/bodymap.css?v=5">
 
 
   <!-- ===== ヘッダー（全ページ共通。変更時はすべてのHTMLを同じに） ===== -->
@@ -152,10 +152,8 @@
           <p class="section__en">Concern Map</p>
           <h2 class="section__title">気になるところから、<br class="sp-only">選べます。</h2>
           <div class="fview" role="group" aria-label="見たい場所を選ぶ">
-            <button type="button" class="fview__btn is-active" data-fview="f-face" aria-pressed="true"><span class="fview__img"><img src="images/face-f.jpg" alt="" loading="lazy" width="800" height="1000"></span><span class="fview__t"><small>女性</small>顔</span></button>
-            <button type="button" class="fview__btn" data-fview="f-body" aria-pressed="false"><span class="fview__img fview__img--body"><img src="images/body-f.webp" alt="" loading="lazy" width="800" height="1040"></span><span class="fview__t"><small>女性</small>からだ</span></button>
-            <button type="button" class="fview__btn" data-fview="m-face" aria-pressed="false"><span class="fview__img"><img src="images/face-m.jpg" alt="" loading="lazy" width="800" height="1000"></span><span class="fview__t"><small>男性</small>顔</span></button>
-            <button type="button" class="fview__btn" data-fview="m-body" aria-pressed="false"><span class="fview__img fview__img--body"><img src="images/body-m.webp" alt="" loading="lazy" width="800" height="1040"></span><span class="fview__t"><small>男性</small>からだ</span></button>
+            <div class="fview__grp"><p class="fview__h">Face</p><div class="fview__row"><button type="button" class="fview__btn is-active" data-fview="f-face" aria-pressed="true" aria-label="女性の顔"><span class="fview__img"><img src="images/face-f.jpg" alt="" loading="lazy"></span><span class="fview__t">Women</span></button><button type="button" class="fview__btn" data-fview="m-face" aria-pressed="false" aria-label="男性の顔"><span class="fview__img"><img src="images/face-m.jpg" alt="" loading="lazy"></span><span class="fview__t">Men</span></button></div></div>
+            <div class="fview__grp"><p class="fview__h">Body</p><div class="fview__row"><button type="button" class="fview__btn" data-fview="f-body" aria-pressed="false" aria-label="女性のからだ"><span class="fview__img fview__img--body"><img src="images/body-f.webp" alt="" loading="lazy"></span><span class="fview__t">Women</span></button><button type="button" class="fview__btn" data-fview="m-body" aria-pressed="false" aria-label="男性のからだ"><span class="fview__img fview__img--body"><img src="images/body-m.webp" alt="" loading="lazy"></span><span class="fview__t">Men</span></button></div></div>
           </div>
           <div class="fmap__toggles-src" hidden>
           <div class="fmap__toggle fmap__toggle--area" role="group" aria-label="顔・からだの切り替え">
