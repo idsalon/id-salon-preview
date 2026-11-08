@@ -40,10 +40,13 @@
     "description": "男性スタッフが担当するメンズ美容。ヒゲ脱毛、肌管理フェイシャル、ウルトラ痩身、美容ホワイトニング。完全予約制・貸切OK。"
   }
   </script>
-  <!-- ★要変更: Google アナリティクス（GA4）。測定IDを取得したら G-XXXXXXXXXX を差し替え、コメントを外す
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
-  -->
+  <!-- Google タグ（GA4・GTM-WWMXJNMN）。本番ドメインでのみ読み込む（確認用URL github.io・手元のファイルでは計測しない） -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    (function(h){ if (!h || /github\.io$|^localhost$|^127\./.test(h)) return; var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-WWMXJNMN'; document.head.appendChild(s); })(location.hostname);
+  </script>
 </head>
 <body>
 

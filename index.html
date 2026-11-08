@@ -38,10 +38,13 @@
     "description": "広島市安芸区矢野のトータルビューティーサロン Id（アイディー）。CHRISTINA正規取扱店のフェイシャル、男女OKのLED脱毛、痩身、セルフホワイトニング。完全予約制・JR矢野駅徒歩5分・駐車場2台。ご予約はホットペッパー・LINEで。"
   }
   </script>
-  <!-- ★要変更: Google アナリティクス（GA4）。測定IDを取得したら G-XXXXXXXXXX を差し替え、コメントを外す
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
-  -->
+  <!-- Google タグ（GA4・GTM-WWMXJNMN）。本番ドメインでのみ読み込む（確認用URL github.io・手元のファイルでは計測しない） -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    (function(h){ if (!h || /github\.io$|^localhost$|^127\./.test(h)) return; var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-WWMXJNMN'; document.head.appendChild(s); })(location.hostname);
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
